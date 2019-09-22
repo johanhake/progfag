@@ -33,6 +33,12 @@ I tekstprogrammering består [instruksjoner](#instruksjon) av ord som settes sam
 
 Tekstprogrammering må følge fastlagde regler som bestemmes av hvilket [programmeringsspråk](#programmeringspråk) du koder i. Reglene kalles for [syntaksen](#syntaks) til programmeringsspråket. 
 
+## Kompilere
+Lage et kjørbart program av en tekstfil.
+
+### Beskrivelse
+En type av tekstprogammering 
+
 ## Blokkprogrammering
 Programmering hvor instruksjonene settes sammen grafisk gjennom ulike blokker.
 
@@ -49,13 +55,13 @@ Ved [tekstprogrammering](#tekstprogrammering) skriver man alle instruksjoner med
 Et program som kjører et skript.
 
 ### Beskrivelse
-Noen filer som lages ved [tekstprogrammering](#tekstprogrammering) trenger et eget program, kommandotolk, for å kunne kjøre. Tekstfilene kalles da for skript. Når en kommandotolk kjører et skript utføres hver instruksjon slik det står skrevet i skriptet. 
+Noen filer som lages ved [tekstprogrammering](#tekstprogrammering) trenger et eget program, kommandotolk, for å kunne kjøres. Tekstfilene med programmet kalles da for skript. 
 
 ## Programmeringsspråk
 Et språk som beskriver hvordan instruksjoner settes sammen i et program.
 
 ### Beskrivelse
-Når man [programmerer](#programmere) må man velge et programmeringsspråk man skal bruke for å sette sammen de ulike [instruksjonene](#instruksjon). Det finnes mange ulike programmeringsspråk som kan brukes til enten [tekstprogrammering](#tekstprogrammering) eller [blokkprogrammering](#blokkprogrammering). De finnes aller flest tekst-programmeringsspråk i verden da disse er enklere å bruke når man skal lage litt større program.  
+Når man [programmerer](#programmere) må man velge et programmeringsspråk man skal bruke for å sette sammen de ulike [instruksjonene](#instruksjon). Det finnes mange ulike programmeringsspråk som kan brukes til enten [tekstprogrammering](#tekstprogrammering) eller [blokkprogrammering](#blokkprogrammering). De finnes aller flest tekst-programmeringsspråk i verden da disse er enklere å bruke når man skal lage større program.  
 
 #### Eksempler på tekst-programmeringsspråk som trenger en kommandotolk
 * Python - brukes mye for å regne med matematikk
@@ -79,17 +85,38 @@ En instruksjon forteller datamaskinen at den skal gjøre noe. Et [program](#prog
 Er et navngitt sted i arbeidsminnet som holder spesifike verdier.
 
 ### Beskrivelse
-En variabel er et navngitt sted i arbeidsminnet som holder på en eller flere verdier i et program. Navnet til variablen brukes i et program til å enten hente ut verdien til variablen eller å endre verdien. 
+En variabel er et navngitt sted i arbeidsminnet som holder på en eller flere verdier i et program. Navnet til variablen anvendes til enten å bruke verdien til variablen eller å endre verdien til den. 
 
-Ordet variabel brukes innen matematikken også, men da brukes den oftest til å betegne en ukjent verdi, f. eks. *x, y*. Innen programmering har en variabel alltid en verdi. 
+Du bestemmer selv hva navnet til en variabel skal være, men [syntaksen](#syntaks) til programmeringsspråket begrenser ofte hvordan navnet kan skrives, f. eks. kan man ikke ha mellomrom i et variabelnavn i noen tekst-programmeringsspråk. Hvert variabel navn må også være unikt, man kan altså ikke ha flere variabler med samme navn.
+
+Når man lager en variabel for første gangen sier man at man [definerer](#definere) den. Man kan ikke bruke en variabel før den er definert.  
+
+Ordet variabel brukes innen matematikken også, men da oftest til å betegne en ukjent tallverdi, f. eks. *x, y*. Innen programmering har en variabel alltid en verdi. 
+
+## Definere
+Instruksjon som lager en variabel eller funksjon.
+
+### Beskrivelse
+For å kunne bruke en [variabel](#variabel) eller [funksjon](#funksjon) må de først defineres. Enkelt sagt betyr det å si ifra at vi skal ha en variabel eller funksjon med et spesifikt navn. 
+
+I tilegg til å få et navn må en variabel også få en verdi når den defineres. En funksjon må også få et set med instruksjoner som skal utføres hver gang man kaller eller kjører funksjonen. I noen [programmeringsspråk](#programmeringsspråk) kan man si ifra at man skal bruke en variabel uten å gi den et navn. Da heter det å *deklarere* en variabel. 
 
 ## Løkke
 Et set med instruksjoner som repeteres og utføres mange ganger.
 
 ### Beskrivelse
 
-
 ## Funksjon
-Et set med instruksjoner som 
+Et set med instruksjoner som knyttes til et navn.  
 
 ### Beskrivelse
+En funksjon brukes til å knytte et set med instruksjoner til et navn slik at man kan kjøre disse instruksjonene gjennom å bruke dette navnet istedenfor. Har men noen instruksjoner som tilsammens starter en bil, kan man lage en funksjon som heter `startBil`. For å kjøre instruksjonene i funksjonen sier man at man kaller på den. 
+
+Slik likner det på en variabel, men til forskjel fra en variabel er en funksjon my mer 
+
+## Argument
+Verdier man kan gi til en funksjon når man kaller den
+
+## Tilordne
+Når man gir en verdi til en variabel
+
