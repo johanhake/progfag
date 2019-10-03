@@ -160,13 +160,21 @@ En verdi kan vises til en bruker for eksempel ved at den vises på skjermen, ell
 ```python
 print("Jeg er 13 år!")
 ```
-Her sendes verdien `"Jeg er 13 år!"` til funksjonen `print` som så viser den på skjermen.    
+Her sendes verdien `"Jeg er 13 år!"` til [funksjonen](#funksjon) `print` som så viser den på skjermen.    
 
 #### Kontrollere et program
 Vanligvis utføres operasjonene i et program fra toppen av tekstfilen og nedover. En operasjon som kontrollerer et [program](#program) kan endre på denne flyten og det finnes ulike måter å kontrollere denne flyten på:
 
-1. if-setninger: Utfører ulike deler av et program avhengig av verdien til en betingelse
-2. løkker: Utfører 
+1. [if-setninger](#if-setning): Utfører ulike deler av et program avhengig av verdien til en [betingelse](#betingelse)
+2. [løkker](#løkke): Repeterer deler av et program null til flere ganger etterhverandre. 
+
+[If-setninger](#if-setning) og [løkker](#løkke) kalles for [kontrollstrukturer](#kontrollstruktur). 
+
+## Kontrollstruktur
+Bestemmer hvilke deler av et program som skal utføres
+
+### Beskrivelse
+Vanligvis utføres operasjonene i et program fra toppen av tekstfilen og nedover. Hver linje i tekstfilen utføres en gang. Kontrollstrukturer består av if-setninger og løkker og de kan bestemme at noen linjer ikke skal utføres eller at noen linjer skal utføres mange ganger. Slik bestemmer kontrollstrukturer flyten i et program. 
 
 ## Uttrykk
 En eller flere operasjoner som er satt sammen
@@ -227,22 +235,6 @@ For Python gjelder disse kravene til et variabelnavn
 ### Tips til variabelnavn
 Bruk variabelnavn som beskriver hva verdien til variabelen skal brukes til. For eksempel er navn som `a`, `b` oftest dårlige navn, mens `lån`, `navn` eller `poengsum` er bra navn. 
 
-## Funksjonsnavn
-Navnet til en funksjon
-
-### Beskrivelse
-En funksjon har som oftest et navn. [Syntaksen](#syntaks) til et programmeringsspråk legger noen krav til navnet. Disse krav er de samme som for [variabelnavn](#variabelnavn).
-
-### Tips til funksjonsnavn
-Bruk funksjonsnavn som beskriver hva funksjonen skal gjøre. Ettersom en funksjon utfører noe er det altid lurt å bruke et verb som første ord i navnet. For eksempel er `beregn_nytt_lån` eller `hent_resultater` gode navn til to funksjoner.   
-
-### Beskrivelse
-En [funksjon](#funksjon) har nesten altid et navn. Funksjonsnavnet brukes når du 
-
-1. [definerer](#definerer) funksjonen
-2. [kaller funksjonen](#kalle-funksjon)
-
-
 ## Verdi
 En representasjon av en eller flere størrelser
 
@@ -266,6 +258,18 @@ Alle verdier har en datatype som beskriver hva den kan brukes til. De vanligste 
 * [lister](#liste): Brukes å samle verdier i en ordnet rekkefølge.
 * [assosiative lister](#assosiativ liste). Brukes til å samle verdier som er assosiert med en [nøkkel](#nøkkel) som er en tekst-streng. 
 
+## Definere
+Operasjon som lager en variabel eller funksjon.
+
+## Tilordne
+Når man gir eller endrer en verdi til en variabel
+
+### Beskrivelse
+For å kunne bruke en [variabel](#variabel) eller [funksjon](#funksjon) må de først defineres. Når en variabel defineres knyttes et [variabelnavn](#variabelnavn) til en verdi som lagres i [arbeidsminnet](#arbeidsminne). Når en funksjon defineres knyttes et [funksjonsnavn](#funksjonsnavn) 
+Enkelt sagt betyr det å lagre en verdi å si ifra at vi skal ha en variabel eller funksjon med et spesifikt navn. Navnet brukes så i programmet for å representere enten verdien til variabelen eller alle operasjonen til funksjonen.  
+
+I tilegg til å få et navn må en variabel også få en verdi når den defineres. En funksjon må også få et set med operasjoner som skal utføres hver gang man kaller eller kjører funksjonen. I noen [programmeringsspråk](#programmeringsspråk) kan man si ifra at man skal bruke en variabel uten å gi den en verdi. Da heter det å *deklarere* en variabel. 
+
 ## Liste
 En samling av verdier som er ordnet i en rekkefølge 
 
@@ -280,26 +284,11 @@ deltagere[1] = "Svein"
 ```
 `deltagere` er en list-variabel med fire elementer. Hvert element representerer navnene til deltagerne i en konkuranse. `deltager` er en variabel som har det *tredje* (ikke det andre!) elementet fra listen. Til slutt endres verdien til det andre elementet til `"Svein"`. Deltager `"Erik"` er altså byttet ut med `"Svein"`.
 
-#### Element
+#### Element - liste
 Verdiene i en liste kalles for elementer.
 
-#### Indeks
+#### Indeks - liste
 En indeks brukes når man skal hente ut eller endre på elementene i en liste. Indeksen betegner nummeret til verdien i listen. Det første elementet har indeksen `0`, det andre har indeksen `1` og så videre. På rad to over brukes indeksen `2` til å hente ut verdien til det tredje elementet i listen `deltager`. På rad tre over brukes indeksen `1` til å endre det andre elementet i listen til verdien `"Svein"`.
-
-## Definere
-Operasjon som lager en variabel eller funksjon.
-
-### Beskrivelse
-For å kunne bruke en [variabel](#variabel) eller [funksjon](#funksjon) må de først defineres. Når en variabel defineres knyttes et [variabelnavn](#variabelnavn) til en verdi som lagres i [arbeidsminnet](#arbeidsminne). Når en funksjon defineres knyttes et [funksjonsnavn](#funksjonsnavn) 
-Enkelt sagt betyr det å lagre en verdi å si ifra at vi skal ha en variabel eller funksjon med et spesifikt navn. Navnet brukes så i programmet for å representere enten verdien til variabelen eller alle operasjonen til funksjonen.  
-
-I tilegg til å få et navn må en variabel også få en verdi når den defineres. En funksjon må også få et set med operasjoner som skal utføres hver gang man kaller eller kjører funksjonen. I noen [programmeringsspråk](#programmeringsspråk) kan man si ifra at man skal bruke en variabel uten å gi den en verdi. Da heter det å *deklarere* en variabel. 
-
-## Løkke
-Operasjoner som repeteres flere ganger.
-
-### Beskrivelse
-
 
 ## Funksjon
 Operasjoner som lagres til et navn.
@@ -309,9 +298,14 @@ En funksjon brukes til å lagre et sett med operasjoner til et navn. Operasjonen
 
 En funksjon likner på en variabel med at den har et navn og noe blir lagret til navnet, men en funksjon lagrer operasjoner hvor en variabel bare lagrer verdier.
 
-### Eksempel
+## Funksjonsnavn
+Navnet til en funksjon
 
+### Beskrivelse
+En [funksjon](#funksjon) har nesten altid et navn. [Syntaksen](#syntaks) til et programmeringsspråk legger noen krav til navnet. Disse krav er de samme som for [variabelnavn](#variabelnavn).
 
+### Tips til funksjonsnavn
+Bruk funksjonsnavn som beskriver hva funksjonen skal gjøre. Ettersom en funksjon utfører noe er det altid lurt å bruke et verb som første ord i navnet. For eksempel er `beregn_nytt_lån` eller `hent_resultater` gode navn til to funksjoner.   
 
 ## Kalle funksjon
 Utføre operasjoner knyttet til en funksjon
@@ -321,6 +315,24 @@ Utføre operasjoner knyttet til en funksjon
 ## Argument
 Verdier man sender til en funksjon når man kaller den
 
-## Tilordne
-Når man gir eller endrer en verdi til en variabel
+## If-setning
+
+### Beskrivelse
+
+## Betingelse
+
+### Beskrivelse
+
+## Løkke
+Operasjoner som repeteres flere ganger.
+
+### Beskrivelse
+
+## For-løkke
+
+### Beskrivelse
+
+## While-løkke
+
+### Beskrivelse
 
