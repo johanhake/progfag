@@ -18,6 +18,7 @@
       
       
       
+      
 
       <style>
       /**
@@ -269,7 +270,7 @@ pre[data-line] .line-highlight[data-end]:after {
       <div class="mume markdown-preview  ">
       <h1 id="begreper">Begreper</h1>
 <h2 id="program">Program</h2>
-<p>Et set med operasjoner som f&#xE5;r en datamaskin til &#xE5; utf&#xF8;re noe.</p>
+<p>Et sett med operasjoner som f&#xE5;r en datamaskin til &#xE5; utf&#xF8;re noe.</p>
 <h3 id="beskrivelse">Beskrivelse</h3>
 <p>Et program eller en app (applikasjon) er et set med <a href="#operasjon">operasjoner</a> som f&#xE5;r en datamaskin til &#xE5; utf&#xF8;re noe. N&#xE5;r dette skjer sier man ofte at man <em>kj&#xF8;rer</em> programmet. Hvis vi bruker en mobiltelefon eller en datamaskin kj&#xF8;rer vi nesten altid et eller annet program, f eks sms-appen til telefonen eller Microsoft Word p&#xE5; datamaskinen. Et program lages ved at man <a href="#programmere">programmerer</a> eller koder det og det kj&#xF8;res ved at man laster programmet inn i <a href="#arbeidsminnet">arbeidsminne</a> til mobiltelefonen eller datamaskinen.</p>
 <h2 id="arbeidsminne">Arbeidsminne</h2>
@@ -333,10 +334,12 @@ h&#xF8;yde <span class="token operator">=</span> <span class="token number">1.34
 <li>Blokkuino - brukes til &#xE5; styre en arduino</li>
 </ul>
 <h2 id="algoritme">Algoritme</h2>
-<p>En oppskrift med operasjoner som utf&#xF8;r en oppgave.</p>
+<p>En liste med operasjoner som utf&#xF8;r en oppgave.</p>
 <h3 id="beskrivelse-9">Beskrivelse</h3>
-<p>En algoritme er en beskrivelse av et antall <a href="#operasjon">operasjoner</a> som tilsammens utf&#xF8;r en oppgave. Oppgaven kan v&#xE6;re en matematisk oppgave som &#xE5; beregne et gjennomsnitt eller &#xE5; finne typetallet (st&#xF8;rste tallet i en tallmengde). Oppgaven kan ogs&#xE5; v&#xE6;re noe v&#xE6;rdagslig som &#xE5; velge den beste oppskriften i en samling med oppskrifter. En algoritme kan v&#xE6;re noe konkret som noen linjer med kode som tilsammens utf&#xF8;r oppgaven eller en abstrakt beskrivelse av hvilke operasjoner som skal utf&#xF8;res og i hvilken rekkef&#xF8;lge de skal gj&#xF8;res.</p>
-<p>Mange internettbedrifter bruker algoritmer n&#xE5;r de skal presentere varer eller artikler til deg. For eksempel bruker str&#xF8;mmetjenester som Netflix og Spotify slike n&#xE5;r de skal presentere filmer eller musikk de mener passer deg. Disse algoritmene baserer seg p&#xE5; at bedriftene husker hva du har valgt tidligere og hva andre personer som likner deg (samme alder, kj&#xF8;nn, bosted) har valgt.</p>
+<p>En algoritme er en liste med <a href="#operasjon">operasjoner</a> som tilsammens utf&#xF8;r en oppgave. Oppgaven kan v&#xE6;re en matematisk oppgave som &#xE5; beregne et gjennomsnitt eller &#xE5; finne typetallet (st&#xF8;rste tallet i en tallmengde). Oppgaven kan ogs&#xE5; v&#xE6;re noe v&#xE6;rdagslig som &#xE5; velge den beste oppskriften i en samling med oppskrifter.</p>
+<p>Listen med operasjoner m&#xE5; komme i en gitt rekkef&#xF8;lge, for eksempel er f&#xF8;lgende to operasjoner fra en oppskrift: * blande ingrediensene sammen * sett inn formen i ovnen Her er det opplagt at man m&#xE5; blande ingrediensene i en oppskrift f&#xF8;r man setter inn formen i ovnen, men akkurat rekkef&#xF8;lgen i en algoritme er ofte vanskelig for en som starter &#xE5; l&#xE6;re seg programmering &#xE5; f&#xE5; inn.</p>
+<p>En algoritme kan v&#xE6;re noe konkret som noen linjer med kode som tilsammens utf&#xF8;r oppgaven eller en abstrakt beskrivelse av hvilke operasjoner som skal utf&#xF8;res og i hvilken rekkef&#xF8;lge de skal gj&#xF8;res. TODO: Gi eksempler eller ta bort</p>
+<p>Mange internettbedrifter bruker algoritmer n&#xE5;r de skal presentere varer eller artikler til deg. For eksempel bruker str&#xF8;mmetjenester som Netflix og Spotify slike n&#xE5;r de skal presentere filmer eller musikk de mener passer deg. Disse algoritmene baserer seg p&#xE5; at bedriftene husker hva du har valgt tidligere og hva andre personer som likner deg (samme alder, kj&#xF8;nn, bosted) har valgt. TODO: Passer dette her?</p>
 <h4 id="eksempel-gjennomsnitt">Eksempel: gjennomsnitt</h4>
 <ul>
 <li>Lag en list-variabel <code>alle_tall</code> hvor du samler alle tall du vill beregne gjennomsnittet p&#xE5;.</li>
@@ -349,20 +352,21 @@ h&#xF8;yde <span class="token operator">=</span> <span class="token number">1.34
     <span class="token builtin">sum</span> <span class="token operator">+=</span> tall
 gjennomsnitt <span class="token operator">=</span> <span class="token builtin">sum</span><span class="token operator">/</span><span class="token builtin">len</span><span class="token punctuation">(</span>alle_tall<span class="token punctuation">)</span></pre>
 <h2 id="operasjon">Operasjon</h2>
-<p>En enkelt ting en datamaskin skal gj&#xF8;re.</p>
+<p>En enkelt ting en datamaskin skal gj&#xF8;re</p>
 <h3 id="beskrivelse-10">Beskrivelse</h3>
-<p>En operasjon forteller datamaskinen at den skal gj&#xF8;re noe. Et <a href="#program">program</a> er mange operasjoner som er satt sammen etter hverandre. Alle operasjoner i et program bruker eller endrer p&#xE5; <a href="#verdi">verdier</a> og flere operasjoner kan settes sammen til <a href="#uttrykk">uttrykk</a>.</p>
-<p>Det finnes fem ulike typer av operasjoner:</p>
+<p>En operasjon forteller datamaskinen at den skal gj&#xF8;re noe. Et <a href="#program">program</a> er mange operasjoner som er satt sammen etter hverandre. En operasjon i hverdagslivet kan v&#xE6;re mange ting men innen <a href="#programmere">programmering</a> er en operasjon noe forenklet begrenset til operasjoner p&#xE5; <a href="#verdi">verdier</a> og det &#xE5; bruke <a href="#kontrollstruktur">kontrolstrukturer</a> og <a href="#funksjon">funksjoner</a>.</p>
+<p>Det finnes 4 ulike typer operasjoner som ut&#xF8;fres p&#xE5; <a href="#verdi">verdier</a>:</p>
 <ol type="1">
-<li>Bearbeider verdier (<em>process</em> eng.)</li>
-<li>Lagre verdier eller operasjoner</li>
-<li>Hente inn verdier (inndata), input</li>
-<li>Vise verdier (utdata), output</li>
-<li>Kontrollere et program</li>
+<li>Bearbeider en verdi (<em>process</em> eng.)</li>
+<li>Lagre en verdi i en variabel</li>
+<li>Hente inn en verdi (inndata), input</li>
+<li>Vise en verdi (utdata), output</li>
 </ol>
 <h4 id="bearbeide-verdier">Bearbeide verdier</h4>
 <p>N&#xE5;r du bearbeider en eller flere verdier gj&#xF8;r datamaskinene noe med verdiene. To ulike m&#xE5;ter &#xE5; bearbeide verdier p&#xE5; er &#xE5; enten bruke en <a href="#operator">operator</a> for eksempel <code>5 + 6</code> eller &#xE5; sende verdiene som <a href="#argument">argumenter</a> til en <a href="#funksjon">funksjon</a> for eksempel <code>gjennomsnitt([3, 6, 8])</code>.</p>
-<h4 id="lagre-verdi-eller-operasjon">Lagre verdi eller operasjon</h4>
+<p>Flere operasjoner som bearbeider verdier kan settes sammen til <a href="#uttrykk">uttrykk</a> for eksempel:</p>
+<pre class="text language-text language-python" data-role="codeBlock" data-info="python"><span class="token builtin">round</span><span class="token punctuation">(</span>sqrt<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span></pre>
+<h4 id="lagre-verdi">Lagre verdi</h4>
 <p>Verdier lagres i <a href="#variabel">variabler</a> og operasjoner lagres i <a href="#funksjon">funksjoner</a>. Verdien eller operasjonene blir da lagret i <a href="#arbeidsminne">arbeidsminnet</a> og kan brukes seinere i programmet.</p>
 <p>N&#xE5;r en verdi skal lagres i en variabel bruker man en <a href="#tilordningsoperator">tilordningsoperatorer</a> (<code>=</code>).</p>
 <pre class="text language-text language-python" data-role="codeBlock" data-info="python">alder <span class="token operator">=</span> <span class="token number">9</span>
@@ -376,28 +380,21 @@ navn <span class="token operator">=</span> <span class="token string">&quot;Mari
 <p>En verdi kan vises til en bruker for eksempel ved at den vises p&#xE5; skjermen, eller skrives til en fil.</p>
 <pre class="text language-text language-python" data-role="codeBlock" data-info="python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Jeg er 13 &#xE5;r!&quot;</span><span class="token punctuation">)</span></pre>
 <p>Her sendes verdien <code>&quot;Jeg er 13 &#xE5;r!&quot;</code> til <a href="#funksjon">funksjonen</a> <code>print</code> som s&#xE5; viser den p&#xE5; skjermen.</p>
-<h4 id="kontrollere-et-program">Kontrollere et program</h4>
-<p>Vanligvis utf&#xF8;res operasjonene i et program fra toppen av tekstfilen og nedover. En operasjon som kontrollerer et <a href="#program">program</a> kan endre p&#xE5; denne flyten og det finnes ulike m&#xE5;ter &#xE5; kontrollere denne flyten p&#xE5;:</p>
-<ol type="1">
-<li><a href="#if-setning">if-setninger</a>: Utf&#xF8;rer ulike deler av et program avhengig av verdien til en <a href="#betingelse">betingelse</a></li>
-<li><a href="#l&#xF8;kke">l&#xF8;kker</a>: Repeterer deler av et program null til flere ganger etterhverandre.</li>
-</ol>
-<p><a href="#if-setning">If-setninger</a> og <a href="#l&#xF8;kke">l&#xF8;kker</a> kalles for <a href="#kontrollstruktur">kontrollstrukturer</a>.</p>
 <h2 id="kontrollstruktur">Kontrollstruktur</h2>
 <p>Bestemmer hvilke deler av et program som skal utf&#xF8;res</p>
 <h3 id="beskrivelse-11">Beskrivelse</h3>
-<p>Vanligvis utf&#xF8;res operasjonene i et program fra toppen av tekstfilen og nedover. Hver linje i tekstfilen utf&#xF8;res en gang. Kontrollstrukturer best&#xE5;r av if-setninger og l&#xF8;kker og de kan bestemme at noen linjer ikke skal utf&#xF8;res eller at noen linjer skal utf&#xF8;res mange ganger. Slik bestemmer kontrollstrukturer flyten i et program.</p>
+<p>Vanligvis utf&#xF8;res operasjonene i et program fra toppen av tekstfilen og nedover. Hver linje i tekstfilen utf&#xF8;res en gang. Kontrollstrukturer best&#xE5;r av <a href="#if-setning">if-setninger</a> og <a href="#l%c3%b8kke">l&#xF8;kker</a> og de kan bestemme at noen linjer skal utf&#xF8;res og andre ikke, eller at noen linjer skal utf&#xF8;res mange ganger. Slik bestemmer kontrollstrukturer flyten i et program.</p>
 <h2 id="uttrykk">Uttrykk</h2>
 <p>En eller flere operasjoner som er satt sammen</p>
 <h3 id="beskrivelse-12">Beskrivelse</h3>
-<p>Et uttrykk best&#xE5;r av en eller flere <a href="#operasjon">operasjoner</a> som er satt sammen. Som oftest resulterer et uttrykk i en verdi.</p>
+<p>Et uttrykk best&#xE5;r av en eller flere <a href="#operasjon">operasjoner</a> som er satt sammen. Operasjonene i uttrykk er satt sammen av operasjoner som bearbeider verdier og som oftest resulterer et uttrykk derfor i en verdi.</p>
 <pre class="text language-text language-python" data-role="codeBlock" data-info="python">navn <span class="token operator">=</span> <span class="token string">&quot;Petter&quot;</span>
 setning <span class="token operator">=</span> <span class="token string">&quot;Jeg heter &quot;</span> <span class="token operator">+</span> navn <span class="token operator">+</span> <span class="token string">&quot; og jeg er &quot;</span> <span class="token operator">+</span> <span class="token number">16</span> <span class="token operator">+</span> <span class="token string">&quot; &#xE5;r.&quot;</span> </pre>
-<p>Her er to linjer som begge tilordner to variabler to verdier som begge er resultater av to uttrykk. Den f&#xF8;rste linjen best&#xE5;r vare av et uttrykk som resulterer i verdien: <code>&quot;Petter&quot;</code>. Den andre linjen best&#xE5;r av et uttrykk som resulterer i verdien <code>&quot;Jeg heter Petter og jeg er 16 &#xE5;r.&quot;</code>.</p>
+<p>Her er to linjer som begge tilordner to variabler to verdier som begge er resultater av to uttrykk. Den f&#xF8;rste linjen best&#xE5;r av et uttrykk som resulterer i verdien: <code>&quot;Petter&quot;</code>. Den andre linjen best&#xE5;r av et uttrykk som resulterer i verdien <code>&quot;Jeg heter Petter og jeg er 16 &#xE5;r.&quot;</code>.</p>
 <h2 id="operator">Operator</h2>
 <p>Enkle tegn som bearbeider en eller to verdier</p>
 <h3 id="beskrivelse-13">Beskrivelse</h3>
-<p>Den enkleste m&#xE5;ten &#xE5; bearbeide en eller to verdier er &#xE5; bruke en operator. FORTSETT!</p>
+<p>Den enkleste m&#xE5;ten &#xE5; bearbeide en eller to verdier er &#xE5; bruke en operator.</p>
 <h2 id="variabel">Variabel</h2>
 <p>Er et navngitt sted i arbeidsminnet som lagrer verdier.</p>
 <h3 id="beskrivelse-14">Beskrivelse</h3>
@@ -433,7 +430,7 @@ l&#xE5;n <span class="token operator">=</span> l&#xE5;n <span class="token opera
 <p>En representasjon av en eller flere st&#xF8;rrelser</p>
 <h3 id="beskrivelse-16">Beskrivelse</h3>
 <p>En verdi representerer en st&#xF8;rrelse som kan manipuleres av et program. Verdier er ofte det man til daglig kaller data. En datamaskin er alts&#xE5; en maskin som bruker verdier! Verdier har ulike <a href="#datatype">datatyper</a> som beskriver hva verdien kan brukes til:</p>
-<p>Eksempler p&#xE5; datatyper er: * tall: <code>2, -5, 0.45, 1e-3</code> * tekst: <code>&quot;A&quot;, &quot;Jeg heter Lise.&quot;</code> * boolean: <code>True, False</code> * liste: <code>[5, 3, 8], [&quot;ost&quot;, 2, &quot;melk&quot;, 5]</code></p>
+<p>Eksempler p&#xE5; datatyper er: * <a href="#tall">tall</a>: <code>2, -5, 0.45, 1e-3</code> * tekst eller <a href="#streng">strenger</a>: <code>&quot;A&quot;, &quot;Jeg heter Lise.&quot;</code> * <a href="#boolean">boolean</a>: <code>True, False</code> * <a href="#liste">liste</a>: <code>[5, 3, 8], [&quot;ost&quot;, 2, &quot;melk&quot;, 5]</code></p>
 <h2 id="datatype">Datatype</h2>
 <p>Beskriver hva en verdi kan brukes til</p>
 <h3 id="beskrivelse-17">Beskrivelse</h3>
@@ -445,46 +442,69 @@ l&#xE5;n <span class="token operator">=</span> l&#xE5;n <span class="token opera
 <h3 id="beskrivelse-18">Beskrivelse</h3>
 <p>For &#xE5; kunne bruke en <a href="#variabel">variabel</a> eller <a href="#funksjon">funksjon</a> m&#xE5; de f&#xF8;rst defineres. N&#xE5;r en variabel defineres knyttes et <a href="#variabelnavn">variabelnavn</a> til en verdi som lagres i <a href="#arbeidsminne">arbeidsminnet</a>. N&#xE5;r en funksjon defineres knyttes et <a href="#funksjonsnavn">funksjonsnavn</a> Enkelt sagt betyr det &#xE5; lagre en verdi &#xE5; si ifra at vi skal ha en variabel eller funksjon med et spesifikt navn. Navnet brukes s&#xE5; i programmet for &#xE5; representere enten verdien til variabelen eller alle operasjonen til funksjonen.</p>
 <p>I tilegg til &#xE5; f&#xE5; et navn m&#xE5; en variabel ogs&#xE5; f&#xE5; en verdi n&#xE5;r den defineres. En funksjon m&#xE5; ogs&#xE5; f&#xE5; et set med operasjoner som skal utf&#xF8;res hver gang man kaller eller kj&#xF8;rer funksjonen. I noen <a href="#programmeringsspr&#xE5;k">programmeringsspr&#xE5;k</a> kan man si ifra at man skal bruke en variabel uten &#xE5; gi den en verdi. Da heter det &#xE5; <em>deklarere</em> en variabel.</p>
+<h2 id="tall">Tall</h2>
+<p>Datatype som brukes til numeriske verdier</p>
+<h3 id="beskrivelse-19">Beskrivelse</h3>
+<p><a href="#verdi">Verdier</a> av <a href="#datatype">datatypen</a> tall brukes i programmering til utf&#xF8;re operasjoner som vi i hverdagen tenker p&#xE5; som matematiske operasjoner. N&#xE5;r to verdier skal legges sammen gjennom addisjon m&#xE5; disse verdien for eksempel ha datatypen tall.</p>
+<p>En del programmeringsspr&#xE5;k for eksempel <a href="#python">Python</a> skiller p&#xE5; datatypen <a href="#heltall">heltall</a> og <a href="#flyttall">flyttall</a>, hvor flyttal brukes til &#xE5; reprsentere tall med desimaler. Andre programmeringsspr&#xE5;k skiller ikke p&#xE5; heltall eller flyttal som f eks <a href="#javascript%5D">JavaScript</a> eller <a href="#scratch">Scratch</a>.</p>
+<h2 id="heltall">Heltall</h2>
+<p>Datatype som brukes til &#xE5; representere hele tall</p>
+<h3 id="beskrivelse-20">Beskrivelse</h3>
+<p>Heletall er tall som ikke har desimaler. Heltall brukes for eksempel til &#xE5; representere et antall for eksempel antallet spiller i et spill eller en posisjon i en rekkef&#xF8;lge. Heltall er mer naturlig for en datamaskin &#xE5; arbeide med enn flyttal. Det er for at alle heltall lett kan representeres med et <a href="#bin%c3%a6re-tall">bin&#xE6;rt tall</a> som best&#xE5;r av 1er og 0er.</p>
+<p>I programmeringsspr&#xE5;ket <a href="#python">Python</a> heter datatypen for helttall <code>int</code>, som er kort for integer.</p>
+<h2 id="flyttall">Flyttall</h2>
+<p>Datatype som brukes til &#xE5; representere desimaltall</p>
+<h3 id="beskrivelse-21">Beskrivelse</h3>
+<p>Et flyttal er et desimaltall. Innen all programmering bruker man <code>&quot;.&quot;</code> istedefor <code>&quot;,&quot;</code> for &#xE5; angi desimalen i et desimaltall eller flyttal.</p>
+<p>Grunnen til at man velger &#xE5; ikke bruke ordet desimaltall er for at desimaltall for det meste ikke g&#xE5;r &#xE5; representeres eksakt. For eksempel best&#xE5;r desimaltallet <span class="math inline">\sqrt{2}</span> av uendelig mange desimaler og m&#xE5; i en datamaskin representeres p&#xE5; en avrundet og un&#xF8;yaktig m&#xE5;te. I Python er <span class="math inline">\sqrt{2}\simeq 1.4142135623730951</span>.</p>
+<p>Flyttal er vanskeligere &#xE5; representere eksakt for en datamaskin enn <a href="#heltall">heltall</a>. Dette er for at en datamaskin i utgangspunktet bare forst&#xE5;r 1er og 0er. Et heltall kan representeres med disse siffrene gjennom <a href="#bin%c3%a6re-tall">bin&#xE6;re tall</a> mens et flyttal m&#xE5; representeres p&#xE5; en annen m&#xE5;te for eksempel m&#xE5; alle desimaltall representeres med et endelig antall desimaler.</p>
+<p>Ordet <em>flyt</em> (engelske <em>float</em>) kommer fra at plasseringen av desimaltegnen flyter. Vi kan for eksempel tenke oss at <code>0.03</code> kan representers med heltallet 3 hvor desimaltegnet er flyttet 2 plasser. Hvordan et flyttal faktisk representeres p&#xE5; g&#xE5;r vi ikke inn p&#xE5; her men i <a href="#python">Python</a> kan dette med at flyttall er vanskelige &#xE5; representer vises med f&#xF8;lgende eksempel:</p>
+<pre class="text language-text language-python" data-role="codeBlock" data-info="python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token operator">*</span><span class="token number">0.1</span><span class="token punctuation">)</span></pre>
+<p>Dette resulterer i utskriften: <code>0.30000000000000004</code> som nesten er <code>0.3</code> men det <em>er</em> ikke eksakt <code>0.3</code>.</p>
+<h2 id="bin&#xE6;re-tall">Bin&#xE6;re tall</h2>
+<p>Tall som representeres med sifferene 1 og 0</p>
+<h3 id="beskrivelse-22">Beskrivelse</h3>
+<p>Bin&#xE6;re tall er tall som representerers med sifferene 1 og 0 for eksempel 1011 er et bin&#xE6;rt tall. For &#xE5; regne ut verdien til tallet ganger vi sifferverdien med plassverdien, akkurat som vi gj&#xF8;r med <em>vanlige tall</em> fra titall systemet. Plassverdien til de 4 f&#xF8;rste posisjonene i et bin&#xE6;rt tall er: 8, 4, 2, 1. Verdien til 1011 kan vi derfor regne ut til &#xE5; v&#xE6;re: <span class="math inline">1\cdot8 + 0\cdot4 + 1\cdot 2 + 1\cdot 1 = 11</span>. Inne i en datamaskin lagres <strong>allt</strong> som bin&#xE6;retall. Dette er for at en datamaskin best&#xE5;r av veldig mange str&#xF8;mbrytere som enten kan v&#xE6;re av (0) eller p&#xE5; (1). TODO: Skal vi skrive mer dette temaet?</p>
 <h2 id="liste">Liste</h2>
 <p>En samling av verdier som er ordnet i en rekkef&#xF8;lge</p>
-<h3 id="beskrivelse-19">Beskrivelse</h3>
+<h3 id="beskrivelse-23">Beskrivelse</h3>
 <p>En liste (<em>array</em> eng.) brukes n&#xE5;r du har mange verdier som h&#xF8;rer sammen. Verdiene i en liste kalles <a href="#element">elementer</a> og er ordnet i en rekkef&#xF8;lge. Verdien til hvert element hentes ut fra listen gjennom &#xE5; bruke nummeret i rekkef&#xF8;lgen elementet har i listen. Dette nummeret kalles for <a href="#indeks">indeksen</a> til elementet. Du kan lagre listen i en <a href="#variabel">variabel</a> slik at du kan bruke verdiene seinere i et program.</p>
 <pre class="text language-text language-python" data-role="codeBlock" data-info="python"><span class="token comment"># Konkuranse</span>
-deltagere <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;Rebecca&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Erik&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Salma&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Amanda&quot;</span><span class="token punctuation">]</span>
+deltagere <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;Rebecca&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Erik&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Selma&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Amanda&quot;</span><span class="token punctuation">]</span>
 deltager <span class="token operator">=</span> deltagere<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
 deltagere<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&quot;Svein&quot;</span></pre>
 <p><code>deltagere</code> er en list-variabel med fire elementer. Hvert element representerer navnene til deltagerne i en konkuranse. <code>deltager</code> er en variabel som har det <em>tredje</em> (ikke det andre!) elementet fra listen. Til slutt endres verdien til det andre elementet til <code>&quot;Svein&quot;</code>. Deltager <code>&quot;Erik&quot;</code> er alts&#xE5; byttet ut med <code>&quot;Svein&quot;</code>.</p>
 <h4 id="element-liste">Element - liste</h4>
 <p>Verdiene i en liste kalles for elementer.</p>
 <h4 id="indeks-liste">Indeks - liste</h4>
-<p>En indeks brukes n&#xE5;r man skal hente ut eller endre p&#xE5; elementene i en liste. Indeksen betegner nummeret til verdien i listen. Det f&#xF8;rste elementet har indeksen <code>0</code>, det andre har indeksen <code>1</code> og s&#xE5; videre. P&#xE5; rad to over brukes indeksen <code>2</code> til &#xE5; hente ut verdien til det tredje elementet i listen <code>deltager</code>. P&#xE5; rad tre over brukes indeksen <code>1</code> til &#xE5; endre det andre elementet i listen til verdien <code>&quot;Svein&quot;</code>.</p>
+<p>En indeks brukes n&#xE5;r man skal hente ut eller endre p&#xE5; elementene i en liste. Indeksen betegner plasseringen til verdien i listen og m&#xE5; altid angis med et <a href="#heltall">heltall</a>. Det f&#xF8;rste elementet har indeksen <code>0</code>, det andre har indeksen <code>1</code> og s&#xE5; videre. P&#xE5; rad to over brukes indeksen <code>2</code> til &#xE5; hente ut verdien til det tredje elementet i listen <code>deltager</code>. P&#xE5; rad tre over brukes indeksen <code>1</code> til &#xE5; endre det andre elementet i listen til verdien <code>&quot;Svein&quot;</code>.</p>
 <h2 id="funksjon">Funksjon</h2>
 <p>Operasjoner som lagres til et navn.</p>
-<h3 id="beskrivelse-20">Beskrivelse</h3>
+<h3 id="beskrivelse-24">Beskrivelse</h3>
 <p>En funksjon brukes til &#xE5; lagre et sett med operasjoner til et navn. Operasjonene som lagres i en funksjon m&#xE5; utf&#xF8;re en spesifikk oppgave slik at man bruker funksjonens navn istedenfor alle operasjonene n&#xE5;r programmet skal utf&#xF8;re oppgaven. N&#xE5;r funksjonen brukes heter det at man <a href="#kalle-funksjon">kaller funksjonen</a>. N&#xE5;r en funksjon blir kallet blir alle operasjonene til funksjonen utf&#xF8;rt og slik blir ogs&#xE5; oppgaven til funksjonen utf&#xF8;rt.</p>
 <p>En funksjon likner p&#xE5; en variabel med at den har et navn og noe blir lagret til navnet, men en funksjon lagrer operasjoner hvor en variabel bare lagrer verdier.</p>
 <h2 id="funksjonsnavn">Funksjonsnavn</h2>
 <p>Navnet til en funksjon</p>
-<h3 id="beskrivelse-21">Beskrivelse</h3>
+<h3 id="beskrivelse-25">Beskrivelse</h3>
 <p>En <a href="#funksjon">funksjon</a> har nesten altid et navn. <a href="#syntaks">Syntaksen</a> til et programmeringsspr&#xE5;k legger noen krav til navnet. Disse krav er de samme som for <a href="#variabelnavn">variabelnavn</a>.</p>
 <h3 id="tips-til-funksjonsnavn">Tips til funksjonsnavn</h3>
 <p>Bruk funksjonsnavn som beskriver hva funksjonen skal gj&#xF8;re. Ettersom en funksjon utf&#xF8;rer noe er det altid lurt &#xE5; bruke et verb som f&#xF8;rste ord i navnet. For eksempel er <code>beregn_nytt_l&#xE5;n</code> eller <code>hent_resultater</code> gode navn til to funksjoner.</p>
 <h2 id="kalle-funksjon">Kalle funksjon</h2>
 <p>Utf&#xF8;re operasjoner knyttet til en funksjon</p>
-<h3 id="beskrivelse-22">Beskrivelse</h3>
+<h3 id="beskrivelse-26">Beskrivelse</h3>
 <h2 id="argument">Argument</h2>
 <p>Verdier man sender til en funksjon n&#xE5;r man kaller den</p>
 <h2 id="if-setning">If-setning</h2>
-<h3 id="beskrivelse-23">Beskrivelse</h3>
+<h3 id="beskrivelse-27">Beskrivelse</h3>
 <h2 id="betingelse">Betingelse</h2>
-<h3 id="beskrivelse-24">Beskrivelse</h3>
+<h3 id="beskrivelse-28">Beskrivelse</h3>
 <h2 id="l&#xF8;kke">L&#xF8;kke</h2>
 <p>Operasjoner som repeteres flere ganger.</p>
-<h3 id="beskrivelse-25">Beskrivelse</h3>
+<h3 id="beskrivelse-29">Beskrivelse</h3>
 <h2 id="for-l&#xF8;kke">For-l&#xF8;kke</h2>
-<h3 id="beskrivelse-26">Beskrivelse</h3>
+<h3 id="beskrivelse-30">Beskrivelse</h3>
 <h2 id="while-l&#xF8;kke">While-l&#xF8;kke</h2>
-<h3 id="beskrivelse-27">Beskrivelse</h3>
+<h3 id="beskrivelse-31">Beskrivelse</h3>
 
       </div>
       

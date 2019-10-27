@@ -1,12 +1,7 @@
----
-  export_on_save:
-    html: true
----
-
 # Begreper
 
 ## Program
-Et set med operasjoner som får en datamaskin til å utføre noe.
+Et sett med operasjoner som får en datamaskin til å utføre noe.
 
 ### Beskrivelse
 Et program eller en app (applikasjon) er et set med [operasjoner](#operasjon) som får en datamaskin til å utføre noe. Når dette skjer sier man ofte at man *kjører* programmet. Hvis vi bruker en mobiltelefon eller en datamaskin kjører vi nesten altid et eller annet program, f eks sms-appen til telefonen eller Microsoft Word på datamaskinen. Et program lages ved at man [programmerer](#programmere) eller koder det og det kjøres ved at man laster programmet inn i [arbeidsminne](#arbeidsminnet) til mobiltelefonen eller datamaskinen.
@@ -98,12 +93,21 @@ Når man [programmerer](#programmere) må man velge et programmeringsspråk man 
 * Blokkuino - brukes til å styre en arduino
 
 ## Algoritme
-En oppskrift med operasjoner som utfør en oppgave.
+En liste med operasjoner som utfør en oppgave.
 
 ### Beskrivelse
-En algoritme er en beskrivelse av et antall [operasjoner](#operasjon) som tilsammens utfør en oppgave. Oppgaven kan være en matematisk oppgave som å beregne et gjennomsnitt eller å finne typetallet (største tallet i en tallmengde). Oppgaven kan også være noe værdagslig som å velge den beste oppskriften i en samling med oppskrifter. En algoritme kan være noe konkret som noen linjer med kode som tilsammens utfør oppgaven eller en abstrakt beskrivelse av hvilke operasjoner som skal utføres og i hvilken rekkefølge de skal gjøres.  
+En algoritme er en liste med [operasjoner](#operasjon) som tilsammens utfør en oppgave. Oppgaven kan være en matematisk oppgave som å beregne et gjennomsnitt eller å finne typetallet (største tallet i en tallmengde). Oppgaven kan også være noe værdagslig som å velge den beste oppskriften i en samling med oppskrifter. 
+
+Listen med operasjoner må komme i en gitt rekkefølge, for eksempel er følgende to operasjoner fra en oppskrift:
+* blande ingrediensene sammen
+* sett inn formen i ovnen
+Her er det opplagt at man må blande ingrediensene i en oppskrift før man setter inn formen i ovnen, men akkurat rekkefølgen i en algoritme er ofte vanskelig for en som starter å lære seg programmering å få inn. 
+
+En algoritme kan være noe konkret som noen linjer med kode som tilsammens utfør oppgaven eller en abstrakt beskrivelse av hvilke operasjoner som skal utføres og i hvilken rekkefølge de skal gjøres. 
+TODO: Gi eksempler eller ta bort
 
 Mange internettbedrifter bruker algoritmer når de skal presentere varer eller artikler til deg. For eksempel bruker strømmetjenester som Netflix og Spotify slike når de skal presentere filmer eller musikk de mener passer deg. Disse algoritmene baserer seg på at bedriftene husker hva du har valgt tidligere og hva andre personer som likner deg (samme alder, kjønn, bosted) har valgt.
+TODO: Passer dette her?
 
 #### Eksempel: gjennomsnitt
 * Lag en list-variabel `alle_tall` hvor du samler alle tall du vill beregne gjennomsnittet på.
@@ -119,23 +123,27 @@ gjennomsnitt = sum/len(alle_tall)
 ```
 
 ## Operasjon
-En enkelt ting en datamaskin skal gjøre.
+En enkelt ting en datamaskin skal gjøre
 
 ### Beskrivelse
-En operasjon forteller datamaskinen at den skal gjøre noe. Et [program](#program) er mange operasjoner som er satt sammen etter hverandre. Alle operasjoner i et program bruker eller endrer på [verdier](#verdi) og flere operasjoner kan settes sammen til [uttrykk](#uttrykk).
+En operasjon forteller datamaskinen at den skal gjøre noe. Et [program](#program) er mange operasjoner som er satt sammen etter hverandre. En operasjon i hverdagslivet kan være mange ting men innen [programmering](#programmere) er en operasjon noe forenklet begrenset til operasjoner på [verdier](#verdi) og det å bruke [kontrolstrukturer](#kontrollstruktur) og [funksjoner](#funksjon). 
 
-Det finnes fem ulike typer av operasjoner:
+Det finnes 4 ulike typer operasjoner som utøfres på [verdier](#verdi):
 
-1. Bearbeider verdier (*process* eng.)
-2. Lagre verdier eller operasjoner 
-3. Hente inn verdier (inndata), input
-4. Vise verdier (utdata), output
-5. Kontrollere et program 
+1. Bearbeider en verdi (*process* eng.)
+2. Lagre en verdi i en variabel
+3. Hente inn en verdi (inndata), input
+4. Vise en verdi (utdata), output
 
 #### Bearbeide verdier
 Når du bearbeider en eller flere verdier gjør datamaskinene noe med verdiene. To ulike måter å bearbeide verdier på er å enten bruke en [operator](#operator) for eksempel `5 + 6` eller å sende verdiene som [argumenter](#argument) til en [funksjon](#funksjon) for eksempel `gjennomsnitt([3, 6, 8])`. 
 
-#### Lagre verdi eller operasjon
+Flere operasjoner som bearbeider verdier kan settes sammen til [uttrykk](#uttrykk) for eksempel:
+```python
+round(sqrt(3)/2, 3)
+```
+
+#### Lagre verdi
 Verdier lagres i [variabler](#variabel) og operasjoner lagres i [funksjoner](#funksjon). Verdien eller operasjonene blir da lagret i [arbeidsminnet](#arbeidsminne) og kan brukes seinere i programmet. 
 
 Når en verdi skal lagres i en variabel bruker man en [tilordningsoperatorer](#tilordningsoperator) (`=`).
@@ -162,38 +170,30 @@ print("Jeg er 13 år!")
 ```
 Her sendes verdien `"Jeg er 13 år!"` til [funksjonen](#funksjon) `print` som så viser den på skjermen.    
 
-#### Kontrollere et program
-Vanligvis utføres operasjonene i et program fra toppen av tekstfilen og nedover. En operasjon som kontrollerer et [program](#program) kan endre på denne flyten og det finnes ulike måter å kontrollere denne flyten på:
-
-1. [if-setninger](#if-setning): Utfører ulike deler av et program avhengig av verdien til en [betingelse](#betingelse)
-2. [løkker](#løkke): Repeterer deler av et program null til flere ganger etterhverandre. 
-
-[If-setninger](#if-setning) og [løkker](#løkke) kalles for [kontrollstrukturer](#kontrollstruktur). 
-
 ## Kontrollstruktur
 Bestemmer hvilke deler av et program som skal utføres
 
 ### Beskrivelse
-Vanligvis utføres operasjonene i et program fra toppen av tekstfilen og nedover. Hver linje i tekstfilen utføres en gang. Kontrollstrukturer består av if-setninger og løkker og de kan bestemme at noen linjer ikke skal utføres eller at noen linjer skal utføres mange ganger. Slik bestemmer kontrollstrukturer flyten i et program. 
+Vanligvis utføres operasjonene i et program fra toppen av tekstfilen og nedover. Hver linje i tekstfilen utføres en gang. Kontrollstrukturer består av [if-setninger](#if-setning) og [løkker](#l%c3%b8kke) og de kan bestemme at noen linjer skal utføres og andre ikke, eller at noen linjer skal utføres mange ganger. Slik bestemmer kontrollstrukturer flyten i et program. 
 
 ## Uttrykk
 En eller flere operasjoner som er satt sammen
 
 ### Beskrivelse
-Et uttrykk består av en eller flere [operasjoner](#operasjon) som er satt sammen. Som oftest resulterer et uttrykk i en verdi.
+Et uttrykk består av en eller flere [operasjoner](#operasjon) som er satt sammen. Operasjonene i uttrykk er satt sammen av operasjoner som bearbeider verdier og som oftest resulterer et uttrykk derfor i en verdi.
 
 ```python
 navn = "Petter"
 setning = "Jeg heter " + navn + " og jeg er " + 16 + " år." 
 ```
 
-Her er to linjer som begge tilordner to variabler to verdier som begge er resultater av to uttrykk. Den første linjen består vare av et uttrykk som resulterer i verdien: `"Petter"`. Den andre linjen består av et uttrykk som resulterer i verdien `"Jeg heter Petter og jeg er 16 år."`.
+Her er to linjer som begge tilordner to variabler to verdier som begge er resultater av to uttrykk. Den første linjen består av et uttrykk som resulterer i verdien: `"Petter"`. Den andre linjen består av et uttrykk som resulterer i verdien `"Jeg heter Petter og jeg er 16 år."`.
 
 ## Operator
 Enkle tegn som bearbeider en eller to verdier
 
 ### Beskrivelse
-Den enkleste måten å bearbeide en eller to verdier er å bruke en operator. FORTSETT!
+Den enkleste måten å bearbeide en eller to verdier er å bruke en operator. 
 
 ## Variabel
 Er et navngitt sted i arbeidsminnet som lagrer verdier.
@@ -242,10 +242,10 @@ En representasjon av en eller flere størrelser
 En verdi representerer en størrelse som kan manipuleres av et program. Verdier er ofte det man til daglig kaller data. En datamaskin er altså en maskin som bruker verdier! Verdier har ulike [datatyper](#datatype) som beskriver hva verdien kan brukes til:
 
 Eksempler på datatyper er:
-* tall: `2, -5, 0.45, 1e-3`
-* tekst: `"A", "Jeg heter Lise."` 
-* boolean: `True, False`
-* liste: `[5, 3, 8], ["ost", 2, "melk", 5]` 
+* [tall](#tall): `2, -5, 0.45, 1e-3`
+* tekst eller [strenger](#streng): `"A", "Jeg heter Lise."` 
+* [boolean](#boolean): `True, False`
+* [liste](#liste): `[5, 3, 8], ["ost", 2, "melk", 5]`
 
 ## Datatype
 Beskriver hva en verdi kan brukes til
@@ -270,6 +270,45 @@ Enkelt sagt betyr det å lagre en verdi å si ifra at vi skal ha en variabel ell
 
 I tilegg til å få et navn må en variabel også få en verdi når den defineres. En funksjon må også få et set med operasjoner som skal utføres hver gang man kaller eller kjører funksjonen. I noen [programmeringsspråk](#programmeringsspråk) kan man si ifra at man skal bruke en variabel uten å gi den en verdi. Da heter det å *deklarere* en variabel. 
 
+## Tall
+Datatype som brukes til numeriske verdier
+
+### Beskrivelse
+[Verdier](#verdi) av [datatypen](#datatype) tall brukes i programmering til utføre operasjoner som vi i hverdagen tenker på som matematiske operasjoner. Når to verdier skal legges sammen gjennom addisjon må disse verdien for eksempel ha datatypen tall. 
+
+En del programmeringsspråk for eksempel [Python](#python) skiller på datatypen [heltall](#heltall) og [flyttall](#flyttall), hvor flyttal brukes til å reprsentere tall med desimaler. Andre programmeringsspråk skiller ikke på heltall eller flyttal som f eks [JavaScript](#javascript]) eller [Scratch](#scratch).
+
+## Heltall
+Datatype som brukes til å representere hele tall
+
+### Beskrivelse
+Heletall er tall som ikke har desimaler. Heltall brukes for eksempel til å representere et antall for eksempel antallet spiller i et spill eller en posisjon i en rekkefølge. Heltall er mer naturlig for en datamaskin å arbeide med enn flyttal. Det er for at alle heltall lett kan representeres med et [binært tall](#bin%c3%a6re-tall) som består av 1er og 0er.
+
+I programmeringsspråket [Python](#python) heter datatypen for helttall `int`, som er kort for integer.
+
+## Flyttall
+Datatype som brukes til å representere desimaltall
+
+### Beskrivelse
+Et flyttal er et desimaltall. Innen all programmering bruker man `"."` istedefor `","` for å angi desimalen i et desimaltall eller flyttal. 
+
+Grunnen til at man velger å ikke bruke ordet desimaltall er for at desimaltall for det meste ikke går å representeres eksakt. For eksempel består desimaltallet $\sqrt{2}$ av uendelig mange desimaler og må i en datamaskin representeres på en avrundet og unøyaktig måte. I Python er $\sqrt{2}\simeq 1.4142135623730951$.
+
+Flyttal er vanskeligere å representere eksakt for en datamaskin enn [heltall](#heltall). Dette er for at en datamaskin i utgangspunktet bare forstår 1er og 0er. Et heltall kan representeres med disse siffrene gjennom [binære tall](#bin%c3%a6re-tall) mens et flyttal må representeres på en annen måte for eksempel må alle desimaltall representeres med et endelig antall desimaler. 
+
+Ordet *flyt* (engelske *float*) kommer fra at plasseringen av desimaltegnen flyter. Vi kan for eksempel tenke oss at `0.03` kan representers med heltallet 3 hvor desimaltegnet er flyttet 2 plasser. Hvordan et flyttal faktisk representeres på går vi ikke inn på her men i [Python](#python) kan dette med at flyttall er vanskelige å representer vises med følgende eksempel:
+```python
+print(3*0.1)
+```
+Dette resulterer i utskriften: `0.30000000000000004` som nesten er `0.3` men det *er* ikke eksakt `0.3`. 
+
+## Binære tall
+Tall som representeres med sifferene 1 og 0
+
+### Beskrivelse
+Binære tall er tall som representerers med sifferene 1 og 0 for eksempel 1011 er et binært tall. For å regne ut verdien til tallet ganger vi sifferverdien med plassverdien, akkurat som vi gjør med *vanlige tall* fra titall systemet. Plassverdien til de 4 første posisjonene i et binært tall er: 8, 4, 2, 1. Verdien til 1011 kan vi derfor regne ut til å være: $1\cdot8 + 0\cdot4 + 1\cdot 2 + 1\cdot 1 = 11$. Inne i en datamaskin lagres **allt** som binæretall. Dette er for at en datamaskin består av veldig mange strømbrytere som enten kan være av (0) eller på (1). 
+TODO: Skal vi skrive mer dette temaet?
+
 ## Liste
 En samling av verdier som er ordnet i en rekkefølge 
 
@@ -278,7 +317,7 @@ En liste (*array* eng.) brukes når du har mange verdier som hører sammen. Verd
 
 ```python
 # Konkuranse
-deltagere = ["Rebecca", "Erik", "Salma", "Amanda"]
+deltagere = ["Rebecca", "Erik", "Selma", "Amanda"]
 deltager = deltagere[2]
 deltagere[1] = "Svein"
 ```
@@ -288,7 +327,7 @@ deltagere[1] = "Svein"
 Verdiene i en liste kalles for elementer.
 
 #### Indeks - liste
-En indeks brukes når man skal hente ut eller endre på elementene i en liste. Indeksen betegner nummeret til verdien i listen. Det første elementet har indeksen `0`, det andre har indeksen `1` og så videre. På rad to over brukes indeksen `2` til å hente ut verdien til det tredje elementet i listen `deltager`. På rad tre over brukes indeksen `1` til å endre det andre elementet i listen til verdien `"Svein"`.
+En indeks brukes når man skal hente ut eller endre på elementene i en liste. Indeksen betegner plasseringen til verdien i listen og må altid angis med et [heltall](#heltall). Det første elementet har indeksen `0`, det andre har indeksen `1` og så videre. På rad to over brukes indeksen `2` til å hente ut verdien til det tredje elementet i listen `deltager`. På rad tre over brukes indeksen `1` til å endre det andre elementet i listen til verdien `"Svein"`.
 
 ## Funksjon
 Operasjoner som lagres til et navn.
