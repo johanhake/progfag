@@ -189,12 +189,6 @@ setning = "Jeg heter " + navn + " og jeg er " + 16 + " år."
 
 Her er to linjer som begge tilordner to variabler to verdier som begge er resultater av to uttrykk. Den første linjen består av et uttrykk som resulterer i verdien: `"Petter"`. Den andre linjen består av et uttrykk som resulterer i verdien `"Jeg heter Petter og jeg er 16 år."`.
 
-## Operator
-Enkle tegn som bearbeider en eller to verdier
-
-### Beskrivelse
-Den enkleste måten å bearbeide en eller to verdier er å bruke en operator. 
-
 ## Variabel
 Er et navngitt sted i arbeidsminnet som lagrer verdier.
 
@@ -253,10 +247,10 @@ Beskriver hva en verdi kan brukes til
 ### Beskrivelse
 Alle verdier har en datatype som beskriver hva den kan brukes til. De vanligste datatypene er:
 * [tall](#tall): Brukes i all matematikk, se for eksempel [aritmetiske operatorer](#aritmetisk operator).
-* tekst eller [strenger](#streng): Brukes til å formidle tekst til en bruker.
+* [strenger](#streng): Brukes til å representere tekst-verdier.
 * [boolean](#boolean): Brukes til å beskrive om noe er *sant* (`True`) eller *falskt* (`False`).
 * [lister](#liste): Brukes å samle verdier i en ordnet rekkefølge.
-* [assosiative lister](#assosiativ liste). Brukes til å samle verdier som er assosiert med en [nøkkel](#nøkkel) som er en tekst-streng. 
+* [assosiative lister](#assosiativ liste). Brukes til å samle verdier som er assosiert med en [nøkkel](#nøkkel). 
 
 ## Definere
 Operasjon som lager en variabel eller funksjon.
@@ -276,7 +270,7 @@ Datatype som brukes til numeriske verdier
 ### Beskrivelse
 [Verdier](#verdi) av [datatypen](#datatype) tall brukes i programmering til utføre operasjoner som vi i hverdagen tenker på som matematiske operasjoner. Når to verdier skal legges sammen gjennom addisjon må disse verdien for eksempel ha datatypen tall. 
 
-En del programmeringsspråk for eksempel [Python](#python) skiller på datatypen [heltall](#heltall) og [flyttall](#flyttall), hvor flyttal brukes til å reprsentere tall med desimaler. Andre programmeringsspråk skiller ikke på heltall eller flyttal som f eks [JavaScript](#javascript]) eller [Scratch](#scratch).
+En del programmeringsspråk for eksempel [Python](#python) skiller på datatypen [heltall](#heltall) og [flyttall](#flyttall). Flyttal brukes til å reprsentere tall med desimaler. Andre programmeringsspråk skiller ikke i utgangspunktet på heltall eller flyttal som f eks [JavaScript](#javascript]) eller [Scratch](#scratch).
 
 ## Heltall
 Datatype som brukes til å representere hele tall
@@ -284,7 +278,7 @@ Datatype som brukes til å representere hele tall
 ### Beskrivelse
 Heletall er tall som ikke har desimaler. Heltall brukes for eksempel til å representere et antall for eksempel antallet spiller i et spill eller en posisjon i en rekkefølge. Heltall er mer naturlig for en datamaskin å arbeide med enn flyttal. Det er for at alle heltall lett kan representeres med et [binært tall](#bin%c3%a6re-tall) som består av 1er og 0er.
 
-I programmeringsspråket [Python](#python) heter datatypen for helttall `int`, som er kort for integer.
+I programmeringsspråket [Python](#python) heter datatypen for helttall `int`, som er kort for integer. 
 
 ## Flyttall
 Datatype som brukes til å representere desimaltall
@@ -309,14 +303,30 @@ Tall som representeres med sifferene 1 og 0
 Binære tall er tall som representerers med sifferene 1 og 0 for eksempel 1011 er et binært tall. For å regne ut verdien til tallet ganger vi sifferverdien med plassverdien, akkurat som vi gjør med *vanlige tall* fra titall systemet. Plassverdien til de 4 første posisjonene i et binært tall er: 8, 4, 2, 1. Verdien til 1011 kan vi derfor regne ut til å være: $1\cdot8 + 0\cdot4 + 1\cdot 2 + 1\cdot 1 = 11$. Inne i en datamaskin lagres **allt** som binæretall. Dette er for at en datamaskin består av veldig mange strømbrytere som enten kan være av (0) eller på (1). 
 TODO: Skal vi skrive mer dette temaet?
 
+## Streng
+Datatype som brukes til å representere tekst
+
+### Beskrivelse
+Innen programmering kalles en tekst for en streng (*string* eng.). Ordet kommer fra at man lagrer en *streng* med enkeltbokstaver. Mange ganger kan det være nyttig å tenke på en streng som en [liste](#liste) med enkelt bokstaver (*characters* eng.) men til forskjell fra lister kan ikke enkelt elementene endres uten å lage en ny streng. 
+
+Strenger kan legges sammen med [streng operatoren](#streng-operatorer) `+`. Denne operasjonen kalles da å konkatenere to strenger, men oftest sier man gjerne bare å *legge sammen* to strenger. 
+
+```python
+fornavn = "Elise"
+etternavn = "Sandberg"
+print("Eleven heter " + fornavn + " " + etternavn)
+```
+
+Det finnes flere ulike [operasjoner](#operasjon) som kan gjøres på og med strenger...
+TODO: Skal vi forklare alle de her? 
+
 ## Liste
 En samling av verdier som er ordnet i en rekkefølge 
 
 ### Beskrivelse
-En liste (*array* eng.) brukes når du har mange verdier som hører sammen. Verdiene i en liste kalles [elementer](#element) og er ordnet i en rekkefølge. Verdien til hvert element hentes ut fra listen gjennom å bruke nummeret i rekkefølgen elementet har i listen. Dette nummeret kalles for [indeksen](#indeks) til elementet. Du kan lagre listen i en [variabel](#variabel) slik at du kan bruke verdiene seinere i et program. 
+En liste (*array* eng.) brukes når du har mange verdier som hører sammen. Verdiene i en liste kalles [elementer](#element---liste) og er ordnet i en rekkefølge. Verdien til hvert element hentes ut fra listen gjennom å bruke nummeret i rekkefølgen elementet har i listen. Dette nummeret kalles for [indeksen](#indeks) til elementet. Du kan lagre listen i en [variabel](#variabel) slik at du kan bruke verdiene seinere i et program. 
 
 ```python
-# Konkuranse
 deltagere = ["Rebecca", "Erik", "Selma", "Amanda"]
 deltager = deltagere[2]
 deltagere[1] = "Svein"
@@ -324,13 +334,93 @@ deltagere[1] = "Svein"
 `deltagere` er en list-variabel med fire elementer. Hvert element representerer navnene til deltagerne i en konkuranse. `deltager` er en variabel som har det *tredje* (ikke det andre!) elementet fra listen. Til slutt endres verdien til det andre elementet til `"Svein"`. Deltager `"Erik"` er altså byttet ut med `"Svein"`.
 
 #### Element - liste
-Verdiene i en liste kalles for elementer.
+Verdiene i en liste kalles for elementer
 
 #### Indeks - liste
 En indeks brukes når man skal hente ut eller endre på elementene i en liste. Indeksen betegner plasseringen til verdien i listen og må altid angis med et [heltall](#heltall). Det første elementet har indeksen `0`, det andre har indeksen `1` og så videre. På rad to over brukes indeksen `2` til å hente ut verdien til det tredje elementet i listen `deltager`. På rad tre over brukes indeksen `1` til å endre det andre elementet i listen til verdien `"Svein"`.
 
+## Assosiativ liste
+En samling verdier som hver er assosiert med en nøkkel 
+
+### Beskrivelse
+En assosiativ liste (*maps*, *dictionaries* eng.) brukes når du har mange verdier som hører sammen og hvor hver verdi knyttes til en (nøkkel). For eksempel kan man lagre verdier knyttet til en elev i en assosiativ liste hvor nøklene kan være `fornavn`, `etternavn`, `klasse` og `resultater`. Et element i en assosiativ liste er altså et nøkkel - verdi par hvor nøkkelen altid er en [streng](#streng) og verdien kan ha en hvilkorlig [datatype](#datatype). 
+
+Assosiative lister finnes i de fleste programmeringsspråk men heter da gjerne noe annet. 
+* python: `dict` - kort for *dictionary* 
+* JavaScript: `Object`
+* Scratch: Det finnes ikke assosiative lister i Scratch (enn?!) 
+
+```python
+elev = {
+    "fornavn": "Salma",
+    "etternavn": "Eriksen",
+    "klasse": "8A",
+    "resultater": [4, 5, 3, 6, 5, 4]
+}
+
+# Hente ut element-verdier
+fornavn = elev["fornavn"]
+resultater = elev["resultater"]
+
+# Endre element-verdier
+elev["klasse"] = "9A"
+```
+
+### Element - assositativ liste
+Et element i en assositativ liste er en nøkkel - verdi par. Nøkkelen sier noe om hva verdien er (tenk [variabelnavn](#variabelnavn)) og verdien er en [verdi](#verdi) som er akseptert i programmeringsspråket. I eksemplet over ser vi at verdiene er 3 [strenger](#streng) og en [liste](#liste).
+
+## Operator
+Et enkelt tegn som bearbeider en eller flere verdier
+
+### Beskrivelse
+En operator er et enkelt tegn som brukes til å bearbeide en eller to [verdier](#verdi). Operatorer er ofte en kilde til misforståelse når man lær seg programmering da de likner på tegn som brukes i hverdagsspråket og innen matematikk og i tilegg likner de ulike operatorene på hverandre. 
+
+Det som forener alle operatorer er at de bearbeider (opererer på) en eller flere (gjerne to) verdier og de returnerer *alltid* en verdi. Addisjons-operatoren `+` opererer på to tall og returnerer resultatet av addisjonen. For eksempel `3 + 4` adderer verdiene `3` og `4` og returnerer `7`. Addisjons-operatoren er en [aritmetisk operator](#aritmetisk-operator). Alle aritmetiske operatorer bearbeider tall-verdier. 
+
+En operator som bearbeider to verdier kalles en [binær operator](#bin%c3%a6r-operator) og en operator som bearbeider en verdi kalles en [unær operator](#un%c3%a6r-operator). `+` er et eksempel på en binær aritmetisk operator. `-` er et eksempel på en aritmetisk operator som både kan være unær og binær. `-` er unær når den representerer et negativt fortegn: `-5`, og binær når den representerer substraksjon: `7-4`. 
+
+### Unær operator
+En operator som bearbeider en verdi
+
+### Beskrivelse
+
+
+## Binær operator
+En operator som bearbeider to verdier
+
+### Beskrivelse
+
+
+## Aritmetisk operator
+Enkelte tegn som bearbeider en eller to verdier
+
+### Beskrivelse
+Den enkleste måten å bearbeide en eller to verdier er å bruke en operator. 
+
+## Tilordnings operator
+
+### Beskrivelse
+
+## Streng operatorer
+Enkle tegn som bearbeider en eller to verdier
+
+### Beskrivelse
+Den enkleste måten å bearbeide en eller to verdier er å bruke en operator. 
+
+## Boolsk operator
+Enkle tegn som bearbeider en eller to verdier
+
+### Beskrivelse
+Den enkleste måten å bearbeide en eller to verdier er å bruke en operator. 
+
+## Sammenlignings operator
+Enkle tegn som bearbeider en eller to verdier
+
+### Beskrivelse
+Den enkleste måten å bearbeide en eller to verdier er å bruke en operator. 
+
 ## Funksjon
-Operasjoner som lagres til et navn.
+Operasjoner som lagres til et navn
 
 ### Beskrivelse
 En funksjon brukes til å lagre et sett med operasjoner til et navn. Operasjonene som lagres i en funksjon må utføre en spesifikk oppgave slik at man bruker funksjonens navn istedenfor alle operasjonene når programmet skal utføre oppgaven. Når funksjonen brukes heter det at man [kaller funksjonen](#kalle-funksjon). Når en funksjon blir kallet blir alle operasjonene til funksjonen utført og slik blir også oppgaven til funksjonen utført. 
@@ -344,7 +434,7 @@ Navnet til en funksjon
 En [funksjon](#funksjon) har nesten altid et navn. [Syntaksen](#syntaks) til et programmeringsspråk legger noen krav til navnet. Disse krav er de samme som for [variabelnavn](#variabelnavn).
 
 ### Tips til funksjonsnavn
-Bruk funksjonsnavn som beskriver hva funksjonen skal gjøre. Ettersom en funksjon utfører noe er det altid lurt å bruke et verb som første ord i navnet. For eksempel er `beregn_nytt_lån` eller `hent_resultater` gode navn til to funksjoner.   
+Bruk funksjonsnavn som beskriver hva funksjonen skal gjøre. Ettersom en funksjon utfører noe er det altid lurt å bruke et verb som første ord i navnet. For eksempel er `beregn_nytt_lån` eller `hent_resultater` gode navn til to funksjoner.
 
 ## Kalle funksjon
 Utføre operasjoner knyttet til en funksjon
@@ -353,6 +443,9 @@ Utføre operasjoner knyttet til en funksjon
 
 ## Argument
 Verdier man sender til en funksjon når man kaller den
+
+
+
 
 ## If-setning
 
