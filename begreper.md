@@ -128,7 +128,7 @@ En enkelt ting en datamaskin skal gjøre
 ### Beskrivelse
 En operasjon forteller datamaskinen at den skal gjøre noe. Et [program](#program) er mange operasjoner som er satt sammen etter hverandre. En operasjon i hverdagslivet kan være mange ting men innen [programmering](#programmere) er en operasjon noe forenklet begrenset til operasjoner på [verdier](#verdi) og det å bruke [kontrolstrukturer](#kontrollstruktur) og [funksjoner](#funksjon). 
 
-Det finnes 4 ulike typer operasjoner som utøfres på [verdier](#verdi):
+Det finnes 4 ulike hovedvarianter av operasjoner som utøfres på [verdier](#verdi):
 
 1. Bearbeider en verdi (*process* eng.)
 2. Lagre en verdi i en variabel
@@ -136,7 +136,7 @@ Det finnes 4 ulike typer operasjoner som utøfres på [verdier](#verdi):
 4. Vise en verdi (utdata), output
 
 #### Bearbeide verdier
-Når du bearbeider en eller flere verdier gjør datamaskinene noe med verdiene. To ulike måter å bearbeide verdier på er å enten bruke en [operator](#operator) for eksempel `5 + 6` eller å sende verdiene som [argumenter](#argument) til en [funksjon](#funksjon) for eksempel `gjennomsnitt([3, 6, 8])`. 
+Når du bearbeider en eller flere verdier gjør datamaskinene noe med verdiene. To ulike måter å bearbeide verdier på er å enten bruke en [operator](#operatorer) for eksempel `5 + 6` eller å sende verdiene som [argumenter](#argument) til en [funksjon](#funksjon) for eksempel `gjennomsnitt([3, 6, 8])`. 
 
 Flere operasjoner som bearbeider verdier kan settes sammen til [uttrykk](#uttrykk) for eksempel:
 ```python
@@ -146,7 +146,7 @@ round(sqrt(3)/2, 3)
 #### Lagre verdi
 Verdier lagres i [variabler](#variabel) og operasjoner lagres i [funksjoner](#funksjon). Verdien eller operasjonene blir da lagret i [arbeidsminnet](#arbeidsminne) og kan brukes seinere i programmet. 
 
-Når en verdi skal lagres i en variabel bruker man en [tilordningsoperatorer](#tilordningsoperator) (`=`).
+Når en verdi skal lagres i en variabel bruker man en  [tilordningsoperator](#tilordningsoperatorer) (`=`).
 
 ```python
 alder = 9
@@ -180,14 +180,14 @@ Vanligvis utføres operasjonene i et program fra toppen av tekstfilen og nedover
 En eller flere operasjoner som er satt sammen
 
 ### Beskrivelse
-Et uttrykk består av en eller flere [operasjoner](#operasjon) som er satt sammen. Operasjonene i uttrykk er satt sammen av operasjoner som bearbeider verdier og som oftest resulterer et uttrykk derfor i en verdi.
+Et uttrykk (*expression* eng.) består av en eller flere [operasjoner](#operasjon) som er satt sammen. Alle enkelt operasjoner i et uttrykk resulterer i en verdi. 
 
 ```python
 navn = "Petter"
 setning = "Jeg heter " + navn + " og jeg er " + 16 + " år." 
 ```
 
-Her er to linjer som begge tilordner to variabler to verdier som begge er resultater av to uttrykk. Den første linjen består av et uttrykk som resulterer i verdien: `"Petter"`. Den andre linjen består av et uttrykk som resulterer i verdien `"Jeg heter Petter og jeg er 16 år."`.
+Her er to linjer som begge [tilordner](#tilordne) to variabler to verdier som begge er resultater av to uttrykk. Den første linjen består av et uttrykk som resulterer i verdien: `"Petter"`. Den andre linjen består av et uttrykk som resulterer i verdien `"Jeg heter Petter og jeg er 16 år."`.
 
 ## Variabel
 Er et navngitt sted i arbeidsminnet som lagrer verdier.
@@ -246,7 +246,7 @@ Beskriver hva en verdi kan brukes til
 
 ### Beskrivelse
 Alle verdier har en datatype som beskriver hva den kan brukes til. De vanligste datatypene er:
-* [tall](#tall): Brukes i all matematikk, se for eksempel [aritmetiske operatorer](#aritmetisk operator).
+* [tall](#tall): Brukes i all matematikk, se for eksempel [aritmetiske operatorer](#aritmetisk operatorer).
 * [strenger](#streng): Brukes til å representere tekst-verdier.
 * [boolean](#boolean): Brukes til å beskrive om noe er *sant* (`True`) eller *falskt* (`False`).
 * [lister](#liste): Brukes å samle verdier i en ordnet rekkefølge.
@@ -255,14 +255,16 @@ Alle verdier har en datatype som beskriver hva den kan brukes til. De vanligste 
 ## Definere
 Operasjon som lager en variabel eller funksjon.
 
+### Beskrivelse
+For å kunne bruke en [variabel](#variabel) eller [funksjon](#funksjon) må de først defineres. Når en variabel defineres knyttes et [variabelnavn](#variabelnavn) til en verdi som lagres i [arbeidsminnet](#arbeidsminne). Når en funksjon defineres knyttes et [funksjonsnavn](#funksjonsnavn) til et sett med operasjoner. Navnet brukes så i programmet for å representere enten verdien til variabelen eller alle operasjonen til funksjonen.  
+
+I tilegg til å få et navn må en variabel også få en verdi ([tilordnes](#tilordne)) når den defineres. I noen [programmeringsspråk](#programmeringsspråk) kan man si ifra at man skal bruke en variabel uten å gi den en verdi. Da heter det å *deklarere* en variabel. 
+
 ## Tilordne
 Når man gir eller endrer en verdi til en variabel
 
 ### Beskrivelse
-For å kunne bruke en [variabel](#variabel) eller [funksjon](#funksjon) må de først defineres. Når en variabel defineres knyttes et [variabelnavn](#variabelnavn) til en verdi som lagres i [arbeidsminnet](#arbeidsminne). Når en funksjon defineres knyttes et [funksjonsnavn](#funksjonsnavn) 
-Enkelt sagt betyr det å lagre en verdi å si ifra at vi skal ha en variabel eller funksjon med et spesifikt navn. Navnet brukes så i programmet for å representere enten verdien til variabelen eller alle operasjonen til funksjonen.  
-
-I tilegg til å få et navn må en variabel også få en verdi når den defineres. En funksjon må også få et set med operasjoner som skal utføres hver gang man kaller eller kjører funksjonen. I noen [programmeringsspråk](#programmeringsspråk) kan man si ifra at man skal bruke en variabel uten å gi den en verdi. Da heter det å *deklarere* en variabel. 
+Når en verdi lagres i en variabel heter det at denne variabelen tilordnes en verdi. Dette gjøres med en [tilordningsoperator](#tilordningsoperator).
 
 ## Tall
 Datatype som brukes til numeriske verdier
@@ -304,7 +306,7 @@ Binære tall er tall som representerers med sifferene 1 og 0 for eksempel 1011 e
 TODO: Skal vi skrive mer dette temaet?
 
 ## Streng
-Datatype som brukes til å representere tekst
+Datatype som brukes til å representere tekst-verdier
 
 ### Beskrivelse
 Innen programmering kalles en tekst for en streng (*string* eng.). Ordet kommer fra at man lagrer en *streng* med enkeltbokstaver. Mange ganger kan det være nyttig å tenke på en streng som en [liste](#liste) med enkelt bokstaver (*characters* eng.) men til forskjell fra lister kan ikke enkelt elementene endres uten å lage en ny streng. 
@@ -319,6 +321,12 @@ print("Eleven heter " + fornavn + " " + etternavn)
 
 Det finnes flere ulike [operasjoner](#operasjon) som kan gjøres på og med strenger...
 TODO: Skal vi forklare alle de her? 
+
+## Boolean
+Datatype som brukes til å representere sanne og falske verdier
+
+### Beskrivelse
+Verdier av datatypen boolean kalles boolske verdier og de anvends til å representere sanne og falske verdier. Man bruker boolske verdier til å svare på [betingelser](#betingelse) eller til å representere svar på *ja- og nei-spørsmål*. Boolske verdier er også resultatet av [boolske operatorer](#boolske-operatorer). 
 
 ## Liste
 En samling av verdier som er ordnet i en rekkefølge 
@@ -369,55 +377,67 @@ elev["klasse"] = "9A"
 ### Element - assositativ liste
 Et element i en assositativ liste er en nøkkel - verdi par. Nøkkelen sier noe om hva verdien er (tenk [variabelnavn](#variabelnavn)) og verdien er en [verdi](#verdi) som er akseptert i programmeringsspråket. I eksemplet over ser vi at verdiene er 3 [strenger](#streng) og en [liste](#liste).
 
-## Operator
-Et enkelt tegn som bearbeider en eller flere verdier
+## Operatorer
+Tegn som bearbeider en eller flere verdier
 
 ### Beskrivelse
 En operator er et enkelt tegn som brukes til å bearbeide en eller to [verdier](#verdi). Operatorer er ofte en kilde til misforståelse når man lær seg programmering da de likner på tegn som brukes i hverdagsspråket og innen matematikk og i tilegg likner de ulike operatorene på hverandre. 
 
-Det som forener alle operatorer er at de bearbeider (opererer på) en eller flere (gjerne to) verdier og de returnerer *alltid* en verdi. Addisjons-operatoren `+` opererer på to tall og returnerer resultatet av addisjonen. For eksempel `3 + 4` adderer verdiene `3` og `4` og returnerer `7`. Addisjons-operatoren er en [aritmetisk operator](#aritmetisk-operator). Alle aritmetiske operatorer bearbeider tall-verdier. 
+Det som forener alle operatorer er at de bearbeider (opererer på) en eller flere (gjerne to) verdier og de returnerer *alltid* en verdi. Addisjons-operatoren `+` opererer på to tall og returnerer resultatet av addisjonen. For eksempel `3 + 4` adderer verdiene `3` og `4` og returnerer `7`. Addisjons-operatoren er en [aritmetisk operator](#aritmetisk-operator).  
 
-En operator som bearbeider to verdier kalles en [binær operator](#bin%c3%a6r-operator) og en operator som bearbeider en verdi kalles en [unær operator](#un%c3%a6r-operator). `+` er et eksempel på en binær aritmetisk operator. `-` er et eksempel på en aritmetisk operator som både kan være unær og binær. `-` er unær når den representerer et negativt fortegn: `-5`, og binær når den representerer substraksjon: `7-4`. 
+Det finns flere ulike typer operatorer. Disse skilles ved at de bearbeider og returnerer ulike typer verdier:
+ 
+* [aritmetiske operatorer](#aritmetisk-operatorer): bearbeider og returnerer [tall-verdier](#tall). 
+* [strengoperatorer](#strengoperatorer): bearbeider [streng](#streng) og [tall](#tall)-verdier og returnerer streng-verdier.
+* [boolske operatorer](#boolske-operatorer): bearbeider og returnerer [boolske-verdier](#boolean).
+* [sammenlignings operatorer](#sammenlignings-operator): bearbeider ulike typer verdier men returnerer alltid en [boolsk-verdi](#boolean).
 
-### Unær operator
-En operator som bearbeider en verdi
+Operatorer kan brukes til å sette sammen [uttrykk](#uttrykk): `7-2*3+2`. For at slike sammensatte uttrykk skal evalueres entydig finnes det regler for i hvilken ordning operatorene skal utføres (*order of execution* eng.). I uttrykket `4-2*3+2` brukes de tre aritmetiske operatorene `-`, `+` og `*` og de utføres i samme rekkefølge som man gjør innen matematikken. Hvert programmeringsspråk har egne regler som programmererer bør kjenne til, men rekkefølgen for aritmetiske operatorer er de samme for alle programmeringsspråk:
+1. parentser
+2. potenser
+3. multiplikasjon og divisjon 
+4. addisjon og substraksjon
+Når to operatorer som har samme rekkefølge kommer etter heverandre i et uttrykk utføres operatorene fra venstre til høyre. 
+`7-2*3+2` som:
+1.`7-`**`2*3`**`+2`
+2.**`7-6`**`+2`
+3.`1+2`
+4.`3`
+Merk at hvis ikke operatorene utføres fra venstre til høyre ville f eks rad 2 bli noe annet: `7-`**`6+2`** => `7-8` som blir `-1`.
 
-### Beskrivelse
+### Unære og binære operatorer
+En operator som bearbeider to verdier kalles en binær operator og en operator som bearbeider en verdi kalles en unær operator. `+` er et eksempel på en binær aritmetisk operator da den brukes til å legge sammen to verdier. `-` er et eksempel på en aritmetisk operator som både kan være unær og binær. `-` er unær når den representerer et negativt fortegn: `-5`, og binær når den representerer substraksjon: `7-4`.
 
+Vanlige missforståelser ved bruk av operatorer.
 
-## Binær operator
-En operator som bearbeider to verdier
-
-### Beskrivelse
-
-
-## Aritmetisk operator
-Enkelte tegn som bearbeider en eller to verdier
+## Aritmetiske operatorer
+Tegn som bearbeider en eller to tall-verdier
 
 ### Beskrivelse
 Den enkleste måten å bearbeide en eller to verdier er å bruke en operator. 
 
-## Tilordnings operator
-
-### Beskrivelse
-
-## Streng operatorer
-Enkle tegn som bearbeider en eller to verdier
+## Strengoperatorer
+Tegn som bearbeider en eller to streng-verdier
 
 ### Beskrivelse
 Den enkleste måten å bearbeide en eller to verdier er å bruke en operator. 
 
-## Boolsk operator
-Enkle tegn som bearbeider en eller to verdier
+## Boolske operatorer
+Tegn som bearbeider en eller to boolske-verdier
 
 ### Beskrivelse
 Den enkleste måten å bearbeide en eller to verdier er å bruke en operator. 
 
 ## Sammenlignings operator
-Enkle tegn som bearbeider en eller to verdier
+Tegn som sammenligner to verdier
 
 ### Beskrivelse
 Den enkleste måten å bearbeide en eller to verdier er å bruke en operator. 
+
+## Tilordningsoperatorer
+Tildeler verdien til et uttrykk
+
+### Beskrivelse
 
 ## Funksjon
 Operasjoner som lagres til et navn

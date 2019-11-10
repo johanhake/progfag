@@ -519,7 +519,7 @@ gjennomsnitt = sum/len(alle_tall)
 <p>En enkelt ting en datamaskin skal gjøre</p>
 <h3 id="beskrivelse">Beskrivelse</h3>
 <p>En operasjon forteller datamaskinen at den skal gjøre noe. Et <a href="#program">program</a> er mange operasjoner som er satt sammen etter hverandre. En operasjon i hverdagslivet kan være mange ting men innen <a href="#programmere">programmering</a> er en operasjon noe forenklet begrenset til operasjoner på <a href="#verdi">verdier</a> og det å bruke <a href="#kontrollstruktur">kontrolstrukturer</a> og <a href="#funksjon">funksjoner</a>.</p>
-<p>Det finnes 4 ulike typer operasjoner som utøfres på <a href="#verdi">verdier</a>:</p>
+<p>Det finnes 4 ulike hovedvarianter av operasjoner som utøfres på <a href="#verdi">verdier</a>:</p>
 <ol>
 <li>Bearbeider en verdi (<em>process</em> eng.)</li>
 <li>Lagre en verdi i en variabel</li>
@@ -527,13 +527,13 @@ gjennomsnitt = sum/len(alle_tall)
 <li>Vise en verdi (utdata), output</li>
 </ol>
 <h4 id="bearbeide-verdier">Bearbeide verdier</h4>
-<p>Når du bearbeider en eller flere verdier gjør datamaskinene noe med verdiene. To ulike måter å bearbeide verdier på er å enten bruke en <a href="#operator">operator</a> for eksempel <code>5 + 6</code> eller å sende verdiene som <a href="#argument">argumenter</a> til en <a href="#funksjon">funksjon</a> for eksempel <code>gjennomsnitt([3, 6, 8])</code>.</p>
+<p>Når du bearbeider en eller flere verdier gjør datamaskinene noe med verdiene. To ulike måter å bearbeide verdier på er å enten bruke en <a href="#operatorer">operator</a> for eksempel <code>5 + 6</code> eller å sende verdiene som <a href="#argument">argumenter</a> til en <a href="#funksjon">funksjon</a> for eksempel <code>gjennomsnitt([3, 6, 8])</code>.</p>
 <p>Flere operasjoner som bearbeider verdier kan settes sammen til <a href="#uttrykk">uttrykk</a> for eksempel:</p>
 <pre class="hljs"><code><div>round(sqrt(<span class="hljs-number">3</span>)/<span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
 </div></code></pre>
 <h4 id="lagre-verdi">Lagre verdi</h4>
 <p>Verdier lagres i <a href="#variabel">variabler</a> og operasjoner lagres i <a href="#funksjon">funksjoner</a>. Verdien eller operasjonene blir da lagret i <a href="#arbeidsminne">arbeidsminnet</a> og kan brukes seinere i programmet.</p>
-<p>Når en verdi skal lagres i en variabel bruker man en <a href="#tilordningsoperator">tilordningsoperatorer</a> (<code>=</code>).</p>
+<p>Når en verdi skal lagres i en variabel bruker man en  <a href="#tilordningsoperatorer">tilordningsoperator</a> (<code>=</code>).</p>
 <pre class="hljs"><code><div>alder = <span class="hljs-number">9</span>
 navn = <span class="hljs-string">"Marie"</span>
 </div></code></pre>
@@ -555,11 +555,11 @@ navn = <span class="hljs-string">"Marie"</span>
 <h2 id="uttrykk">Uttrykk</h2>
 <p>En eller flere operasjoner som er satt sammen</p>
 <h3 id="beskrivelse">Beskrivelse</h3>
-<p>Et uttrykk består av en eller flere <a href="#operasjon">operasjoner</a> som er satt sammen. Operasjonene i uttrykk er satt sammen av operasjoner som bearbeider verdier og som oftest resulterer et uttrykk derfor i en verdi.</p>
+<p>Et uttrykk (<em>expression</em> eng.) består av en eller flere <a href="#operasjon">operasjoner</a> som er satt sammen. Alle enkelt operasjoner i et uttrykk resulterer i en verdi.</p>
 <pre class="hljs"><code><div>navn = <span class="hljs-string">"Petter"</span>
 setning = <span class="hljs-string">"Jeg heter "</span> + navn + <span class="hljs-string">" og jeg er "</span> + <span class="hljs-number">16</span> + <span class="hljs-string">" år."</span> 
 </div></code></pre>
-<p>Her er to linjer som begge tilordner to variabler to verdier som begge er resultater av to uttrykk. Den første linjen består av et uttrykk som resulterer i verdien: <code>&quot;Petter&quot;</code>. Den andre linjen består av et uttrykk som resulterer i verdien <code>&quot;Jeg heter Petter og jeg er 16 år.&quot;</code>.</p>
+<p>Her er to linjer som begge <a href="#tilordne">tilordner</a> to variabler to verdier som begge er resultater av to uttrykk. Den første linjen består av et uttrykk som resulterer i verdien: <code>&quot;Petter&quot;</code>. Den andre linjen består av et uttrykk som resulterer i verdien <code>&quot;Jeg heter Petter og jeg er 16 år.&quot;</code>.</p>
 <h2 id="variabel">Variabel</h2>
 <p>Er et navngitt sted i arbeidsminnet som lagrer verdier.</p>
 <h3 id="beskrivelse">Beskrivelse</h3>
@@ -608,7 +608,7 @@ lån = lån + rente
 <h3 id="beskrivelse">Beskrivelse</h3>
 <p>Alle verdier har en datatype som beskriver hva den kan brukes til. De vanligste datatypene er:</p>
 <ul>
-<li><a href="#tall">tall</a>: Brukes i all matematikk, se for eksempel [aritmetiske operatorer](#aritmetisk operator).</li>
+<li><a href="#tall">tall</a>: Brukes i all matematikk, se for eksempel [aritmetiske operatorer](#aritmetisk operatorer).</li>
 <li><a href="#streng">strenger</a>: Brukes til å representere tekst-verdier.</li>
 <li><a href="#boolean">boolean</a>: Brukes til å beskrive om noe er <em>sant</em> (<code>True</code>) eller <em>falskt</em> (<code>False</code>).</li>
 <li><a href="#liste">lister</a>: Brukes å samle verdier i en ordnet rekkefølge.</li>
@@ -616,12 +616,13 @@ lån = lån + rente
 </ul>
 <h2 id="definere">Definere</h2>
 <p>Operasjon som lager en variabel eller funksjon.</p>
+<h3 id="beskrivelse">Beskrivelse</h3>
+<p>For å kunne bruke en <a href="#variabel">variabel</a> eller <a href="#funksjon">funksjon</a> må de først defineres. Når en variabel defineres knyttes et <a href="#variabelnavn">variabelnavn</a> til en verdi som lagres i <a href="#arbeidsminne">arbeidsminnet</a>. Når en funksjon defineres knyttes et <a href="#funksjonsnavn">funksjonsnavn</a> til et sett med operasjoner. Navnet brukes så i programmet for å representere enten verdien til variabelen eller alle operasjonen til funksjonen.</p>
+<p>I tilegg til å få et navn må en variabel også få en verdi (<a href="#tilordne">tilordnes</a>) når den defineres. I noen <a href="#programmeringsspr%C3%A5k">programmeringsspråk</a> kan man si ifra at man skal bruke en variabel uten å gi den en verdi. Da heter det å <em>deklarere</em> en variabel.</p>
 <h2 id="tilordne">Tilordne</h2>
 <p>Når man gir eller endrer en verdi til en variabel</p>
 <h3 id="beskrivelse">Beskrivelse</h3>
-<p>For å kunne bruke en <a href="#variabel">variabel</a> eller <a href="#funksjon">funksjon</a> må de først defineres. Når en variabel defineres knyttes et <a href="#variabelnavn">variabelnavn</a> til en verdi som lagres i <a href="#arbeidsminne">arbeidsminnet</a>. Når en funksjon defineres knyttes et <a href="#funksjonsnavn">funksjonsnavn</a>
-Enkelt sagt betyr det å lagre en verdi å si ifra at vi skal ha en variabel eller funksjon med et spesifikt navn. Navnet brukes så i programmet for å representere enten verdien til variabelen eller alle operasjonen til funksjonen.</p>
-<p>I tilegg til å få et navn må en variabel også få en verdi når den defineres. En funksjon må også få et set med operasjoner som skal utføres hver gang man kaller eller kjører funksjonen. I noen <a href="#programmeringsspr%C3%A5k">programmeringsspråk</a> kan man si ifra at man skal bruke en variabel uten å gi den en verdi. Da heter det å <em>deklarere</em> en variabel.</p>
+<p>Når en verdi lagres i en variabel heter det at denne variabelen tilordnes en verdi. Dette gjøres med en <a href="#tilordningsoperator">tilordningsoperator</a>.</p>
 <h2 id="tall">Tall</h2>
 <p>Datatype som brukes til numeriske verdier</p>
 <h3 id="beskrivelse">Beskrivelse</h3>
@@ -648,7 +649,7 @@ Enkelt sagt betyr det å lagre en verdi å si ifra at vi skal ha en variabel ell
 <p>Binære tall er tall som representerers med sifferene 1 og 0 for eksempel 1011 er et binært tall. For å regne ut verdien til tallet ganger vi sifferverdien med plassverdien, akkurat som vi gjør med <em>vanlige tall</em> fra titall systemet. Plassverdien til de 4 første posisjonene i et binært tall er: 8, 4, 2, 1. Verdien til 1011 kan vi derfor regne ut til å være: $1\cdot8 + 0\cdot4 + 1\cdot 2 + 1\cdot 1 = 11$. Inne i en datamaskin lagres <strong>allt</strong> som binæretall. Dette er for at en datamaskin består av veldig mange strømbrytere som enten kan være av (0) eller på (1).
 TODO: Skal vi skrive mer dette temaet?</p>
 <h2 id="streng">Streng</h2>
-<p>Datatype som brukes til å representere tekst</p>
+<p>Datatype som brukes til å representere tekst-verdier</p>
 <h3 id="beskrivelse">Beskrivelse</h3>
 <p>Innen programmering kalles en tekst for en streng (<em>string</em> eng.). Ordet kommer fra at man lagrer en <em>streng</em> med enkeltbokstaver. Mange ganger kan det være nyttig å tenke på en streng som en <a href="#liste">liste</a> med enkelt bokstaver (<em>characters</em> eng.) men til forskjell fra lister kan ikke enkelt elementene endres uten å lage en ny streng.</p>
 <p>Strenger kan legges sammen med <a href="#streng-operatorer">streng operatoren</a> <code>+</code>. Denne operasjonen kalles da å konkatenere to strenger, men oftest sier man gjerne bare å <em>legge sammen</em> to strenger.</p>
@@ -658,6 +659,10 @@ print(<span class="hljs-string">"Eleven heter "</span> + fornavn + <span class="
 </div></code></pre>
 <p>Det finnes flere ulike <a href="#operasjon">operasjoner</a> som kan gjøres på og med strenger...
 TODO: Skal vi forklare alle de her?</p>
+<h2 id="boolean">Boolean</h2>
+<p>Datatype som brukes til å representere sanne og falske verdier</p>
+<h3 id="beskrivelse">Beskrivelse</h3>
+<p>Verdier av datatypen boolean kalles boolske verdier og de anvends til å representere sanne og falske verdier. Man bruker boolske verdier til å svare på <a href="#betingelse">betingelser</a> eller til å representere svar på <em>ja- og nei-spørsmål</em>. Boolske verdier er også resultatet av <a href="#boolske-operatorer">boolske operatorer</a>.</p>
 <h2 id="liste">Liste</h2>
 <p>En samling av verdier som er ordnet i en rekkefølge</p>
 <h3 id="beskrivelse">Beskrivelse</h3>
@@ -697,36 +702,54 @@ elev[<span class="hljs-string">"klasse"</span>] = <span class="hljs-string">"9A"
 </div></code></pre>
 <h3 id="element---assositativ-liste">Element - assositativ liste</h3>
 <p>Et element i en assositativ liste er en nøkkel - verdi par. Nøkkelen sier noe om hva verdien er (tenk <a href="#variabelnavn">variabelnavn</a>) og verdien er en <a href="#verdi">verdi</a> som er akseptert i programmeringsspråket. I eksemplet over ser vi at verdiene er 3 <a href="#streng">strenger</a> og en <a href="#liste">liste</a>.</p>
-<h2 id="operator">Operator</h2>
-<p>Et enkelt tegn som bearbeider en eller flere verdier</p>
+<h2 id="operatorer">Operatorer</h2>
+<p>Tegn som bearbeider en eller flere verdier</p>
 <h3 id="beskrivelse">Beskrivelse</h3>
 <p>En operator er et enkelt tegn som brukes til å bearbeide en eller to <a href="#verdi">verdier</a>. Operatorer er ofte en kilde til misforståelse når man lær seg programmering da de likner på tegn som brukes i hverdagsspråket og innen matematikk og i tilegg likner de ulike operatorene på hverandre.</p>
-<p>Det som forener alle operatorer er at de bearbeider (opererer på) en eller flere (gjerne to) verdier og de returnerer <em>alltid</em> en verdi. Addisjons-operatoren <code>+</code> opererer på to tall og returnerer resultatet av addisjonen. For eksempel <code>3 + 4</code> adderer verdiene <code>3</code> og <code>4</code> og returnerer <code>7</code>. Addisjons-operatoren er en <a href="#aritmetisk-operator">aritmetisk operator</a>. Alle aritmetiske operatorer bearbeider tall-verdier.</p>
-<p>En operator som bearbeider to verdier kalles en <a href="#bin%c3%a6r-operator">binær operator</a> og en operator som bearbeider en verdi kalles en <a href="#un%c3%a6r-operator">unær operator</a>. <code>+</code> er et eksempel på en binær aritmetisk operator. <code>-</code> er et eksempel på en aritmetisk operator som både kan være unær og binær. <code>-</code> er unær når den representerer et negativt fortegn: <code>-5</code>, og binær når den representerer substraksjon: <code>7-4</code>.</p>
-<h3 id="un%C3%A6r-operator">Unær operator</h3>
-<p>En operator som bearbeider en verdi</p>
-<h3 id="beskrivelse">Beskrivelse</h3>
-<h2 id="bin%C3%A6r-operator">Binær operator</h2>
-<p>En operator som bearbeider to verdier</p>
-<h3 id="beskrivelse">Beskrivelse</h3>
-<h2 id="aritmetisk-operator">Aritmetisk operator</h2>
-<p>Enkelte tegn som bearbeider en eller to verdier</p>
+<p>Det som forener alle operatorer er at de bearbeider (opererer på) en eller flere (gjerne to) verdier og de returnerer <em>alltid</em> en verdi. Addisjons-operatoren <code>+</code> opererer på to tall og returnerer resultatet av addisjonen. For eksempel <code>3 + 4</code> adderer verdiene <code>3</code> og <code>4</code> og returnerer <code>7</code>. Addisjons-operatoren er en <a href="#aritmetisk-operator">aritmetisk operator</a>.</p>
+<p>Det finns flere ulike typer operatorer. Disse skilles ved at de bearbeider og returnerer ulike typer verdier:</p>
+<ul>
+<li><a href="#aritmetisk-operatorer">aritmetiske operatorer</a>: bearbeider og returnerer <a href="#tall">tall-verdier</a>.</li>
+<li><a href="#strengoperatorer">strengoperatorer</a>: bearbeider <a href="#streng">streng</a> og <a href="#tall">tall</a>-verdier og returnerer streng-verdier.</li>
+<li><a href="#boolske-operatorer">boolske operatorer</a>: bearbeider og returnerer <a href="#boolean">boolske-verdier</a>.</li>
+<li><a href="#sammenlignings-operator">sammenlignings operatorer</a>: bearbeider ulike typer verdier men returnerer alltid en <a href="#boolean">boolsk-verdi</a>.</li>
+</ul>
+<p>Operatorer kan brukes til å sette sammen <a href="#uttrykk">uttrykk</a>: <code>7-2*3+2</code>. For at slike sammensatte uttrykk skal evalueres entydig finnes det regler for i hvilken ordning operatorene skal utføres (<em>order of execution</em> eng.). I uttrykket <code>4-2*3+2</code> brukes de tre aritmetiske operatorene <code>-</code>, <code>+</code> og <code>*</code> og de utføres i samme rekkefølge som man gjør innen matematikken. Hvert programmeringsspråk har egne regler som programmererer bør kjenne til, men rekkefølgen for aritmetiske operatorer er de samme for alle programmeringsspråk:</p>
+<ol>
+<li>parentser</li>
+<li>potenser</li>
+<li>multiplikasjon og divisjon</li>
+<li>addisjon og substraksjon
+Når to operatorer som har samme rekkefølge kommer etter heverandre i et uttrykk utføres operatorene fra venstre til høyre.
+<code>7-2*3+2</code> som:
+1.<code>7-</code><strong><code>2*3</code></strong><code>+2</code>
+2.<strong><code>7-6</code></strong><code>+2</code>
+3.<code>1+2</code>
+4.<code>3</code>
+Merk at hvis ikke operatorene utføres fra venstre til høyre ville f eks rad 2 bli noe annet: <code>7-</code><strong><code>6+2</code></strong> =&gt; <code>7-8</code> som blir <code>-1</code>.</li>
+</ol>
+<h3 id="un%C3%A6re-og-bin%C3%A6re-operatorer">Unære og binære operatorer</h3>
+<p>En operator som bearbeider to verdier kalles en binær operator og en operator som bearbeider en verdi kalles en unær operator. <code>+</code> er et eksempel på en binær aritmetisk operator da den brukes til å legge sammen to verdier. <code>-</code> er et eksempel på en aritmetisk operator som både kan være unær og binær. <code>-</code> er unær når den representerer et negativt fortegn: <code>-5</code>, og binær når den representerer substraksjon: <code>7-4</code>.</p>
+<p>Vanlige missforståelser ved bruk av operatorer.</p>
+<h2 id="aritmetiske-operatorer">Aritmetiske operatorer</h2>
+<p>Tegn som bearbeider en eller to tall-verdier</p>
 <h3 id="beskrivelse">Beskrivelse</h3>
 <p>Den enkleste måten å bearbeide en eller to verdier er å bruke en operator.</p>
-<h2 id="tilordnings-operator">Tilordnings operator</h2>
-<h3 id="beskrivelse">Beskrivelse</h3>
-<h2 id="streng-operatorer">Streng operatorer</h2>
-<p>Enkle tegn som bearbeider en eller to verdier</p>
+<h2 id="strengoperatorer">Strengoperatorer</h2>
+<p>Tegn som bearbeider en eller to streng-verdier</p>
 <h3 id="beskrivelse">Beskrivelse</h3>
 <p>Den enkleste måten å bearbeide en eller to verdier er å bruke en operator.</p>
-<h2 id="boolsk-operator">Boolsk operator</h2>
-<p>Enkle tegn som bearbeider en eller to verdier</p>
+<h2 id="boolske-operatorer">Boolske operatorer</h2>
+<p>Tegn som bearbeider en eller to boolske-verdier</p>
 <h3 id="beskrivelse">Beskrivelse</h3>
 <p>Den enkleste måten å bearbeide en eller to verdier er å bruke en operator.</p>
 <h2 id="sammenlignings-operator">Sammenlignings operator</h2>
-<p>Enkle tegn som bearbeider en eller to verdier</p>
+<p>Tegn som sammenligner to verdier</p>
 <h3 id="beskrivelse">Beskrivelse</h3>
 <p>Den enkleste måten å bearbeide en eller to verdier er å bruke en operator.</p>
+<h2 id="tilordningsoperatorer">Tilordningsoperatorer</h2>
+<p>Tildeler verdien til et uttrykk</p>
+<h3 id="beskrivelse">Beskrivelse</h3>
 <h2 id="funksjon">Funksjon</h2>
 <p>Operasjoner som lagres til et navn</p>
 <h3 id="beskrivelse">Beskrivelse</h3>
