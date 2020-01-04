@@ -4,7 +4,7 @@
 Et sett med operasjoner som får en datamaskin til å utføre noe.
 
 ### Beskrivelse
-Et program eller en app (applikasjon) er et set med [operasjoner](#operasjon) som får en datamaskin til å utføre noe. Når dette skjer sier man ofte at man *kjører* programmet. Hvis vi bruker en mobiltelefon eller en datamaskin kjører vi nesten altid et eller annet program, f eks sms-appen til telefonen eller Microsoft Word på datamaskinen. Et program lages ved at man [programmerer](#programmere) eller koder det og det kjøres ved at man laster programmet inn i [arbeidsminne](#arbeidsminnet) til mobiltelefonen eller datamaskinen.
+Et program eller en app (applikasjon) er et set med [operasjoner](#operasjon) som får en datamaskin til å utføre noe. Når dette skjer sier man ofte at man *kjører* programmet. Hvis vi bruker en mobiltelefon eller en datamaskin kjører vi nesten alltid et eller annet program, f eks sms-appen til telefonen eller Microsoft Word på datamaskinen. Et program lages ved at man [programmerer](#programmere) eller koder det og det kjøres ved at man laster programmet inn i [arbeidsminne](#arbeidsminnet) til mobiltelefonen eller datamaskinen.
 
 ## Arbeidsminne
 Er et sted i datamaskinen hvor programmer lagres.
@@ -32,7 +32,7 @@ Tekstprogrammering må følge fastlagde regler som bestemmes av hvilket [program
 Lage et kjørbart program av en tekstfil.
 
 ### Beskrivelse
-En type av tekstprogammering 
+En type av tekstprogammering hvor man lager et kjørbart program fra en tekstfil.
 
 ## Blokkprogrammering
 Programmering hvor operasjonene settes sammen grafisk gjennom ulike blokker.
@@ -230,7 +230,7 @@ For Python gjelder disse kravene til et variabelnavn
 Bruk variabelnavn som beskriver hva verdien til variabelen skal brukes til. For eksempel er navn som `a`, `b` oftest dårlige navn, mens `lån`, `navn` eller `poengsum` er bra navn. 
 
 ## Verdi
-En representasjon av en eller flere størrelser
+En konkret representasjon av data
 
 ### Beskrivelse
 En verdi representerer en størrelse som kan manipuleres av et program. Verdier er ofte det man til daglig kaller data. En datamaskin er altså en maskin som bruker verdier! Verdier har ulike [datatyper](#datatype) som beskriver hva verdien kan brukes til:
@@ -378,7 +378,7 @@ elev["klasse"] = "9A"
 Et element i en assositativ liste er en nøkkel - verdi par. Nøkkelen sier noe om hva verdien er (tenk [variabelnavn](#variabelnavn)) og verdien er en [verdi](#verdi) som er akseptert i programmeringsspråket. I eksemplet over ser vi at verdiene er 3 [strenger](#streng) og en [liste](#liste).
 
 ## Operatorer
-Tegn som bearbeider en eller flere verdier
+Enkelt tegn som bearbeider en eller flere verdier
 
 ### Beskrivelse
 En operator er et enkelt tegn som brukes til å bearbeide en eller to [verdier](#verdi). Operatorer er ofte en kilde til misforståelse når man lær seg programmering da de likner på tegn som brukes i hverdagsspråket og innen matematikk og i tilegg likner de ulike operatorene på hverandre. 
@@ -388,39 +388,52 @@ Det som forener alle operatorer er at de bearbeider (opererer på) en eller fler
 Det finns flere ulike typer operatorer. Disse skilles ved at de bearbeider og returnerer ulike typer verdier:
  
 * [aritmetiske operatorer](#aritmetisk-operatorer): bearbeider og returnerer [tall-verdier](#tall). 
-* [strengoperatorer](#strengoperatorer): bearbeider [streng](#streng) og [tall](#tall)-verdier og returnerer streng-verdier.
+* [strengoperatorer](#strengoperatorer): bearbeider [streng](#streng) og [tall](#tall)-verdier og returnerer nesten alltid streng-verdier.
 * [boolske operatorer](#boolske-operatorer): bearbeider og returnerer [boolske-verdier](#boolean).
 * [sammenlignings operatorer](#sammenlignings-operator): bearbeider ulike typer verdier men returnerer alltid en [boolsk-verdi](#boolean).
+* [tilordningsoperatorer](#tilordningsoperatorer): tilordner en variabel som er på venstre side av operatoren en verdi.  
 
-Operatorer kan brukes til å sette sammen [uttrykk](#uttrykk): `7-2*3+2`. For at slike sammensatte uttrykk skal evalueres entydig finnes det regler for i hvilken ordning operatorene skal utføres (*order of execution* eng.). I uttrykket `4-2*3+2` brukes de tre aritmetiske operatorene `-`, `+` og `*` og de utføres i samme rekkefølge som man gjør innen matematikken. Hvert programmeringsspråk har egne regler som programmererer bør kjenne til, men rekkefølgen for aritmetiske operatorer er de samme for alle programmeringsspråk:
+### Operator-rekkefølge
+Operatorer kan brukes til å sette sammen [uttrykk](#uttrykk): `7-2*3+2`. For at slike sammensatte uttrykk skal evalueres entydig finnes det regler for i hvilken rekkefølge operatorene skal utføres i (*order of execution* eng.). I uttrykket `4-2*3+2` brukes de tre aritmetiske operatorene `-`, `+` og `*` og de utføres i samme rekkefølge som man gjør innen matematikken. Hvert programmeringsspråk har egne regler for hvilke rekkefølge operatorer utføres i. Disse bør en avansert programmererer kjenne til. Rekkefølgen for aritmetiske operatorer er de samme for alle programmeringsspråk:
 1. parentser
 2. potenser
 3. multiplikasjon og divisjon 
 4. addisjon og substraksjon
 Når to operatorer som har samme rekkefølge kommer etter heverandre i et uttrykk utføres operatorene fra venstre til høyre. 
 `7-2*3+2` som:
-1.`7-`**`2*3`**`+2`
+1.`7-`**`2*3`**`+2`: Utfører ganger-operatoren  
 2.**`7-6`**`+2`
 3.`1+2`
 4.`3`
-Merk at hvis ikke operatorene utføres fra venstre til høyre ville f eks rad 2 bli noe annet: `7-`**`6+2`** => `7-8` som blir `-1`.
+Merk at hvis ikke operatorene utføres fra venstre til høyre ville f eks rad 2 bli noe annet: `7-`**`6+2`** $\rightarrow$ `7-8` som blir `-1`.
 
 ### Unære og binære operatorer
 En operator som bearbeider to verdier kalles en binær operator og en operator som bearbeider en verdi kalles en unær operator. `+` er et eksempel på en binær aritmetisk operator da den brukes til å legge sammen to verdier. `-` er et eksempel på en aritmetisk operator som både kan være unær og binær. `-` er unær når den representerer et negativt fortegn: `-5`, og binær når den representerer substraksjon: `7-4`.
 
-Vanlige missforståelser ved bruk av operatorer.
+### Vanlige missforståelser ved bruk av operatorer.
+* Tilordningsoperator må stå til venstre for et uttrykk. Man kan altså ikke skrive `4*6=x`
+* `4a` betyr ikke `4*a`. Mener du variabelen `a` ganger 4 skriver du det eksplisit ved å bruker multiplikasjons-operatoren `*`.
 
 ## Aritmetiske operatorer
 Tegn som bearbeider en eller to tall-verdier
 
 ### Beskrivelse
-Den enkleste måten å bearbeide en eller to verdier er å bruke en operator. 
+Aritmetiske operatorene er de som tilsvarer regnetegnene og fortegnene innen matematikken og bearbeider derfor bare [tall](#tall)-verdier. 
+* `+`: addisjon; `5+2` resulterer i `7`
+* `-`: substraksjon ([binært](#un%c3%a6re-og-bin%c3%a6re-operatorer)) og negasjon ([unært](#un%c3%a6re-og-bin%c3%a6re-operatorer)); `5-2` resulterer i `3`
+* `*`: multiplikasjon; `5*2` resulterer i `10`.
+* `/`: divisjon; `5/2` resulterer i `2.5`
+
+Operatorene over finnes i både Python og Scratch. Innen Python har vi i tilegg disse aritmetiske operatorene:
+* `**`: potens; `5**2` resulterer i `25`.
+* `//`: heltalsdivisjon; `5//2` resulterer i `2`.
+* `%`: modulus; rest ved heltalsdivisjon, `5%2` resulterer i `1`.
 
 ## Strengoperatorer
 Tegn som bearbeider en eller to streng-verdier
 
 ### Beskrivelse
-Den enkleste måten å bearbeide en eller to verdier er å bruke en operator. 
+Strengoperatorer brukes til å bearbeide [strenger](#streng).
 
 ## Boolske operatorer
 Tegn som bearbeider en eller to boolske-verdier
@@ -464,7 +477,10 @@ Utføre operasjoner knyttet til en funksjon
 ## Argument
 Verdier man sender til en funksjon når man kaller den
 
+## Kommentar
+Kode som ikke utfører operasjoner men forklarer hva annen kode gjør 
 
+### Beskrivelse
 
 
 ## If-setning
@@ -485,6 +501,14 @@ Operasjoner som repeteres flere ganger.
 ### Beskrivelse
 
 ## While-løkke
+
+### Beskrivelse
+
+## Importere
+
+### Beskrivelse
+
+## Bibliotek
 
 ### Beskrivelse
 
