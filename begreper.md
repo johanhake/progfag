@@ -1,5 +1,7 @@
 # Begreper
 
+[//]: <> (Slik kan du kommentere!!! hei)
+
 ## Program
 Et sett med operasjoner som får en datamaskin til å utføre noe.
 
@@ -7,7 +9,7 @@ Et sett med operasjoner som får en datamaskin til å utføre noe.
 Et program eller en app (applikasjon) er et set med [operasjoner](#operasjon) som får en datamaskin til å utføre noe. Når dette skjer sier man ofte at man *kjører* programmet. Hvis vi bruker en mobiltelefon eller en datamaskin kjører vi nesten alltid et eller annet program, f eks sms-appen til telefonen eller Microsoft Word på datamaskinen. Et program lages ved at man [programmerer](#programmere) eller koder det og det kjøres ved at man laster programmet inn i [arbeidsminne](#arbeidsminnet) til mobiltelefonen eller datamaskinen.
 
 ## Arbeidsminne
-Er et sted i datamaskinen hvor programmer lagres.
+Et sted i datamaskinen hvor programmer som kjøres lagres.
 
 ### Beskrivelse
 Når et program kjøres lastes det inn i arbeidsminnet til en datamaskin. Er programmet komplisert, har mange [operasjoner](#operasjon), tar det også større plass i arbeidsminnet.
@@ -125,6 +127,8 @@ gjennomsnitt = sum/len(alle_tall)
 ## Operasjon
 En enkelt ting en datamaskin skal gjøre
 
+[//]: # Legge inn kommando for det faktiske kommandoet man skriver inn
+
 ### Beskrivelse
 En operasjon forteller datamaskinen at den skal gjøre noe. Et [program](#program) er mange operasjoner som er satt sammen etter hverandre. En operasjon i hverdagslivet kan være mange ting men innen [programmering](#programmere) er en operasjon noe forenklet begrenset til operasjoner på [verdier](#verdi) og det å bruke [kontrolstrukturer](#kontrollstruktur) og [funksjoner](#funksjon). 
 
@@ -177,7 +181,7 @@ Bestemmer hvilke deler av et program som skal utføres
 Vanligvis utføres operasjonene i et program fra toppen av tekstfilen og nedover. Hver linje i tekstfilen utføres en gang. Kontrollstrukturer består av [if-setninger](#if-setning) og [løkker](#l%c3%b8kke) og de kan bestemme at noen linjer skal utføres og andre ikke, eller at noen linjer skal utføres mange ganger. Slik bestemmer kontrollstrukturer flyten i et program. 
 
 ## Uttrykk
-En eller flere operasjoner som er satt sammen
+En eller flere operasjoner som er satt sammen og som returnerer en verdi
 
 ### Beskrivelse
 Et uttrykk (*expression* eng.) består av en eller flere [operasjoner](#operasjon) som er satt sammen. Alle enkelt operasjoner i et uttrykk resulterer i en verdi. 
@@ -221,8 +225,8 @@ En [variabel](#variabel) har altid et navn. [Syntaksen](#syntaks) til et program
 
 For Python gjelder disse kravene til et variabelnavn 
  
-1. kan innholde bokstaver, siffer og understrek. 
-2. kan IKKE innholde mellomrom ` `, bindestrek `-` eller punktum `.`: Bruk heller `_` mellom ord i variabelnavnet.
+1. kan inneholde bokstaver, siffer og understrek. 
+2. kan IKKE inneholde mellomrom ` `, bindestrek `-` eller punktum `.`: Bruk heller `_` mellom ord i variabelnavnet.
 3. kan IKKE starte med en siffer.
 4. må være unikt. Flere variabler kan altså ikke ha samme navn. 
 
@@ -261,10 +265,10 @@ For å kunne bruke en [variabel](#variabel) eller [funksjon](#funksjon) må de f
 I tilegg til å få et navn må en variabel også få en verdi ([tilordnes](#tilordne)) når den defineres. I noen [programmeringsspråk](#programmeringsspråk) kan man si ifra at man skal bruke en variabel uten å gi den en verdi. Da heter det å *deklarere* en variabel. 
 
 ## Tilordne
-Når man gir eller endrer en verdi til en variabel
+Gir eller endrer en verdi til en variabel
 
 ### Beskrivelse
-Når en verdi lagres i en variabel heter det at denne variabelen tilordnes en verdi. Dette gjøres med en [tilordningsoperator](#tilordningsoperator).
+Når en verdi lagres i en variabel heter det at denne variabelen tilordnes en verdi. Dette gjøres med en [tilordningsoperator](#tilordningsoperator), som i Python er `=`. På venstre side av tilordningsoperatoren må [variabelens navn](#variabelnavn) skrives. På høyre side må det stå en verdi eller et uttrykk som resulterer i en verdi. Denne verdien blir så lagret i variabelen.
 
 ## Tall
 Datatype som brukes til numeriske verdier
@@ -288,9 +292,9 @@ Datatype som brukes til å representere desimaltall
 ### Beskrivelse
 Et flyttal er et desimaltall. Innen all programmering bruker man `"."` istedefor `","` for å angi desimalen i et desimaltall eller flyttal. 
 
-Grunnen til at man velger å ikke bruke ordet desimaltall er for at desimaltall for det meste ikke går å representeres eksakt. For eksempel består desimaltallet $\sqrt{2}$ av uendelig mange desimaler og må i en datamaskin representeres på en avrundet og unøyaktig måte. I Python er $\sqrt{2}\simeq 1.4142135623730951$.
+Ordet flyttal henspiller på måten tallet er representert i [arbeidsminnet](#arbeidsminne) til en datamaskin. Det som er viktig å nevne her er at flyttal ikke representeres eksakt i arbeidsminnet. For eksempel består desimaltallet $\sqrt{2}$ av uendelig mange desimaler og må i en datamaskin representeres på en avrundet og unøyaktig måte. I Python er $\sqrt{2}\simeq 1.4142135623730951$.
 
-Flyttal er vanskeligere å representere eksakt for en datamaskin enn [heltall](#heltall). Dette er for at en datamaskin i utgangspunktet bare forstår 1er og 0er. Et heltall kan representeres med disse siffrene gjennom [binære tall](#bin%c3%a6re-tall) mens et flyttal må representeres på en annen måte for eksempel må alle desimaltall representeres med et endelig antall desimaler. 
+Flyttal er vanskeligere å representere eksakt for en datamaskin enn [heltall](#heltall). Dette er for at en datamaskin i utgangspunktet bare forstår 1er og 0er. Et heltall kan representeres med disse siffrene gjennom [binære tall](#bin%c3%a6re-tall) mens et flyttal representeres på en annen måte. 
 
 Ordet *flyt* (engelske *float*) kommer fra at plasseringen av desimaltegnen flyter. Vi kan for eksempel tenke oss at `0.03` kan representers med heltallet 3 hvor desimaltegnet er flyttet 2 plasser. Hvordan et flyttal faktisk representeres på går vi ikke inn på her men i [Python](#python) kan dette med at flyttall er vanskelige å representer vises med følgende eksempel:
 ```python
@@ -326,7 +330,7 @@ TODO: Skal vi forklare alle de her?
 Datatype som brukes til å representere sanne og falske verdier
 
 ### Beskrivelse
-Verdier av datatypen boolean kalles boolske verdier og de anvends til å representere sanne og falske verdier. Man bruker boolske verdier til å svare på [betingelser](#betingelse) eller til å representere svar på *ja- og nei-spørsmål*. Boolske verdier er også resultatet av [boolske operatorer](#boolske-operatorer). 
+Verdier av datatypen boolean kalles boolske verdier og de anvends til å representere sanne og falske verdier. Man bruker boolske verdier til å svare på [betingelser](#betingelse) eller til å representere svar på *ja- og nei-spørsmål*. Boolske verdier er også resultatet av [logiske operatorer](#logiske-operatorer). 
 
 ## Liste
 En samling av verdier som er ordnet i en rekkefølge 
@@ -389,12 +393,12 @@ Det finns flere ulike typer operatorer. Disse skilles ved at de bearbeider og re
  
 * [aritmetiske operatorer](#aritmetisk-operatorer): bearbeider og returnerer [tall-verdier](#tall). 
 * [strengoperatorer](#strengoperatorer): bearbeider [streng](#streng) og [tall](#tall)-verdier og returnerer nesten alltid streng-verdier.
-* [boolske operatorer](#boolske-operatorer): bearbeider og returnerer [boolske-verdier](#boolean).
+* [logiske operatorer](#logiske-operatorer): bearbeider og returnerer [boolske-verdier](#boolean).
 * [sammenlignings operatorer](#sammenlignings-operator): bearbeider ulike typer verdier men returnerer alltid en [boolsk-verdi](#boolean).
 * [tilordningsoperatorer](#tilordningsoperatorer): tilordner en variabel som er på venstre side av operatoren en verdi.  
 
 ### Operator-rekkefølge
-Operatorer kan brukes til å sette sammen [uttrykk](#uttrykk): `7-2*3+2`. For at slike sammensatte uttrykk skal evalueres entydig finnes det regler for i hvilken rekkefølge operatorene skal utføres i (*order of execution* eng.). I uttrykket `4-2*3+2` brukes de tre aritmetiske operatorene `-`, `+` og `*` og de utføres i samme rekkefølge som man gjør innen matematikken. Hvert programmeringsspråk har egne regler for hvilke rekkefølge operatorer utføres i. Disse bør en avansert programmererer kjenne til. Rekkefølgen for aritmetiske operatorer er de samme for alle programmeringsspråk:
+Operatorer kan brukes til å sette sammen [uttrykk](#uttrykk): `7-2*3+2`. For at slike sammensatte uttrykk skal evalueres entydig finnes det regler for i hvilken rekkefølge operatorene skal utføres i (*operator precedence* eng.). I uttrykket `4-2*3+2` brukes de tre aritmetiske operatorene `-`, `+` og `*` og de utføres i samme rekkefølge som man gjør innen matematikken. Hvert programmeringsspråk har egne regler for hvilke rekkefølge operatorer utføres i. Disse bør en avansert programmererer kjenne til. Rekkefølgen for de aritmetiske operatorene er de samme for de aller fleste programmeringsspråk:
 1. parentser
 2. potenser
 3. multiplikasjon og divisjon 
@@ -412,6 +416,7 @@ En operator som bearbeider to verdier kalles en binær operator og en operator s
 
 ### Vanlige missforståelser ved bruk av operatorer.
 * Tilordningsoperator må stå til venstre for et uttrykk. Man kan altså ikke skrive `4*6=x`
+* Tilordningsoperatoren blandes ofte sammen med likhets operatoren
 * `4a` betyr ikke `4*a`. Mener du variabelen `a` ganger 4 skriver du det eksplisit ved å bruker multiplikasjons-operatoren `*`.
 
 ## Aritmetiske operatorer
@@ -435,22 +440,32 @@ Tegn som bearbeider en eller to streng-verdier
 ### Beskrivelse
 Strengoperatorer brukes til å bearbeide [strenger](#streng).
 
-## Boolske operatorer
+## Logiske operatorer
 Tegn som bearbeider en eller to boolske-verdier
 
 ### Beskrivelse
 Den enkleste måten å bearbeide en eller to verdier er å bruke en operator. 
 
-## Sammenlignings operator
-Tegn som sammenligner to verdier
+## Sammenligningsoperator
+Tegn som sammenligner to verdier og returnerer en boolsk verdi
 
 ### Beskrivelse
-Den enkleste måten å bearbeide en eller to verdier er å bruke en operator. 
+En sammenligningsoperator sammenligner to verdier. Basert på verdiene og type operator returneres så resultatet av sammenligningen som en boolskverdi: `true` eller `false`. 
+
+#### Det finnes 5 ulike sammenligningsoperatorer:
+`==`: likhet; `4==6` returnerer verdien `false` da 4 ikke er lik 6.
+`<`: mindre enn; `4<6` returnerer verdien `true` da 4 er mindre enn 6.
+`<=`: mindre enn eller lik; `7<=7` returnerer verdien `true` da 7 er mindre enn eller lik 7.
+`<`: større enn; `4>6` returnerer verdien `false` da 4 ikke er større enn 6.
+`>=`: større enn eller lik; `7>=4` returnerer verdien `true` da 7 er større enn eller lik 4.
 
 ## Tilordningsoperatorer
-Tildeler verdien til et uttrykk
+Tegn som tilordner verdien til en variabel
 
 ### Beskrivelse
+
+Er man ny til programmering blandes dette tegnet ofte sammen med likhetstegnet fra matematikk som tilsynelatende er det samme. I matematikk betyr likhetstegnet at det som står på venstre side om likhetstegnet er lik det som står på høyre side. 
+
 
 ## Funksjon
 Operasjoner som lagres til et navn
@@ -477,19 +492,37 @@ Utføre operasjoner knyttet til en funksjon
 ## Argument
 Verdier man sender til en funksjon når man kaller den
 
-## Kommentar
-Kode som ikke utfører operasjoner men forklarer hva annen kode gjør 
-
 ### Beskrivelse
 
+## Kommentar
+Tekst som ikke utfører noen operasjoner
+
+### Beskrivelse
 
 ## If-setning
+En operasjon som gjør et valg
 
 ### Beskrivelse
+En if-setning brukes når man gjør et valg i sin kode. Valget gjøres på bakgrunn av verdien til en [betingelse](#betingelse). Hvis betingelsen har verdien [sant](#boolean) ytføres første [kodeblokken](#kodeblokk). 
+TODO: Fortsett...
+
+## Valg
+Tas når kode kjøres på grunnlag av en betingelse 
+
+### Beskrivelse
+Når kode skal kjøres på grunnlag av en betingelse gjør man et valg. Oftest 
+
+## Kodeblokk
+Linjer med kode som hører sammen
+
+### Beskrivelse
+TODO: Her mener vi scope...
 
 ## Betingelse
+Noe som må være sant for at kode skal utføres
 
 ### Beskrivelse
+I programmering 
 
 ## Løkke
 Operasjoner som repeteres flere ganger.
@@ -504,11 +537,18 @@ Operasjoner som repeteres flere ganger.
 
 ### Beskrivelse
 
-## Importere
+## Importere moduler
+Få tilgang på flere operasjoner
+
+### Beskrivelse
+Når en modul eller bibliotek importeres får en tilgang på flere operasjoner, gjerne knyttet til en spesifikk funksjonalitet. De fleste programmeringsspråk kommer med ett grunnsett med operasjoner. Vil du for eksempel generere et tilfeldig tall må man i python importere denne operasjonen fra modulen random. 
+
+## Bibliotek
 
 ### Beskrivelse
 
-## Bibliotek
+## Tilfeldig tall
+Et tall som velges tilfeldig
 
 ### Beskrivelse
 
