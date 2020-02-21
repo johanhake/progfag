@@ -3,50 +3,48 @@
 [//]: <> (Slik kan du kommentere!!! hei)
 
 ## Program
-Et sett med operasjoner som får en datamaskin til å utføre noe.
+Et sett med operasjoner som får en datamaskin til å utføre noe
 
 ### Beskrivelse
-Et program eller en app (applikasjon) er et set med [operasjoner](#operasjon) som får en datamaskin til å utføre noe. Når dette skjer sier man ofte at man *kjører* programmet. Hvis vi bruker en mobiltelefon eller en datamaskin kjører vi nesten alltid et eller annet program, f eks sms-appen til telefonen eller Microsoft Word på datamaskinen. Et program lages ved at man [programmerer](#programmere) eller koder det og det kjøres ved at man laster programmet inn i [arbeidsminne](#arbeidsminnet) til mobiltelefonen eller datamaskinen.
+Et program eller en app (applikasjon) er et sett med [operasjoner](#operasjon) som får en datamaskin til å utføre noe. Når dette skjer heter det at programmet *kjøres*. Når en mobiltelefon eller en datamaskin brukes kjøres alltid et eller annet program, for eksempel sms-appen til telefonen, eller Microsoft Word på datamaskinen. Det å lage et program heter å [programmere](#programmere) eller å kode det og det kjøres ved at programmet lastes inn i [arbeidsminne](#arbeidsminnet) til mobiltelefonen eller datamaskinen.
 
 ## Arbeidsminne
-Et sted i datamaskinen hvor programmer som kjøres lagres.
+Et sted i datamaskinen hvor programmer som kjøres lagres midlertidig
 
 ### Beskrivelse
-Når et program kjøres lastes det inn i arbeidsminnet til en datamaskin. Er programmet komplisert, har mange [operasjoner](#operasjon), tar det også større plass i arbeidsminnet.
-
-Arbeidsminnet til en datamaskin kalles også for RAM (Random Access Memory).
+Når et program kjøres lastes det inn i arbeidsminnet til en datamaskin. Er programmet komplisert, har mange [operasjoner](#operasjon), tar det også større plass i arbeidsminnet. Et annet navn på arbeidsminnet er RAM (Random Access Memory).
 
 ## Programmere
 Å lage et program 
 
 ### Beskrivelse
-Når du lager et [program](#program) sier vi at du programmerer eller koder programmet. Da setter du sammen [operasjoner](#operasjon) som får datamaskinen til å gjøre det du vill den skal gjøre. Operasjonene kan enten skrives i en tesktfil, [tekstprogrammering](#teksprogrammering) eller settes sammen grafiskt gjennom blokker, [blokkprogrammering](#blokkprogrammering). Blokkprogrammering kan være enklere å bruke når du skal lære deg programmering og tekstprogrammering brukes gjerne for mer komplekse programmer. Uanset om du velger tekst eller blokk-programmering må du velge et eller annet [programmeringsspråk](#programmeringsspråk) som du koder i.
+Det å lage et [program](#program) er å programmerer eller å kode. Da settes ulike [operasjoner](#operasjon) sammen som får datamaskinen til å utføre noe. Operasjonene kan enten skrives i en tesktfil, [tekstprogrammering](#teksprogrammering) eller settes sammen grafiskt gjennom blokker, [blokkprogrammering](#blokkprogrammering). Blokkprogrammering kan være enklere å bruke når programmering læres og tekstprogrammering brukes gjerne for mer komplekse programmer. Det finnes flere ulike typer [programmeringsspråk](#programmeringsspråk) innen både blokkprogrammering og tekstprogrammering.
 
 ## Tekstprogrammering
-Programmering hvor operasjoner skrives i tekstfiler.
+Programmering hvor operasjoner skrives i tekstfiler
 
 ### Beskrivelse
-I tekstprogrammering består [operasjoner](#operasjon) av instruksjoner satt sammen av ord og tall. Operasjonene utføres så linje for linje i en rekkefølge som går fra toppen av filen mot bunnen og i hver linje utføres de fra høyre mot venstre. *ILLUSTRASJON* Tekstfilene kan så enten *kjøres* direkte gjennom en [kommandotolk](#kommandotolk) (*interpreter* eng.) og filene kalles da for et *skript*, eller kan filene gjøres om til egne program gjennom å [kompilere](#kompilere) de. Vi kommer bare lage skript når vi bruker tekstprogrammering. Alle apper som installeres på en datamaskin er eksempler på kompilerte program. 
+I tekstprogrammering består [operasjoner](#operasjon) av instruksjoner satt sammen av ulika ord og tall. Operasjonene utføres så linje for linje i en rekkefølge som går fra toppen av filen mot bunnen. *ILLUSTRASJON* Tekstfilene kan så enten *kjøres* direkte gjennom en [kommandotolk](#kommandotolk) (*interpreter* eng.) og telstfilene kalles da for et *skript*, eller så kan tekstfilene gjøres om til egne program gjennom å bli [kompilerte](#kompilere). Alle apper som installeres på en datamaskin er eksempler på kompilerte program. 
 
 Tekstprogrammering må følge fastlagde regler som bestemmes av hvilket [programmeringsspråk](#programmeringspråk) du koder i. Reglene kalles for [syntaksen](#syntaks) til programmeringsspråket. 
 
 ## Kompilere
-Lage et kjørbart program av en tekstfil.
+Lage et kjørbart program av en tekstfil
 
 ### Beskrivelse
-En type av tekstprogammering hvor man lager et kjørbart program fra en tekstfil.
+En eller flere tekstfiler blir kompilert når de blir oversatt til et kjørbart program.
 
 ## Blokkprogrammering
-Programmering hvor operasjonene settes sammen grafisk gjennom ulike blokker.
+Programmering hvor operasjonene settes sammen grafisk gjennom ulike blokker
 
 ### Beskrivelse
-I blokkprogrammering består [operasjoner](#operasjon) av blokker som settes sammen grafisk i et eget program. Det er oftest lettest å komme igang å programmere gjennom å bruke blokkprogrammering da betydningen til operasjonene mange ganger lett kan visualiseres gjennom utseendet til de ulike blokkene. 
+I blokkprogrammering består [operasjoner](#operasjon) av blokker som settes sammen grafisk i et eget program. Oftest er det lettere å lære seg å programmere gjennom å bruke blokkprogrammering da betydningen til operasjonene kan visualiseres gjennom utseendet til de ulike blokkene.
 
 ## Syntaks
-Regler for hvordan operasjoner skrives innen tekstprogrammering.
+Regler for hvordan operasjoner skrives innen tekstprogrammering
 
 ### Beskrivelse
-Ved [tekstprogrammering](#tekstprogrammering) skriver man alle operasjoner med bokstaver og tegn. Syntaksen til et tekst-programmeringsspråk er regler som bestemmer hvordan bokstavene kan skrives. På samme måte som syntaksen til skriftlig norsk bestemmer hvordan norsk kan skrives, f. eks. en setning starter med stor bokstav og slutter med et punkt, bestemmer syntaksen til tekstprogrammering hvordan operasjoner kan skrives i en tekstfil.
+Ved [tekstprogrammering](#tekstprogrammering) skrives alle operasjoner med bokstaver og tegn. Syntaksen til et tekst-programmeringsspråk er regler som bestemmer hvordan bokstavene kan skrives. På samme måte som syntaksen til skriftlig norsk bestemmer hvordan norsk kan skrives, f. eks. en setning starter med stor bokstav og slutter med et punkt, bestemmer syntaksen til tekstprogrammering hvordan operasjoner kan skrives i en tekstfil.
 
 Syntaksen for å tildele to variabler hver sin verdi og å lage en kommentar er forskjellige for ulike programmeringsspråk. Her viser vi hvordan det ser ut for Python og JavaScript. Vi ser at det er flere ting som er likt men også noen ting som skiller de to språkene.
 
@@ -127,12 +125,10 @@ gjennomsnitt = sum/len(alle_tall)
 ## Operasjon
 En enkelt ting en datamaskin skal gjøre
 
-[//]: # Legge inn kommando for det faktiske kommandoet man skriver inn
-
 ### Beskrivelse
-En operasjon forteller datamaskinen at den skal gjøre noe. Et [program](#program) er mange operasjoner som er satt sammen etter hverandre. En operasjon i hverdagslivet kan være mange ting men innen [programmering](#programmere) er en operasjon noe forenklet begrenset til operasjoner på [verdier](#verdi) og det å bruke [kontrolstrukturer](#kontrollstruktur) og [funksjoner](#funksjon). 
+En operasjon forteller datamaskinen at den skal gjøre noe. Et [program](#program) er satt sammen av mange operasjoner etter hverandre. En operasjon er enkelt fortalt, det å gjøre noe med [verdier](#verdi), eller å bruke [kontrollstrukturer](#kontrollstruktur) eller [funksjoner](#funksjon).
 
-Det finnes 4 ulike hovedvarianter av operasjoner som utøfres på [verdier](#verdi):
+Det finnes 4 ulike hovedvarianter av operasjoner som gjør noe med [verdier](#verdi):
 
 1. Bearbeider en verdi (*process* eng.)
 2. Lagre en verdi i en variabel
@@ -140,7 +136,7 @@ Det finnes 4 ulike hovedvarianter av operasjoner som utøfres på [verdier](#ver
 4. Vise en verdi (utdata), output
 
 #### Bearbeide verdier
-Når du bearbeider en eller flere verdier gjør datamaskinene noe med verdiene. To ulike måter å bearbeide verdier på er å enten bruke en [operator](#operatorer) for eksempel `5 + 6` eller å sende verdiene som [argumenter](#argument) til en [funksjon](#funksjon) for eksempel `gjennomsnitt([3, 6, 8])`. 
+Når et program bearbeider en eller flere verdier gjøres det noe med verdiene. To ulike måter å bearbeide verdier på er å bruke en [operator](#operatorer) for eksempel `5 + 6` eller å bruke verdiene som [argumenter](#argument) til en [funksjon](#funksjon) for eksempel `gjennomsnitt([3, 6, 8])`. 
 
 Flere operasjoner som bearbeider verdier kan settes sammen til [uttrykk](#uttrykk) for eksempel:
 ```python
@@ -148,23 +144,23 @@ round(sqrt(3)/2, 3)
 ```
 
 #### Lagre verdi
-Verdier lagres i [variabler](#variabel) og operasjoner lagres i [funksjoner](#funksjon). Verdien eller operasjonene blir da lagret i [arbeidsminnet](#arbeidsminne) og kan brukes seinere i programmet. 
+Verdier lagres i [arbeidsminnet](#arbeidsminne) som [variabler](#variabel) og kan deretter brukes seinere i programmet.
 
-Når en verdi skal lagres i en variabel bruker man en  [tilordningsoperator](#tilordningsoperatorer) (`=`).
+Når en verdi lagres i en variabel brukes en [tilordningsoperator](#tilordningsoperatorer) (`=`).
 
 ```python
 alder = 9
 navn = "Marie"
 ```
-Her lagres to ulike verdier: `9, "Marie"`, til variablene: `alder, navn`. 
+Her lagres to ulike verdier: `9` og `"Marie"`, til variablene: `alder` og `navn`.
 
 #### Hente en verdi, input
-En datamaskin hadde vært ganske verdiløs hvis den ikke kunne hente verdier enten fra en bruker eller fra et eller annet sted for eksempel en avstandsensor på en bil. 
+En datamaskin hadde vært ganske verdiløs hvis den ikke kunne hente verdier enten fra en bruker eller fra et eller annet sted for eksempel en avstandsensor på en bil.
 
 ```python
 navn = input("Hva heter du?")
 ```
-Her brukes funksjonen `input` til å spør brukeren om å skrive inn sitt navn. Programmet stopper da opp og venter på at brukeren skal skrive inn sitt navn. 
+Her brukes funksjonen `input` til å spør brukeren om å skrive inn sitt navn. Programmet stopper da opp og venter på at brukeren skal skrive inn sitt navn.
 
 #### Vise en verdi, output
 En verdi kan vises til en bruker for eksempel ved at den vises på skjermen, eller skrives til en fil. 
@@ -382,7 +378,7 @@ elev["klasse"] = "9A"
 Et element i en assositativ liste er en nøkkel - verdi par. Nøkkelen sier noe om hva verdien er (tenk [variabelnavn](#variabelnavn)) og verdien er en [verdi](#verdi) som er akseptert i programmeringsspråket. I eksemplet over ser vi at verdiene er 3 [strenger](#streng) og en [liste](#liste).
 
 ## Operatorer
-Enkelt tegn som bearbeider en eller flere verdier
+Enkelt tegn som bearbeider en eller flere verdier og returnerer en verdi
 
 ### Beskrivelse
 En operator er et enkelt tegn som brukes til å bearbeide en eller to [verdier](#verdi). Operatorer er ofte en kilde til misforståelse når man lær seg programmering da de likner på tegn som brukes i hverdagsspråket og innen matematikk og i tilegg likner de ulike operatorene på hverandre. 
@@ -423,7 +419,8 @@ En operator som bearbeider to verdier kalles en binær operator og en operator s
 Tegn som bearbeider en eller to tall-verdier
 
 ### Beskrivelse
-Aritmetiske operatorene er de som tilsvarer regnetegnene og fortegnene innen matematikken og bearbeider derfor bare [tall](#tall)-verdier. 
+Inne programmering representeres de fire regneartene ved aritmetiske operatorer. Disse bearbeider da bare [tall](#tall)-verdier og returnerer et annet tall-verdi. I tilegg til operatorer for de fire regneartene finnes også andre aritmetiske operatorer:
+
 * `+`: addisjon; `5+2` resulterer i `7`
 * `-`: substraksjon ([binært](#un%c3%a6re-og-bin%c3%a6re-operatorer)) og negasjon ([unært](#un%c3%a6re-og-bin%c3%a6re-operatorer)); `5-2` resulterer i `3`
 * `*`: multiplikasjon; `5*2` resulterer i `10`.
@@ -435,13 +432,13 @@ Operatorene over finnes i både Python og Scratch. Innen Python har vi i tilegg 
 * `%`: modulus; rest ved heltalsdivisjon, `5%2` resulterer i `1`.
 
 ## Strengoperatorer
-Tegn som bearbeider en eller to streng-verdier
+Tegn eller funksjoner som bearbeider streng-verdier og returnerer en streng
 
 ### Beskrivelse
-Strengoperatorer brukes til å bearbeide [strenger](#streng).
+Strengoperatorer brukes til å bearbeide [strenger](#streng) og da det er en operator returnerer den alltid en annen streng. 
 
 ## Logiske operatorer
-Tegn som bearbeider en eller to boolske-verdier
+Tegn eller ord som bearbeider boolske-verdier og returnerer en boolsk verdi
 
 ### Beskrivelse
 Den enkleste måten å bearbeide en eller to verdier er å bruke en operator. 
@@ -499,56 +496,178 @@ Tekst som ikke utfører noen operasjoner
 
 ### Beskrivelse
 
-## If-setning
-En operasjon som gjør et valg
-
-### Beskrivelse
-En if-setning brukes når man gjør et valg i sin kode. Valget gjøres på bakgrunn av verdien til en [betingelse](#betingelse). Hvis betingelsen har verdien [sant](#boolean) ytføres første [kodeblokken](#kodeblokk). 
-TODO: Fortsett...
-
 ## Valg
-Tas når kode kjøres på grunnlag av en betingelse 
+Ulik kode kjøres på grunnlag av en betingelse
 
 ### Beskrivelse
-Når kode skal kjøres på grunnlag av en betingelse gjør man et valg. Oftest 
+Et program tar et valg når ulik kode kjøres på grunnlag av en [betingelse](#betingelse). Innen programmering tas valg gjennom en [if-setning](#if-setning).
+
+## If-setning
+En kontrollstruktur som gjør et valg på grunnlag av en betingelse
+
+### Beskrivelse
+En if-setning er en [kontrollstruktur](#kontrollstruktur) som kan brukes til å ta et valg. Valget gjøres på bakgrunn av verdien til en [betingelse](#betingelse). Et valg kan være å utføre en [blokk med kode](#kodeblokk) hvis en bruker har gjetter korrekt tall (betingelsen er da [sann](#boolean)) i en gjettelek, og en kodeblokk hvis brukeren gjetter feil tall. 
+```python
+if gjettet == korrekt:
+    print("Du gjettet riktig :)")
+else:
+    print("Du gjettet feil :(")
+```
+En if-setning kan brukes for å ta ett valg, istedenfor to som i eksemplet over. Da sløyfes bare `else` setningen.
+```
+pris = 30
+if alder < 15:
+    pris = 15
+print("Du skal betale {pris} kr".format(pris))
+```
+En if-setning kan brukes til å ta flere enn to valg også. Da legges flere betingelser inn gjennom `elif` setningen.
+```
+if alder < 4:
+    pris = 0
+elif alder < 15:
+    pris = 15
+elif alder < 63:
+    pris = 30
+else:
+    pris = 15
+print("Du skal betale {pris} kr".format(pris))
+```
 
 ## Kodeblokk
 Linjer med kode som hører sammen
 
 ### Beskrivelse
-TODO: Her mener vi scope...
+En kodeblokk er et sett med linjer som hører sammen. I python brukes mellomrom, eller så kallte innrykk, i starten på hver linje for å vise et kodeblokk. Linjer som har samme [innrykk](#innrykk) i python tilhører samme kodeblokk. 
+```python
+for i in range(1,11):
+    # Dette er en kodeblokk
+    # En kodeblokk kan gå over flere linjer
+    print("Jeg tilhører kodeblokk 1")
+    if i < 5:
+        print ("Jeg tilhører kodeblokk 2")
+    else:
+        print ("Jeg tilhører kodeblokk 3")
+```
+I andre [tekst-programmeringsspråk](#programmeringsspr%c3%a5k), som for eksempel C++, Java, JavaScript, brukes krøllparenteser `{<kodeblokk>}` til å avgrense en kodeblokk. 
+
+## Innrykk
+Mellomrom først i en kodelinje
+
+### Beskrivelse
+Innrykk er et mellomrom før de første tegnene i en kodelinje. Mellomrommet kan bestå av enten tegnet mellomrom eller av tegnet tab. Innrykk brukes i de fleste programmeringsspråk til å gjøre kode bedre lesbar. I Python brukes innrykk til å avgrense en [kodeblokk](#kodeblokk)
 
 ## Betingelse
 Noe som må være sant for at kode skal utføres
 
 ### Beskrivelse
-I programmering 
+I programmering brukes betingelser blandt annet til å ta [valg](#valg). En betingelse er noe som enten har verdien [sant](#boolean) eller verdien [falskt](#boolean). Her er noen måter en betingelse kan lages på i python.
+```python
+# Sammenligning
+if alder <= 12:
+    print("Du er et barn!")
+
+# Kombinerte sammenligninger
+if 13 <= alder and alder < 20:
+    print("Du er en tennåring!")
+
+# Sjekker om en verdi er i en liste
+if navn in ["Ole", "Dole", "Doffen"]:
+    print("Du er en nevø av Donald!")
+
+# Sjekker verdien til en variabel
+if ferdig:
+    print("Der var du ferdig!")
+```
 
 ## Løkke
-Operasjoner som repeteres flere ganger.
+Kontrollstruktur som gjentar en kodeblokk
+
+### Beskrivelse
+En løkke er en [kontrollstruktur](#kontrollstruktur) som kan gjenta en [kodeblokk](#kodeblokk) null til flere ganger. I python finnes det to ulike typer løkker:
+
+1. [for-løkke](#for-l%c3%b8kke): Brukes når man vet hvor mange ganger en kodeblokk skal gjentas.
+2. [while-løkke](#while-l%c3%b8kke): Brukes når gjentagelsen av kodeblokken er avhengig av en betingelse.
+
+## Nestede løkker
+To eller flere løkker som er plassert inni hverandre
+
+### Beskrivelse
+Med nestede løkker plasseres en løkke inne i en annen løkke og man får da en yttre og en indre løkke. Den indre løkken vil gjentas sammen med den yttre kodeblokken.
+```python
+for i in range(1, 11):
+    # Yttre kodeblokk
+    for j in range(1, 11):
+        # Indre kodeblokk
+        print(i*j)
+```
+Hver av de to løkkene vil her gentas 10 ganger men da den indre løkken inngår i den yttre kodeblokken vil den indre kodeblokken totalt gjentas: 10x10=100 ganger.
+
+## for-løkke
+En løkke som gjentar en kodeblokk et gitt antall ganger
+
+### Beskrivelse
+En for-løkke brukes til å gjenta en [kodeblokk](#kodeblokk) når man vet hvor mange ganger kodeblokken skal gjentas. For eksempel 
+
+## while-løkke
+En løkke som gjentar en kodeblokk avhengig av en betingelse
 
 ### Beskrivelse
 
-## For-løkke
+
+## Modul
+Funksjonalitet som må importeres for å brukes
 
 ### Beskrivelse
+En modul eller bibliotek inneholder funksjoner eller verdier som kan brukes innen et spesifikt område. For eksempel gir modulen `math` i python tilgang på en del matematiske funksjoner, for eksempel: `sin()`, `exp()` og `ceil()` og tallverdier: `pi` og `e`. For å bruke en modul må den første [importeres](#importere-moduler).
+```python
+# Importerer hele module math
+from math import sin, exp, ceil, pi, e
 
-## While-løkke
+if exp(1) == e**1:
+    print("exp(1) er det samme som e**1")
 
-### Beskrivelse
+if ceil(pi) == 4:
+    print("ceil avrunder et flyt-tall til nærmeste heltall over tallet.")
+```
 
 ## Importere moduler
-Få tilgang på flere operasjoner
+Få tilgang på operasjoner fra en modul
 
 ### Beskrivelse
-Når en modul eller bibliotek importeres får en tilgang på flere operasjoner, gjerne knyttet til en spesifikk funksjonalitet. De fleste programmeringsspråk kommer med ett grunnsett med operasjoner. Vil du for eksempel generere et tilfeldig tall må man i python importere denne operasjonen fra modulen random. 
+Når en modul eller bibliotek importeres får en tilgang på funksjoner og verdier, knyttet til en spesifikk funksjonalitet. De fleste programmeringsspråk kommer med ett sett med grunnleggende operasjoner. Vil du for eksempel generere et tilfeldig tall må man i python importere denne operasjonen fra modulen random. 
 
-## Bibliotek
+I python kan moduler importeres på flere ulike måter.
+```python
+# Importere bare funksjonen randint fra modulen random
+from random import randint
 
-### Beskrivelse
+# Importere alle funksjonen fra modulen random
+from random import *
+
+# Importere hele modulen men beholder funksjonene i modulen
+import random
+random.randint(1, 10)
+
+# Importere hele modulen men gir den et kortere navn
+import random as r
+r.randint(1, 10)
+```
+Det er å foretrekke å importere bare de funksjoner man trenger for eksempel `from random import randint` og å unngå å importere alle funksjoner som `from random import *`.
 
 ## Tilfeldig tall
 Et tall som velges tilfeldig
 
 ### Beskrivelse
+Tilfeldige tall kan brukes i spill eller i noen matematiske simuleringer. For å få tilgang på funksjoner som genererer tilfeldige tall må de i python [importeres](#importere-moduler) fra modulen `random`. Det finnes flere ulike måter å generere tilfeldige tall og her er noen eksempel:
+```python
+import random
 
+# Genererer et tilfeldig flyttall mellom 0 og 1
+random.random()
+
+# Genererer et tilfeldig heltall mellom 1 og 10
+random.randint(1,10)
+
+# Velger et element fra en liste
+random.choice(["Janne", "Jarl", "Snorre"])
+```
