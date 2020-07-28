@@ -290,10 +290,10 @@ Datatype som brukes til numeriske verdier
 En del programmeringsspråk for eksempel [Python](#python) skiller på datatypen [heltall](#heltall) og [flyttall](#flyttall). Flyttal brukes til å reprsentere tall med desimaler. Andre programmeringsspråk, som for eksempel [JavaScript](#javascript]) eller [Scratch](#scratch), skiller i utgangspunktet ikke på heltall eller flyttal.
 
 ## Heltall
-Datatype som brukes til å representere hele tall
+Datatype som brukes til å representere heltall
 
 ### Beskrivelse
-Heletall er tall som ikke har desimaler. Heltall brukes for eksempel til å representere et antall for eksempel antallet spiller i et spill eller en posisjon i en rekkefølge. Heltall er mer naturlig for en datamaskin å arbeide med enn flyttal. Det er fordi alle heltall kan representeres med et [binært tall](#bin%c3%a6re-tall) som er tall satt sammen av sifrene 1 og 0.
+Heltall er tall som ikke har desimaler. Heltall brukes for eksempel til å representere et antall for eksempel antallet spiller i et spill eller en posisjon i en rekkefølge. Heltall er mer naturlig for en datamaskin å arbeide med enn flyttal. Det er fordi alle heltall kan representeres med et [binært tall](#bin%c3%a6re-tall) som er tall satt sammen av sifrene 1 og 0.
 
 I programmeringsspråket [Python](#python) heter datatypen for helttall `int`, som er kort for integer og er engelsk for heltall. Funksjonen `int()` kan brukes til å lage et heltall fra for eksempel en [streng](#streng).
 ```python
@@ -306,17 +306,49 @@ I eksemplet over hentes en streng inn fra brukeren og så blir den gjort om til 
 Datatype som brukes til å representere desimaltall
 
 ### Beskrivelse
-Et flyttal er et desimaltall. Innen all programmering bruker man `"."` istedefor `","` for å angi desimalen i et desimaltall eller flyttal. 
+Et flyttal er et desimaltall. Innen all programmering bruker man `"."` (punktum) istedefor `","` (komma) for å angi desimalen i et flyttal (desimaltall). Ordet *flyt* (engelske *float*) kommer fra at plasseringen av desimaltegnen flyter. Litt forenklet kan `0.03` representers med heltallet 3 hvor desimaltegnet er flyttet 2 plasser.
 
-Ordet flyttal henspiller på måten tallet er representert i [arbeidsminnet](#arbeidsminne) til en datamaskin. Det som er viktig å nevne her er at flyttal ikke representeres eksakt i arbeidsminnet. For eksempel består desimaltallet $\sqrt{2}$ av uendelig mange desimaler og må i en datamaskin representeres på en avrundet og unøyaktig måte. I Python er $\sqrt{2}\simeq 1.4142135623730951$.
+#### Flyttal er unøyaktig representert
+Et flyttal representeres ikke eksakt i arbeidsminnet. For eksempel består desimaltallet $\sqrt{2}$ av uendelig mange desimaler og må i en datamaskin representeres på en avrundet og unøyaktig måte. I Python er $\sqrt{2}\simeq 1.4142135623730951$. Dette kan illustreres med følgende eksempel:
+```python
+from math import sqrt
+print(sqrt(2))
+```
+som resulterer i følgende utskrift:
+```bash
+1.4142135623730951
+```
 
-Flyttal er vanskeligere å representere eksakt for en datamaskin enn [heltall](#heltall). Dette er fordi en datamaskin i utgangspunktet bare forstår [binære tall](#bin%c3%a6re-tall). Heltall kan representeres ved binære tall, mens flyttall må representeres på en annen måte. For eksempel må alle desimaltall representeres med et endelig antall desimaler
-
-Ordet *flyt* (engelske *float*) kommer fra at plasseringen av desimaltegnen flyter. Vi kan for eksempel tenke oss at `0.03` kan representers med heltallet 3 hvor desimaltegnet er flyttet 2 plasser. Hvordan et flyttal faktisk representeres på går vi ikke inn på her men i [Python](#python) kan dette med at flyttall er vanskelige å representer vises med følgende eksempel:
+Det er ikke bare desimaltall med ubegrensede desimaler som representeres unøyaktig i Python, som $\sqrt{2}$. Følgende eksempel resulterer i utskriften: `0.30000000000000004` som nesten er `0.3` men det *er* ikke eksakt `0.3`.
 ```python
 print(3*0.1)
 ```
-Dette resulterer i utskriften: `0.30000000000000004` som nesten er `0.3` men det *er* ikke eksakt `0.3`. 
+
+#### Avrunde flyttall
+Et flyttall kan avrundes med funksjonen `round`. Flyttallet som skal avrundes overføres som argument til `round`.
+```python
+print(10/3)
+print(round(10/3))
+print(round(10/3, 2))
+```
+```
+3.3333333333333335
+3 
+3.33
+```
+Her vises først en unøyaktig representasjon av 10/3, så heltalls delen 3, hvor `round` er brukt uten ekstra [argumenter](#argument), og sist en versjon som er avrundet til to desimaler, hvor antallet desimaler, 2, er sendt med som et andre [argument](#argument) til `round`.
+
+#### Eksponensiell notasjon av flyttall
+For å enklere representere store og små flytttall i pythonbrukes eksponensiell notasjon. Denne notasjonen bruker det at et hvilket som helst tall kan deles opp i et desimaltall som ganges med 10 opphøyd i et heltall (vitenskapelig notasjon). For eksempel kan et stort tall $567000000$ skrives som $5,67\cdot 10^{9}$ og et litet tall $0,0006$ kan skrives som $6\cdot 10^{-4}$. I Python skrives disse to tallene med eksponensiell notasjon:
+```python
+print(5.67e9)
+print(6e-4)
+```
+```
+5670000000.0
+0.0006
+```
+Her byttes potensdelen ($\cdot 10^9$ og $\cdot 10^{-5}$) i den vitenskapelige notasjonen ut med `e9` og `e-5`.
 
 ## Programmeringsfeil
 En feil som oppstår når et program gjøre en feil
@@ -450,7 +482,7 @@ Når to operatorer som har samme rekkefølge kommer etter heverandre i et uttryk
 Merk at hvis ikke operatorene utføres fra venstre til høyre ville for eksempel rad 2 bli noe annet: `7-`**`6+2`** $\rightarrow$ `7-8` som blir `-1`.
 
 ### Unære og binære operatorer
-En operator som bearbeider to verdier kalles en binær operator og en operator som bearbeider en verdi kalles en unær operator. `+` er et eksempel på en binær aritmetisk operator da den brukes til å legge sammen to verdier. `-` er et eksempel på en aritmetisk operator som både kan være unær og binær. `-` er unær når den representerer et negativt fortegn: `-5`, og binær når den representerer substraksjon: `7-4`.
+En operator som bearbeider to verdier kalles en binær operator og en operator som bearbeider en verdi kalles en unær operator. `+` er et eksempel på en binær aritmetisk operator da den brukes til å legge sammen to verdier. `-` er et eksempel på en aritmetisk operator som både kan være unær og binær. `-` er unær når den representerer et negativt fortegn: `-5`, og binær når den representerer substraksjon: `7-4`. 
 
 ### Vanlige misforståelser ved bruk av operatorer.
 * Tilordningsoperator må stå til venstre for et uttrykk. Man kan altså ikke skrive `4*6=x`
@@ -461,17 +493,26 @@ En operator som bearbeider to verdier kalles en binær operator og en operator s
 Tegn som bearbeider en eller to tall-verdier
 
 ### Beskrivelse
-Inne programmering representeres de fire regneartene ved aritmetiske operatorer. Disse bearbeider da bare [tall](#tall)-verdier og returnerer et annet tall-verdi. I tilegg til operatorer for de fire regneartene finnes også andre aritmetiske operatorer:
+Inne programmering representeres de fire regneartene ved aritmetiske operatorer, som er tegn som bearbeider [tall-verdier](#tall) og returnerer en annen tall-verdi.
 
+#### Fire regneartene
 * `+`: addisjon; `5+2` resulterer i `7`
 * `-`: subtraksjon ([binært](#un%c3%a6re-og-bin%c3%a6re-operatorer)) og minus fortegn ([unært](#un%c3%a6re-og-bin%c3%a6re-operatorer)); `5-2` resulterer i `3`. 
 * `*`: multiplikasjon; `5*2` resulterer i `10`.
 * `/`: divisjon; `5/2` resulterer i `2.5`
 
-Operatorene over finnes i både Python og Scratch. Innen Python har vi i tilegg disse aritmetiske operatorene:
+#### Potens, heltallsdivisjon og modulus
 * `**`: potens; `5**2` resulterer i `25`.
-* `//`: heltalsdivisjon; `5//2` resulterer i `2`.
-* `%`: modulus; rest ved heltalsdivisjon, `5%2` resulterer i `1`.
+* `//`: heltallsdivisjon; `5//2` resulterer i `2`.
+* `%`: modulus; rest ved heltallsdivisjon, `5%2` resulterer i `1`.
+
+#### Absoluttverdien til et tall
+Absoluttverdien til et tall gir oss avstanden mellom tallet og 0 på en tallinje og kan sees på som en aritmetisk operator. I Python returnerer funksjonen `abs` absoluttverdien til ett tall. En avstand er alltid positiv slik at:
+```python
+print(abs(3))
+print(abs(-3))
+```
+viser begge utskriften `3`. Absoluttverdien til et tall brukes ikke så ofte i matematikken men er fin å vite om i programmering, [se sammenligning av flyttall](#sammenligne-flyttal). 
 
 ## Strengoperatorer
 Tegn eller funksjoner som bearbeider streng-verdier og returnerer en streng
@@ -498,6 +539,33 @@ En sammenligningsoperator sammenligner to verdier. Basert på verdiene og type o
 `<`: større enn; `4>6` returnerer verdien `false` da 4 ikke er større enn 6.
 `>=`: større enn eller lik; `7>=4` returnerer verdien `true` da 7 er større enn eller lik 4.
 
+#### Sammenligne flyttal
+Ettersom flyttal representeres [unøyaktig](#flyttal-er-unøyaktig-representert) i en datamaskin. 
+må likhets-operatoren `==` aldri brukes til å sammenligne to [flyttall](#flyttall). Dette kan illustreres med følgende eksempel:
+```python
+print(0.3 == 3*0.1)
+```
+```
+False
+```
+Innen matematikken så er $0,3$ lik $3\cdot 0,1$, men da flyttall representeres unøyaktig i Python så er ikke disse to flyttall ikke like. For noen flyttal ser det ut å virke, som for eksempel:
+```python
+print(0.4 == 4*0.1)
+```
+```
+True
+```
+men hovedregelen er å aldri bruk `==` når to flyttall skal sammenlignes. 
+
+Istedenfor å bruke `==` operatoren for å teste om to flyttall er like må man teste om *forskjellen* mellom to flyttall er liten. Hvor liten må man selv bestemme som programmerere.
+```python
+print(abs(0.3-3*0.1) < 1e-6)
+```
+```
+True
+```
+Her brukes `abs` til å finne ut om avstandet mellom differansen  $0,3-3\cdot 0,1$ og 0 er *mindre enn* (`<`) tallet $0,000001$, som er et litet tall. Merk at her brukes [eksponensiell notasjon](#eksponensiell-notasjon-av-flyttall) for å skrive flyttallet $0,000001$.
+
 ## Tilordningsoperatorer
 Tegn som brukes til å tilordner en variabel en verdi
 
@@ -507,14 +575,13 @@ Når en verdi får en ny verdi brukes
 
 Er man ny til programmering blandes dette tegnet ofte sammen med likhetstegnet fra matematikk som tilsynelatende er det samme. I matematikk betyr likhetstegnet at det som står på venstre side om likhetstegnet er lik det som står på høyre side. 
 
-
 ## Funksjon
 En funksjon lagrer en eller flere operasjoner
 
 ### Beskrivelse
 En funksjon brukes til å lagre et sett med operasjoner til et navn. Operasjonene som lagres i en funksjon må utføre en spesifikk oppgave slik at man bruker funksjonens navn istedenfor alle operasjonene når programmet skal utføre oppgaven. Når funksjonen brukes heter det at man [kaller funksjonen](#kalle-funksjon). Når en funksjon blir kallet blir alle operasjonene til funksjonen utført og slik blir også oppgaven til funksjonen utført. 
 
-En funksjon likner på en variabel med at den har et navn og noe blir lagret til navnet, men en funksjon lagrer operasjoner hvor en variabel lagrer verdier.
+En funksjon likner på en variabel med at den har et navn og noe blir lagret til navnet, men en funksjon lagrer *operasjoner* hvor en variabel lagrer *verdier*.
 TODO: Legg in noen eksempler
 
 ## Funksjonsnavn
@@ -532,8 +599,15 @@ Utføre operasjoner knyttet til en funksjon
 ### Beskrivelse
 En funksjon lagrer operasjoner og når disse skal utføres må funksjonen kalles. Andre ord som ofte brukes for dette er å utføre funksjonen eller å kjøres den. Innen [tekstprogrammering](#tekstprogrammering) kalles en funksjon gjennom å skrive to parenteser etter funksjonsnavnet.
 ```python
-# 
+# Print funksjonen kalles
+print("Hei verden")
+
+# Print funksjonen kalles IKKE
+print
 ```
+Her brukes funksjonen `print` to ganger. Den første gangen kalles funksjonen og den andre gangen kalles ikke funksjonen da den mangler de to parentesene etter funksjonsnavnet. 
+
+Når en funksjon kalles kan verdier overføres til 
 
 ## Argument
 Verdier som overføres til en funksjon når den kalles
@@ -573,7 +647,7 @@ En if-setning kan brukes for å ta ett valg, istedenfor to som i eksemplet over.
 pris = 30
 if alder < 15:
     pris = 15
-print("Du skal betale {pris} kr".format(pris))
+print(f"Du skal betale {pris} kr")
 ```
 En if-setning kan brukes til å ta flere enn to valg også. Da legges flere betingelser inn gjennom `elif` setningen.
 ```
@@ -585,7 +659,7 @@ elif alder < 63:
     pris = 30
 else:
     pris = 15
-print("Du skal betale {pris} kr".format(pris))
+print(f"Du skal betale {pris} kr")
 ```
 
 ## Kodeblokk
@@ -718,7 +792,7 @@ if exp(1) == e**1:
     print("exp(1) er det samme som e**1")
 
 if ceil(pi) == 4:
-    print("ceil avrunder et flyt-tall til nærmeste heltall over tallet.")
+    print("ceil avrunder et flyttall til nærmeste heltall over tallet.")
 ```
 
 ## Importere moduler
