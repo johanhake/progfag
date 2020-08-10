@@ -411,6 +411,7 @@ En liste (*array* eng.) brukes når du har mange verdier som hører sammen. Verd
 deltagere = ["Rebecca", "Erik", "Selma", "Amanda"]
 deltager = deltagere[2]
 deltagere[1] = "Svein"
+antall_deltagere = len(deltagere)
 ```
 `deltagere` er en list-variabel med fire elementer. Hvert element representerer navnene til deltagerne i en konkuranse. `deltager` er en variabel som har det *tredje* (ikke det andre!) elementet fra listen. Til slutt endres verdien til det andre elementet til `"Svein"`. Deltager `"Erik"` er altså byttet ut med `"Svein"`.
 
@@ -419,7 +420,20 @@ Verdiene i en liste kalles for elementer
 
 #### Indeks - liste
 En indeks brukes når man skal hente ut eller endre på elementene i en liste. Indeksen betegner plasseringen til verdien i listen og må alltid angis med et [heltall](#heltall) (flyttal virker ikke, da plassering 2.59 ikke gir mening).
-Det første elementet har indeksen `0`, det andre har indeksen `1` og så videre. På rad to over brukes indeksen `2` til å hente ut verdien til det tredje elementet i listen `deltager`. På rad tre over brukes indeksen `1` til å endre det andre elementet i listen til verdien `"Svein"`.
+Det første elementet har indeksen `0`, det andre har indeksen `1` og så videre. På rad to over brukes indeksen `2` til å hente ut verdien til det tredje elementet i listen `deltager`. På rad tre over brukes indeksen `1` til å endre det andre elementet i listen til verdien `"Svein"`. Merk at indeksen må stå innenfor [indeksoperatoren](#indeksoperator) som er de to `[]`-parentesene. 
+
+#### Indeksoperator
+Operator `[]`, som brukes etter en liste til å få tilgang til et element i en liste `liste[indeks]`. På de to siste radene over brukes indeksoperatoren `deltagere[2]` og `deltagere[1]` til å få tilgang til det tredje og andre elementet i listen. 
+
+#### Lengden til en liste
+Funksjonen `len(liste)` returnerer lengden til en liste. 
+
+#### Slice - liste
+TODO: Legg til forklaring
+
+#### Nested liste
+TODO: Legg til forklaring
+
 
 ## Assosiativ liste
 En samling verdier som hver er assosiert med en nøkkel 
@@ -448,7 +462,7 @@ resultater = elev["resultater"]
 elev["klasse"] = "9A"
 ```
 
-### Element - assositativ liste
+#### Element - assositativ liste
 Et element i en assositativ liste er en nøkkel - verdi par. Nøkkelen sier noe om hva verdien er (tenk [variabelnavn](#variabelnavn)) og verdien er en [verdi](#verdi) som er akseptert i programmeringsspråket. I eksemplet over ser vi at verdiene er 3 [strenger](#streng) og en [liste](#liste).
 
 ## Operatorer
@@ -512,7 +526,7 @@ Absoluttverdien til et tall gir oss avstanden mellom tallet og 0 på en tallinje
 print(abs(3))
 print(abs(-3))
 ```
-viser begge utskriften `3`. Absoluttverdien til et tall brukes ikke så ofte i matematikken men er fin å vite om i programmering, [se sammenligning av flyttall](#sammenligne-flyttal). 
+viser begge utskriften `3`. Absoluttverdien til et tall brukes ikke så ofte i matematikken men er vanlig å bruke innen programmering når [flyttall skal sammenlignes](#sammenligne-flyttal).
 
 ## Strengoperatorer
 Tegn eller funksjoner som bearbeider streng-verdier og returnerer en streng
@@ -643,14 +657,14 @@ else:
     print("Du gjettet feil :(")
 ```
 En if-setning kan brukes for å ta ett valg, istedenfor to som i eksemplet over. Da sløyfes bare `else` setningen.
-```
+```python
 pris = 30
 if alder < 15:
     pris = 15
 print(f"Du skal betale {pris} kr")
 ```
 En if-setning kan brukes til å ta flere enn to valg også. Da legges flere betingelser inn gjennom `elif` setningen.
-```
+```python
 if alder < 4:
     pris = 0
 elif alder < 15:
@@ -737,7 +751,7 @@ En løkke som bruker en tellevariabel til å gjentar en kodeblokk et gitt antall
 ### Beskrivelse
 En for-løkke brukes til å gjenta en [kodeblokk](#kodeblokk) når man vet hvor mange ganger kodeblokken skal gjentas. Spesielt for en for-løkker er at den alltid bruker en [tellevariabel](#tellevariabel) som oppdateres for hver gang en kodeblokk gjentas. 
 
-To eksempler hvor en for-løkke brukes er når 
+To eksempler hvor en for-løkke kan brukes er når
 1. en enkel tallfølge skal lages, og
 2. en liste med verdier skal gås igjennom
 
