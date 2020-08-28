@@ -793,13 +793,13 @@ En løkke som gjentar en kodeblokk så lenge en betingelse har verdien True
 ### Beskrivelse
 
 
-## Modul
+## Bibliotek
 Funksjonalitet som må importeres for å brukes
 
 ### Beskrivelse
-En modul eller bibliotek inneholder funksjoner eller verdier som kan brukes innen et spesifikt område. For eksempel gir modulen `math` i python tilgang på en del matematiske funksjoner, for eksempel: `sin()`, `exp()` og `ceil()` og tallverdier: `pi` og `e`. For å bruke en modul må den første [importeres](#importere-moduler).
+Et bibliotek eller modul inneholder funksjoner eller verdier som kan brukes innen et spesifikt område. For eksempel gir biblioteket `math` i python tilgang på en del matematiske funksjoner, for eksempel: `sin()`, `exp()` og `ceil()` og tallverdier: `pi` og `e`. For å bruke et bibliotek må den første [importeres](#importere-bibliotek).
 ```python
-# Importerer hele module math
+# Importerer hele biblioteket math
 from math import sin, exp, ceil, pi, e
 
 if exp(1) == e**1:
@@ -809,35 +809,37 @@ if ceil(pi) == 4:
     print("ceil avrunder et flyttall til nærmeste heltall over tallet.")
 ```
 
-## Importere moduler
-Få tilgang på operasjoner fra en modul
+## Importere bibliotek
+Få tilgang på operasjoner fra et eksternt bibliotek
 
 ### Beskrivelse
-Når en modul eller bibliotek importeres får en tilgang på funksjoner og verdier, knyttet til en spesifikk funksjonalitet. De fleste programmeringsspråk kommer med ett sett med grunnleggende operasjoner. Vil du for eksempel generere et tilfeldig tall må man i python importere denne operasjonen fra modulen random. 
+Når et bibliotek importeres får en tilgang på funksjoner og verdier, knyttet til en spesifikk funksjonalitet. De fleste programmeringsspråk kommer med ett sett med grunnleggende operasjoner. Vil du for eksempel generere et tilfeldig tall må man i python importere denne operasjonen fra biblioteket random. 
 
-I python kan moduler importeres på flere ulike måter.
+I python kan bibliotek importeres på flere ulike måter.
 ```python
-# Importere bare funksjonen randint fra modulen random
+# Importere bare funksjonen randint fra biblioteket random
 from random import randint
 
-# Importere alle funksjonen fra modulen random
+# Importere alle funksjonen fra biblioteket random
 from random import *
 
-# Importere hele modulen men beholder funksjonene i modulen
+# Importere hele biblioteket men beholder funksjonene i biblioteket
 import random
 random.randint(1, 10)
 
-# Importere hele modulen men gir den et kortere navn
+# Importere hele biblioteket men gir det et kortere navn
 import random as r
 r.randint(1, 10)
 ```
-Det er å foretrekke å importere bare de funksjoner man trenger for eksempel `from random import randint` og å unngå å importere alle funksjoner som `from random import *`.
+
+Det er å anbefalle å enten importere enkelt funksjoner direkte fra biblioteket: `from random import randint` eller å importere biblioteket gjennom: `import random` eller `import random as r` over `from random import *`. Når man importerer alle funksjonene fra et bibliotek kan det bli kollisjoner mellom funksjoner med samme navn fra ulike bibliotek. 
+
 
 ## Tilfeldig tall
 Et tall som velges tilfeldig
 
 ### Beskrivelse
-Tilfeldige tall kan brukes i spill eller i noen matematiske simuleringer. For å få tilgang på funksjoner som genererer tilfeldige tall må de i python [importeres](#importere-moduler) fra modulen `random`. Det finnes flere ulike måter å generere tilfeldige tall og her er noen eksempel:
+Tilfeldige tall kan brukes i spill eller i noen matematiske simuleringer. For å få tilgang på funksjoner som genererer tilfeldige tall må de i python [importeres](#importere-bibliotek) fra biblioteket `random`. Det finnes flere ulike måter å generere tilfeldige tall og her er noen eksempel:
 ```python
 from random import random, randint, choice
 
