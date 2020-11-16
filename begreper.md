@@ -46,6 +46,10 @@ Programmering hvor operasjonene settes sammen grafisk gjennom ulike blokker
 ### Beskrivelse
 I blokkprogrammering består [operasjoner](#operasjon) av blokker som settes sammen grafisk i et eget program. Ofte er det lettere å lære seg å programmere gjennom å bruke blokkprogrammering, da betydningen til operasjonene kan visualiseres gjennom utseendet til de ulike blokkene.
 
+
+### Eksempel 
+![Blokkprogrammering](bilder/blokk_program.png)
+
 ## Syntaks
 Regler for hvordan operasjoner skrives i tekstprogrammering
 
@@ -53,6 +57,7 @@ Regler for hvordan operasjoner skrives i tekstprogrammering
 I [tekstprogrammering](#tekstprogrammering) skrives alle operasjoner med bokstaver og tegn. Syntaksen til et tekst-programmeringsspråk er regler som bestemmer hvordan operasjonene kan skrives. På samme måte som syntaksen til skriftlig norsk bestemmer hvordan norsk kan skrives, for eksempel en setning starter med stor bokstav og slutter med et punktum, bestemmer syntaksen til tekstprogrammering hvordan operasjoner kan skrives i en tekstfil.
 
 Syntaksen for å tildele to variabler hver sin verdi og å lage en kommentar er forskjellige for ulike programmeringsspråk. Under vises hvordan det ser ut for Python og JavaScript. Det er flere ting som er likt men også noe som skiller de to språkene.
+
 #### Python-syntaks
 ```python
 # Alder og høyde til en person
@@ -87,26 +92,26 @@ Tolkede [tekstprogrammeringsspråk](#tekstprogrammering) trenger en kommandotolk
 ```bash
 > python mitt-program.py
 ```
-TODO: Definere terminal?
+[//]: <> (TODO: Definere terminal?)
 
 ## Programmeringsspråk
 Et språk som beskriver hvordan operasjoner settes sammen i et program.
 
 ### Beskrivelse
-Når man [programmerer](#programmere) må man velge et programmeringsspråk man skal bruke for å sette sammen de ulike [operasjonene](#operasjon). Det finnes mange ulike programmeringsspråk som kan brukes til enten [tekstprogrammering](#tekstprogrammering) eller [blokkprogrammering](#blokkprogrammering). De finnes aller flest tekst-programmeringsspråk i verden da disse er enklere å bruke når man skal lage større program.
+Når man [programmerer](#programmere) må man velge et programmeringsspråk man skal bruke for å sette sammen de ulike [operasjonene](#operasjon). Det finnes mange ulike programmeringsspråk som kan brukes til enten [tekstprogrammering](#tekstprogrammering) eller [blokkprogrammering](#blokkprogrammering). De finnes aller flest tekst-programmeringsspråk da disse er enklere å bruke når større program skal lages.
 
 #### Eksempler på tekst-programmeringsspråk som trenger en kommandotolk
-* Python - brukes for eksempel til å regne matematikk
-* JavaScript - brukes for eksempel til å styre en nettside
+* Python - regne matematikk
+* JavaScript - styre nettsider
 
 #### Eksempler på tekst-programmeringsspråk som må kompileres
-* C - brukes for eksempel til å programmere kjernen i de fleste operativsystemene
-* C++ - brukes for eksempel til å programmere dataspill
+* C - programmere kjernen i de fleste operativsystemene
+* C++ - programmere dataspill
 
 #### Eksempler på blokk-programmeringsspråk
-* Scratch - brukes for eksempel til å programmere enkle spill
-* Trinket-block - brukes for eksempel til å lære seg programere
-* Blokkuino - brukes til å styre en arduino
+* Scratch - programmere enkle spill
+* Trinket-block - lære seg å programere
+* Blokkuino - brukes til å styre en arduino microship
 
 ## Algoritme
 En liste med operasjoner som utfører en oppgave.
@@ -120,7 +125,8 @@ Listen med operasjoner må komme i en gitt rekkefølge, for eksempel er følgend
 Her er det opplagt at man må blande ingrediensene i en oppskrift før man setter inn formen i ovnen, men for en som starter å lære seg programmering kan det være vanskelig å forstå i hvilken rekkefølge operasjonene i en algoritme skal skrives. 
 
 En algoritme kan være noe konkret, som noen linjer med kode som utfør oppgaven eller en abstrakt beskrivelse av hvilke operasjoner som skal utføres og i hvilken rekkefølge de skal gjøres. 
-TODO: Gi eksempler eller ta bort
+
+[//]: <> (TODO: Gi eksempler eller ta bort)
 
 Mange internettbedrifter bruker algoritmer når de skal presentere varer eller artikler til deg. For eksempel bruker strømmetjenester som Netflix og Spotify slike når de skal presentere filmer eller musikk de mener passer deg. Disse algoritmene baserer seg på at bedriftene husker hva du har valgt tidligere og hva andre personer som likner deg (samme alder, kjønn, bosted) har valgt.
 
@@ -186,13 +192,13 @@ print("Jeg er 13 år!")
 Her sendes verdien `"Jeg er 13 år!"` til [funksjonen](#funksjon) `print` som så viser den på skjermen.    
 
 ## Kontrollstruktur
-Bestemmer hvilke deler av et program som skal utføres
+Bestemmer hvilke deler av et program som skal utføres.
 
 ### Beskrivelse
-Vanligvis utføres operasjonene i et program fra toppen av tekstfilen og nedover. Hver linje i tekstfilen utføres en gang. Kontrollstrukturer består av [if-setninger](#if-setning) og [løkker](#l%c3%b8kke) og de kan bestemme at noen linjer skal utføres og andre ikke, eller at noen linjer skal utføres mange ganger. Slik bestemmer kontrollstrukturer flyten i et program. 
+Operasjoner i et program utføres fra toppen av tekstfilen og nedover. Hver linje i tekstfilen utføres en gang. Kontrollstrukturer kan bestemme at noen linjer skal utføres og andre ikke, eller at noen linjer skal utføres mange ganger.  Slik bestemmer kontrollstrukturer flyten i et program, og de består blandt annet av [if-setninger](#if-setning) og [løkker](#l%c3%b8kke). 
 
 ## Uttrykk
-En eller flere operasjoner som er satt sammen og som returnerer en verdi
+En eller flere operasjoner som er satt sammen og som returnerer en verdi.
 
 ### Beskrivelse
 Et uttrykk (*expression* eng.) består av en eller flere [operasjoner](#operasjon) som er satt sammen. Alle enkeltoperasjoner i et uttrykk resulterer i en verdi. 
@@ -208,25 +214,27 @@ Her er to linjer som begge [tilordner](#tilordne) to variabler verdier. Verdiene
 Er et navngitt sted i arbeidsminnet som lagrer verdier.
 
 ### Beskrivelse
-En variabel er et navngitt sted i arbeidsminnet som lagrer en eller flere [verdier](#verdi) i et program. Navnet til variabelen brukes så i [uttrykk](#uttrykk) for å representere verdien til variabelen.
+En variabel er et navngitt sted i arbeidsminnet som lagrer en eller flere [verdier](#verdi) i et program. Navnet til variabelen kan så brukes i f eks [uttrykk](#uttrykk) for å representere verdien til variabelen.
 
-Du bestemmer selv hva navnet til en variabel skal være, men [syntaksen](#syntaks) til programmeringsspråket legger begrensninger på hva et [variabelnavn](#variabelnavn) kan være. Når man lager en variabel for første gangen sier man at man [definerer](#definere) den og man kan ikke bruke en variabel før den er definert. Navnet til en variabel brukes når du:
+En bestemmer selv hva navnet til en variabel skal være, men [syntaksen](#syntaks) til programmeringsspråket legger begrensninger til hva et [variabelnavn](#variabelnavn) kan være. Før man kan bruke en variablel må den [definerers](#definere). Navnet til en variabel brukes når du:
+
+[//]: <> (TODO: Skal vi også forklar deklareres, for det er egentlig det som skal stå over. )
 
 1. [definerer](#definerer) variablen
 2. bruker verdien til variablen
 3. endrer verdien til variablen. 
 
-Disse tre måtene kan illustreres med følgende eksempel:
+De tre måtene å bruke en variabel på illustreres med følgende eksempel:
 ```python
 lån = 500000.
 rente_prosent = 0.05
 rente = lån*rente_prosent
 lån = lån + rente
 ```
-Her defineres første tre variabler: `lån`, `rente_prosent` og `rente`. På tredje rad brukes variabelen `lån` og `rente_prosent` i et [uttrykk](#uttrykk) for å regne ut hva renten skal være. På siste rad endres verdien til variabelen `lån` ved at renten legges til det første lånet. 
+Her defineres først tre variabler: `lån`, `rente_prosent` og `rente`. På tredje rad brukes variabelen `lån` og `rente_prosent` i et [uttrykk](#uttrykk) for å regne ut hva renten skal være. På siste rad endres verdien til variabelen `lån` ved at renten legges til den første verdien til lånet. 
 
 #### Variabel i matematikken
-Ordet variabel brukes også i algebra i matematikken. Da betegner det ofte en ukjent tallverdi, for eksempel *x, y*. Innen programmering har en variabel *alltid* en verdi og representerer altså ikke noe ukjent. 
+Ordet variabel brukes også i algebraen i matematikken. Da betegner det ofte en ukjent tallverdi, for eksempel *x, y*. Innen programmering har en variabel *alltid* en verdi og representerer altså ikke noe ukjent. 
 
 ## Variabelnavn
 Navnet til en variabel.
@@ -245,12 +253,12 @@ For Python gjelder disse kravene til et variabelnavn
 Bruk variabelnavn som beskriver hva verdien til variabelen skal brukes til. For eksempel er navn som `a`, `b` oftest dårlige navn, mens `lån`, `navn` eller `poengsum` er bra navn. 
 
 ## Verdi
-En konkret representasjon av data
+En konkret representasjon av data.
 
 ### Beskrivelse
 En verdi representerer en størrelse som kan manipuleres av et program. Verdier er ofte det man til daglig kaller data. En datamaskin er altså en maskin som bruker verdier! Verdier har ulike [datatyper](#datatype) som beskriver hva verdien kan brukes til:
 
-Eksempler på datatyper er:
+#### Eksempler på datatyper:
 * [tall](#tall): `2, -5, 0.45, 1e-3`
 * tekst eller [strenger](#streng): `"A", "Jeg heter Lise."` 
 * [boolean](#boolean): `True, False`
@@ -265,18 +273,20 @@ Alle verdier har en datatype som beskriver hva den kan brukes til. De vanligste 
 * [strenger](#streng): Brukes til å representere tekst-verdier.
 * [boolean](#boolean): Brukes til å beskrive om noe er *sant* (`True`) eller *falskt* (`False`).
 * [lister](#liste): Brukes å samle verdier i en ordnet rekkefølge.
-* [assosiative lister](#assosiativ liste). Brukes til å samle verdier som er assosiert med en [nøkkel](#nøkkel). 
+* [assosiative lister](#assosiativ-liste). Brukes til å samle verdier som er assosiert med en [nøkkel](#nøkkel). 
 
 ## Definere
 Operasjon som lager en variabel eller funksjon.
 
+[//]: <> (TODO: Skal vi også forklar deklareres?)
+
 ### Beskrivelse
 For å kunne bruke en [variabel](#variabel) eller [funksjon](#funksjon) må de først defineres. Når en variabel defineres knyttes et [variabelnavn](#variabelnavn) til en verdi som lagres i [arbeidsminnet](#arbeidsminne). Når en funksjon defineres knyttes et [funksjonsnavn](#funksjonsnavn) til et sett med operasjoner. Navnet brukes så i programmet for å representere enten verdien til variabelen eller alle operasjonen til funksjonen.  
 
-I tillegg til å få et navn må en variabel også bli tilordnet en verdi ([tilordnes](#tilordne)) når den defineres. I noen [programmeringsspråk](#programmeringsspråk) kan man si ifra at man skal bruke en variabel uten å gi den en verdi. Da heter det å *deklarere* en variabel. 
+Når en variabel blir definert må den også bli [tilordnet](#tilordne) en verdi. I noen [programmeringsspråk](#programmeringsspråk) kan man si ifra at man skal bruke en variabel uten å gi den en verdi. Da heter det å *deklarere* en variabel.
 
 ## Tilordne
-Gir eller endrer en verdi til en variabel
+Gir eller endrer en verdi til en variabel.
 
 ### Beskrivelse
 Når en verdi lagres i en variabel heter det at denne variabelen tilordnes en verdi. Dette gjøres med en [tilordningsoperator](#tilordningsoperator), som i Python er `=`. På venstre side av tilordningsoperatoren må [variabelens navn](#variabelnavn) skrives. På høyre side må det stå en verdi eller et uttrykk som resulterer i en verdi. Denne verdien blir så lagret i variabelen.
@@ -433,7 +443,6 @@ TODO: Legg til forklaring
 
 #### Nested liste
 TODO: Legg til forklaring
-
 
 ## Assosiativ liste
 En samling verdier som hver er assosiert med en nøkkel 
