@@ -18,21 +18,21 @@ Når et program kjøres lastes det inn i arbeidsminnet til en datamaskin. Jo fle
 Å lage et program 
 
 ### Beskrivelse
-Det å lage et [program](#program) er å programmerer eller å kode. Da settes ulike [operasjoner](#operasjon) sammen som får datamaskinen til å utføre noe. Operasjonene kan enten skrives i en tesktfil, [tekstprogrammering](#teksprogrammering) eller settes sammen grafiskt gjennom blokker, [blokkprogrammering](#blokkprogrammering). Blokkprogrammering kan være enklere å bruke når programmering læres og tekstprogrammering brukes gjerne for mer komplekse programmer. Det finnes flere ulike typer [programmeringsspråk](#programmeringsspråk) innen både blokkprogrammering, og tekstprogrammering.
+Det å lage et [program](#program) er å programmerer eller å kode. Da settes ulike [operasjoner](#operasjon) sammen som får datamaskinen til å utføre noe. Operasjonene kan enten skrives i en tesktfil, [tekstbasert programmering](#tekstbasert-programmering) eller settes sammen grafiskt gjennom blokker, [blokkbasert programmering](#blokkbasert-programmering). Blokkbasert programmering kan være enklere å bruke når programmering læres og tekstbasert programmering brukes gjerne for mer komplekse programmer. Det finnes flere ulike typer [programmeringsspråk](#programmeringsspråk) innen både blokkbasert programmering, og tekstbasert programmering.
 
-## Tekstprogrammering
+## Tekstbasert programmering
 Programmering hvor operasjoner skrives i tekstfiler
 
 ### Beskrivelse
-I tekstprogrammering består [operasjoner](#operasjon) av instruksjoner satt sammen av ulika ord og tall. Operasjonene utføres linje for linje fra topp til bunn av filen, og hver linje leses fra høyre mot venstre. 
+I tekstbasert programmering består [operasjoner](#operasjon) av instruksjoner satt sammen av ulika ord og tall. Operasjonene utføres linje for linje fra topp til bunn av filen, og hver linje leses fra høyre mot venstre. 
 
-Det finnes to ulike typer tekstprogrammeringsspråk:
+Det finnes to ulike typer tekstbasert programmeringsspråk:
 1. Tolkede språk: for eksempel [Python](#python) eller [JavaScript](#javascript)
 2. Kompilerte språk: [C](#c) eller [C++](#c++)
 
-For tolkede språk kjøres tekstfilen gjennom en [kommandotolk](#kommandotolk) (*interpreter* eng.), da kalles filen ofte for et skript, eller kan filen gjøres om til et kjørbart program ved at den [kompileres](#kompilere). Vanligvis lages skript bare når vi bruker tekstprogrammering, mens alle apper som installeres på en datamaskin er eksempler på kompilerte programmer.
+For tolkede språk kjøres tekstfilen gjennom en [kommandotolk](#kommandotolk) (*interpreter* eng.), da kalles filen ofte for et skript, eller kan filen gjøres om til et kjørbart program ved at den [kompileres](#kompilere). Vanligvis lages skript bare når vi bruker tekstbasert programmering, mens alle apper som installeres på en datamaskin er eksempler på kompilerte programmer.
 
-Tekstprogrammering følger faste regler som bestemmes av hvilket [programmeringsspråk](#programmeringspråk) du koder i. Disse reglene kalles for [syntaksen](#syntaks) til programmeringsspråket. 
+tekstbasert programmering følger faste regler som bestemmes av hvilket [programmeringsspråk](#programmeringspråk) du koder i. Disse reglene kalles for [syntaksen](#syntaks) til programmeringsspråket. 
 
 ## Kompilere
 Lage et kjørbart program av en tekstfil
@@ -40,21 +40,21 @@ Lage et kjørbart program av en tekstfil
 ### Beskrivelse
 En eller flere tekstfiler blir kompilert når de blir oversatt til et kjørbart program. Dette programmet trenger da ikke noe annet programmet for å bli kjørt. 
 
-## Blokkprogrammering
+## Blokkbasert programmering
 Programmering hvor operasjonene settes sammen grafisk gjennom ulike blokker
 
 ### Beskrivelse
-I blokkprogrammering består [operasjoner](#operasjon) av blokker som settes sammen grafisk i et eget program. Ofte er det lettere å lære seg å programmere gjennom å bruke blokkprogrammering, da betydningen til operasjonene kan visualiseres gjennom utseendet til de ulike blokkene.
+I blokkbasert programmering består [operasjoner](#operasjon) av blokker som settes sammen grafisk i et eget program. Ofte er det lettere å lære seg å programmere gjennom å bruke blokkbasert programmering, da betydningen til operasjonene kan visualiseres gjennom utseendet til de ulike blokkene.
 
 
 ### Eksempel 
-![Blokkprogrammering](bilder/blokk_program.png)
+![Blokkbasert programmering](bilder/blokk_program.png)
 
 ## Syntaks
-Regler for hvordan operasjoner skrives i tekstprogrammering
+Regler for hvordan operasjoner skrives i tekstbasert programmering
 
 ### Beskrivelse
-I [tekstprogrammering](#tekstprogrammering) skrives alle operasjoner med bokstaver og tegn. Syntaksen til et tekst-programmeringsspråk er regler som bestemmer hvordan operasjonene kan skrives. På samme måte som syntaksen til skriftlig norsk bestemmer hvordan norsk kan skrives, for eksempel en setning starter med stor bokstav og slutter med et punktum, bestemmer syntaksen til tekstprogrammering hvordan operasjoner kan skrives i en tekstfil.
+I [tekstbasert programmering](#tekstbasert-programmering) skrives alle operasjoner med bokstaver og tegn. Syntaksen til et slikt språk er regler som bestemmer hvordan operasjonene kan skrives. På samme måte som syntaksen til skriftlig norsk bestemmer hvordan norsk kan skrives, for eksempel en setning starter med stor bokstav og slutter med et punktum, bestemmer syntaksen til tekstbasert programmering hvordan operasjoner kan skrives i en tekstfil. Hvis noe som er skrevet inn i programmet ikke følger reglene for syntaksen for programeringsspråket oppstår er [syntaksfeil](#syntaks-feil). Til syntaksen hører også spesielle [nøkkelord](#nøkkelord) som betyr noe spesielt for det programmeringsspråket. 
 
 Syntaksen for å tildele to variabler hver sin verdi og å lage en kommentar er forskjellige for ulike programmeringsspråk. Under vises hvordan det ser ut for Python og JavaScript. Det er flere ting som er likt men også noe som skiller de to språkene.
 
@@ -72,23 +72,23 @@ let alder = 9;
 let høyde = 1.34;
 ```
 
-#### Syntaksfeil
-En syntaksfeil er en [programmeringsfeil](#programmeringsfeil) som oppstår når en bruker skriver noe som ikke er lov i henhold til syntaksreglene. Program med syntaksfeil vil ikke kunne kjøres og man får som oftest informasjon om hvor i programmmet synktaksfeilen er.
+## Nøkkelord
+Et ord som har en spesiell betydning i et programmeringsspråk
 
-```python
-print("Hei verden!"
-```
-Hvis denne pythonkoden kjøres vil føljende feilmelding vises:
-```
-SyntaxError: unexpected EOF while parsing
-```
-Meldingen sier først at det er en syntaksfeil og så hvorfor feilen oppsto. 
+### Beskrivelse
+De fleste [tekst-programmeringsspråk](#tekstbasert-programmeringsspråk) har nøkkelord (*keyword* eng.) som er reserverte til spesielle [operasjoner](#operasjon). Et nøkkelord kan ikke brukes til [variabelnavn](#variabelnavn) eller [funksjonsnavn](#funksjonsnavn). Ord som brukes til å lage [kontrollstrukturer](#kontrollstruktur) er alle nøkkelord.
+
+#### Eksempel på nøkkelord i Python
+* `def`: definerer en [funksjon](#funksjon)
+* `if`: starter en [if-setning](#if-setning)
+* `else`: lager en else-kodeblokk knyttet til en if-setning
+* `True`, `False`: [Boolske](#boolean)-verdier
 
 ## Kommandotolk
 Et program som kjører et skript.
 
 ### Beskrivelse
-Tolkede [tekstprogrammeringsspråk](#tekstprogrammering) trenger en kommandotolk for å kunne kjøres. Tekstfilene med programmet kalles da for skript. Kommandotolken til et pythonskript heter enkelt og greit `python`. Hvis [Python](#python) er installert og tilgjengelig kan et pythonskript kjøres i en terminal gjennom å bruke kommandotolken `python` foran filnavnet til skriptet.
+Tolkede [programmeringsspråk](#tekstbasert-programmering) trenger en kommandotolk for å kunne kjøres. Tekstfilene med programmet kalles da for skript. Kommandotolken til et pythonskript heter enkelt og greit `python`. Hvis [Python](#python) er installert og tilgjengelig kan et pythonskript kjøres i en terminal gjennom å bruke kommandotolken `python` foran filnavnet til skriptet.
 ```bash
 > python mitt-program.py
 ```
@@ -98,17 +98,22 @@ Tolkede [tekstprogrammeringsspråk](#tekstprogrammering) trenger en kommandotolk
 Et språk som beskriver hvordan operasjoner settes sammen i et program.
 
 ### Beskrivelse
-Når man [programmerer](#programmere) må man velge et programmeringsspråk man skal bruke for å sette sammen de ulike [operasjonene](#operasjon). Det finnes mange ulike programmeringsspråk som kan brukes til enten [tekstprogrammering](#tekstprogrammering) eller [blokkprogrammering](#blokkprogrammering). De finnes aller flest tekst-programmeringsspråk da disse er enklere å bruke når større program skal lages.
+Når man [programmerer](#programmere) må man velge et programmeringsspråk man skal bruke for å sette sammen de ulike [operasjonene](#operasjon). Det finnes mange ulike programmeringsspråk som kan brukes til enten [tekstbasert programmering](#tekstbasert-programmering) eller [blokkbasert programmering](#blokkbasert-programmering). De finnes aller flest tekst-programmeringsspråk da disse er enklere å bruke når større program skal lages.
 
-#### Eksempler på tekst-programmeringsspråk som trenger en kommandotolk
+
+#### Tekstbasert programmeringsspråk
+
+Eksempler på tekst-programmeringsspråk som trenger en kommandotolk
 * Python - regne matematikk
 * JavaScript - styre nettsider
 
-#### Eksempler på tekst-programmeringsspråk som må kompileres
+Eksempler på tekst-programmeringsspråk som må kompileres
 * C - programmere kjernen i de fleste operativsystemene
 * C++ - programmere dataspill
 
-#### Eksempler på blokk-programmeringsspråk
+#### Blokkbasert programmeringsspråk
+
+Eksempler på blokk-programmeringsspråk
 * Scratch - programmere enkle spill
 * Trinket-block - lære seg å programere
 * Blokkuino - brukes til å styre en arduino microship
@@ -365,9 +370,59 @@ En feil som oppstår når et program gjøre en feil
 
 ### Beskrivelse
 Det er vanlig å skrive program med feil (*bug* eng.) i seg. Det finnes ulike typer programmeringsfeil og her deler vi inn i to ulike typer:
-1. [Syntaksfeil](#syntaksfeil): Når kode bryter mot syntaksen til et [tekstprogrammeringsspråk](#tekstprogrammering).
+1. [Syntaksfeil](#syntaksfeil): Når kode bryter mot syntaksen til et [tekstbasert programmeringsspråk](#tekstbasert-programmeringsspråk).
 2. [Logiske feil](#logiske-feil): Når et program gjør noe som ikke gir mening.
-Når et feil oppstår er det viktig å kunne [feilsøke](#feils%c3%b8ke) (*debug* eng.). 
+Når et feil oppstår er det viktig å kunne [feilsøke](#feils%c3%b8ke) (*debug* eng.).
+
+#### Syntaksfeil
+En syntaksfeil er en feil som oppstår når en bruker skriver noe som ikke er lov i henhold til [syntaksreglene](#syntaks). Program med syntaksfeil vil ikke kunne kjøres og man får som oftest informasjon om hvor i programmmet synktaksfeilen er. Her følger noen syntaksfeil fra Python med følgende feilmelding og forklaring.
+
+```python
+print("Hei verden!"
+tall = 12
+```
+```
+tall = 12
+   ^
+SyntaxError: invalid syntax
+```
+Her mangler det en parentese til `print` funksjonen. Meldingen er litt missvisende da feilen faktisk skjer på linjen over. Men Python-[kommandotolken](#kommandotolk) prøver å avslutte linjen med `print` gjennom å gå til neste linje.
+```python
+if tall > 10
+    print("Tallet er større enn 10!")
+```
+```
+if tall > 10
+           ^
+SyntaxError: invalid syntax
+```
+Her mangler det et kolon `:` på slutten av `if`-setningen.
+```python
+if poeng > 36:
+    print("Du klarte poenggrensen!")
+esle:
+    print("Du klarte ikke poenggrensen!")
+```
+```
+esle:
+    ^
+SyntaxError: invalid syntax
+```
+Her er `else` stavet feil.
+```python
+addere(a, b):
+    return a+b
+```
+```
+addere(a, b):
+            ^
+SyntaxError: invalid syntax
+```
+Her er [nøkkelordet](#nøkkelord) `def` blitt utelatt. 
+
+#### Logiske feil
+Når et program gjør noe som ikke gir mening.
+Når et feil oppstår er det viktig å kunne [feilsøke](#feils%c3%b8ke) (*debug* eng.).
 
 ## Feilsøke
 Finne programmeringsfeil i et program
@@ -410,6 +465,17 @@ Datatype som brukes til å representere sanne og falske verdier
 
 ### Beskrivelse
 Verdier av datatypen boolean kalles boolske verdier og de brukes til å representere sanne og falske verdier. Man bruker boolske verdier til å svare på [betingelser](#betingelse) eller til å representere svar på *ja- og nei-spørsmål*. Boolske verdier er også resultatet av [logiske operatorer](#logiske-operatorer). 
+
+#### Eksempel på boolske verdier i Python
+```python
+er_høy = True
+if er_høy:
+    print("Du er et høyt menneske!")
+
+liker_fisk = False
+if liker_fisk:
+    print("Du liker fisk!")
+```
 
 ## Liste
 En samling av verdier som er ordnet i en rekkefølge 
@@ -620,7 +686,7 @@ Bruk funksjonsnavn som beskriver hva funksjonen skal gjøre. Ettersom en funksjo
 Utføre operasjoner knyttet til en funksjon
 
 ### Beskrivelse
-En funksjon lagrer operasjoner og når disse skal utføres må funksjonen kalles. Andre ord som ofte brukes for dette er å utføre funksjonen eller å kjøres den. Innen [tekstprogrammering](#tekstprogrammering) kalles en funksjon gjennom å skrive to parenteser etter funksjonsnavnet.
+En funksjon lagrer operasjoner og når disse skal utføres må funksjonen kalles. Andre ord som ofte brukes for dette er å utføre funksjonen eller å kjøres den. Innen [tekstbasert programmering](#tekstbasert-programmering) kalles en funksjon gjennom å skrive to parenteser etter funksjonsnavnet.
 ```python
 # Print funksjonen kalles
 print("Hei verden")
@@ -700,7 +766,7 @@ for i in range(1,11):
     else:
         print ("Jeg tilhører kodeblokk 3")
 ```
-I andre [tekst-programmeringsspråk](#programmeringsspr%c3%a5k), som for eksempel C++, Java, JavaScript, brukes krøllparenteser `{<kodeblokk>}` til å avgrense en kodeblokk. 
+I andre tekst baserte [programmeringsspråk](#tekst-baserte-programmeringsspråk), som for eksempel C++, Java, JavaScript, brukes krøllparenteser `{<kodeblokk>}` til å avgrense en kodeblokk. 
 
 ## Innrykk
 Mellomrom først i en kodelinje
