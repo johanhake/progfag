@@ -54,7 +54,7 @@ I blokkbasert programmering består [operasjoner](#operasjon) av blokker som set
 Regler for hvordan operasjoner skrives i tekstbasert programmering
 
 ### Beskrivelse
-I [tekstbasert programmering](#tekstbasert-programmering) skrives alle operasjoner med bokstaver og tegn. Syntaksen til et slikt språk er regler som bestemmer hvordan operasjonene kan skrives. På samme måte som syntaksen til skriftlig norsk bestemmer hvordan norsk kan skrives, for eksempel en setning starter med stor bokstav og slutter med et punktum, bestemmer syntaksen til tekstbasert programmering hvordan operasjoner kan skrives i en tekstfil. Hvis noe som er skrevet inn i programmet ikke følger reglene for syntaksen for programeringsspråket oppstår er [syntaksfeil](#syntaks-feil). Til syntaksen hører også spesielle [nøkkelord](#nøkkelord) som betyr noe spesielt for det programmeringsspråket. 
+I [tekstbasert programmering](#tekstbasert-programmering) skrives alle operasjoner med bokstaver og tegn. Syntaksen til et slikt språk er regler som bestemmer hvordan operasjonene kan skrives. På samme måte som syntaksen til skriftlig norsk bestemmer hvordan norsk kan skrives, for eksempel en setning starter med stor bokstav og slutter med et punktum, bestemmer syntaksen til tekstbasert programmering hvordan operasjoner kan skrives i en tekstfil. Hvis noe som er skrevet inn i programmet ikke følger reglene for syntaksen for programeringsspråket oppstår er [syntaks-feil](#syntaks-feil). Til syntaksen hører også spesielle [nøkkelord](#nøkkelord) som betyr noe spesielt for det programmeringsspråket. 
 
 Syntaksen for å tildele to variabler hver sin verdi og å lage en kommentar er forskjellige for ulike programmeringsspråk. Under vises hvordan det ser ut for Python og JavaScript. Det er flere ting som er likt men også noe som skiller de to språkene.
 
@@ -366,17 +366,20 @@ print(6e-4)
 Her byttes potensdelen ($\cdot 10^9$ og $\cdot 10^{-5}$) i den vitenskapelige notasjonen ut med `e9` og `e-5`.
 
 ## Programmeringsfeil
-En feil som oppstår når et program gjøre en feil
+En feil som oppstår når et program kjøres
 
 ### Beskrivelse
-Det er vanlig å skrive program med feil (*bug* eng.) i seg. Det finnes ulike typer programmeringsfeil og her deler vi inn i to ulike typer:
-1. [Syntaksfeil](#syntaksfeil): Når kode bryter mot syntaksen til et [tekstbasert programmeringsspråk](#tekstbasert-programmeringsspråk).
-2. [Logiske feil](#logiske-feil): Når et program gjør noe som ikke gir mening.
-Når et feil oppstår er det viktig å kunne [feilsøke](#feils%c3%b8ke) (*debug* eng.).
+Det er vanlig å skrive program med feil (*bug* eng.) i seg. Den eneste måten å lære seg å bli en god progammerere på er å gjøre mange feil. For å lære seg mer av feilene er det viktig å kunne [feilsøke](#feils%c3%b8ke) (*debug* eng.) og å kjenne til hvilken type feil det er som har oppstått. 
 
-#### Syntaksfeil
-En syntaksfeil er en feil som oppstår når en bruker skriver noe som ikke er lov i henhold til [syntaksreglene](#syntaks). Program med syntaksfeil vil ikke kunne kjøres og man får som oftest informasjon om hvor i programmmet synktaksfeilen er. Her følger noen syntaksfeil fra Python med følgende feilmelding og forklaring.
+Det finnes ulike typer programmeringsfeil og her deler vi inn i tre ulike typer:
+1. [Syntaks-feil](#syntaks-feil): (*syntax error* eng.) Når kode bryter mot syntaksen til et [tekstbasert programmeringsspråk](#tekstbasert-programmeringsspråk).
+2. [Kjøretids-feil](#kjøretids-feil): (*runtime error* eng.) Når en feil oppstår mens et program kjører og som gjør at det avbrytes. 
+3. [Logisk feil](#logisk-feil): (*logic error* eng.) Når et program gjør noe som ikke var ment fra den som programmerte det men programmet avbrytes ikke.
 
+#### Syntaks-feil
+En syntaks-feil er en feil som oppstår når en bruker skriver noe som ikke er lov i henhold til [syntaksreglene](#syntaks). Program med syntaks-feil vil ikke kunne kjøres og man får som oftest informasjon om hvor i programmmet synktaksfeilen er. Her følger noen syntaks-feil fra Python med påfølgende feilmelding og forklaring.
+
+##### Mangler en parentese
 ```python
 print("Hei verden!"
 tall = 12
@@ -386,7 +389,9 @@ tall = 12
    ^
 SyntaxError: invalid syntax
 ```
-Her mangler det en parentese til `print` funksjonen. Meldingen er litt missvisende da feilen faktisk skjer på linjen over. Men Python-[kommandotolken](#kommandotolk) prøver å avslutte linjen med `print` gjennom å gå til neste linje.
+Meldingen er litt missvisende da feilen faktisk skjer på linjen over. Men Python-[kommandotolken](#kommandotolk) prøver å avslutte linjen med `print` gjennom å gå til neste linje.
+
+##### Mangler et kolon `:` på slutten av en `if`-setningen.
 ```python
 if tall > 10
     print("Tallet er større enn 10!")
@@ -396,7 +401,9 @@ if tall > 10
            ^
 SyntaxError: invalid syntax
 ```
-Her mangler det et kolon `:` på slutten av `if`-setningen.
+
+##### Feilstave [nøkkkelordet](#nøkkelord) `else`.
+
 ```python
 if poeng > 36:
     print("Du klarte poenggrensen!")
@@ -408,7 +415,7 @@ esle:
     ^
 SyntaxError: invalid syntax
 ```
-Her er `else` stavet feil.
+##### Utelate [nøkkelordet](#nøkkelord) `def`. 
 ```python
 addere(a, b):
     return a+b
@@ -418,29 +425,105 @@ addere(a, b):
             ^
 SyntaxError: invalid syntax
 ```
-Her er [nøkkelordet](#nøkkelord) `def` blitt utelatt. 
 
-#### Logiske feil
-Når et program gjør noe som ikke gir mening.
-Når et feil oppstår er det viktig å kunne [feilsøke](#feils%c3%b8ke) (*debug* eng.).
+#### Kjøretids-feil
+Et kjøretids-feil oppstår når en feil fører til at programmet avbrytes. Det er altså feil som har korrekt syntakst men som ikke gir mening å utføre. 
+
+##### Bruker en [variabel](#variabel) som ikke er [definert](#definere).
+```python
+navn = "Svein"
+print(f"Ditt navn er: {etternavn}")
+```
+```
+print(f"Ditt navn er: {etternavn}")
+NameError: name 'etternavn' is not defined
+```
+
+##### Bruker en [operator](#operatorer) på feil [datatyper](#datatype).
+```python
+brus = 34.50
+antall = input("Hvor mange brus vil du ha:")
+print(f"Du bruker {brus*antall} kr på brus.")
+```
+```
+print(f"Du bruker {brus*antall} kr på brus.")
+TypeError: can't multiply sequence by non-int of type 'float'
+```
+
+##### Bruker en [indeks](#indeks---liste) til et [element](#element---liste) som ikke finnes i en [liste](#liste).
+```python
+poeng_liste = [34, 54, 23, 26, 45]
+poeng = poeng_liste[5]
+```
+```
+poeng = poeng_liste[5]
+IndexError: list index out of range
+```
+##### Deler et tall med verdien 0
+```python
+antall = 0
+total_pris = 145
+print(f"Dere er {antall} personer som hver skal betale: {total_pris/antall} hver.")
+```
+```
+print(f"Dere er {antall} personer som hver skal betale: {total_pris/antall} hver.")
+ZeroDivisionError: division by zero
+```
+#### Logisk feil
+Et logisk feil oppstår når et program gjør noe som ikke var ment fra den som programmerte det. Logiske feil er ofteste de vanskeligste å finne ettersom programmet ikke avbrytes, som ved [syntaks-feil](#syntaks-feil), men det generer oftest ikke et forventet resultat. Her følger noen logiske feil fra Python med påfølgende forklaring.
+
+##### Bruke feil variabelnavn.
+```python
+alder = 45
+høyde = 177
+if høyde >=18:
+    print("Du er myndig!")
+```
+
+##### Bruker feil innrykk på en kodeblokk.
+```python
+sum = 0
+liste = [1, 5, 7, 2, 9]
+størst = liste[0]
+for tall in liste:
+    sum += tall
+if tall > størst:
+    størst = tall
+```
+
+##### Bruker sammenligningsoperatorer feil.
+```python
+alder = 16
+if alder <= 18:
+    print("Du er myndig!")
+```
+
+##### Bruker komma istedenfor punktum for flyttall.
+```python
+høyde = 1,77
+print(f"Din høyde er: {høyde}.")
+```
 
 ## Feilsøke
 Finne programmeringsfeil i et program
 
 ### Beskrivelse
-Å feilsøke (*debug* eng.) et program er å prøve å finne programmeringsfeil. Dette kan ofte være frustrerende og tidkrevende, men en enkel og god [læringsalgoritme](#algoritme) for å lære seg programmering er å:
-1. prøve programmere noe
-2. gjøre feil
-3. finn feilene
-4. rette feilene
-Det finnes ulike strategier for å feilsøke.
-TODO: Forklare ulike strategier for feilsøking.
+Å feilsøke (*debug* eng.) et program er å prøve å finne et programmeringsfeil. Dette kan ofte være frustrerende og tidkrevende, men da kan det være godt å vite at alle gjøre feil. Det viktigste er at man lærer seg av feilene.
+
+Når en feil oppstår må man først finne ut hvilken type programmeringsfeil det er. 
+1. [syntaks-feil](#syntaks-feil)
+2. [kjøretids-feil](#kjøretids-feil)
+3. [logisk feil](#logisk-feil)
+
+Er det en syntaks-feil eller en kjøretids-feil sier  kommandotolken ifra hvor feilen oppstod. Da kan man gå til den linjen i koden og prøve å rette på den.
+
+Er det en logisk feil er det oftest vanskeligere. Da kan man legge inn `print` kommandoer i koden for å "se" hva verdien til en variabel er underveis i programmet.
 
 ## Binære tall
 Tall som representeres med sifferene 1 og 0
 
 ### Beskrivelse
-Binære tall er tall som representerers med sifferene 1 og 0 for eksempel 1011 er et binært tall. For å regne ut verdien til tallet ganger vi sifferverdien med plassverdien, akkurat som vi gjør med *vanlige tall* fra titall systemet. Plassverdien til de 4 første posisjonene i et binært tall er: 8, 4, 2, 1. Verdien til 1011 kan vi derfor regne ut til å være: $1\cdot8 + 0\cdot4 + 1\cdot 2 + 1\cdot 1 = 11$. Inne i en datamaskin lagres **allt** som binæretall. Dette er fordi en datamaskin består av veldig mange strømbrytere som enten kan være av (0) eller på (1). 
+Binære tall er tall som representerers med sifferene 1 og 0 for eksempel 1011 er et binært tall. Plassverdien til binære tall baserer seg på grunntallet 2 og ikke 10 som det er for ti-tall systemt. For å regne ut verdien til tallet ganger vi sifferverdien med plassverdien, akkurat som vi gjør med *vanlige tall* fra titall systemet. Plassverdien til de 4 første posisjonene i et binært tall er: 8, 4, 2, 1. Verdien til 1011 kan vi derfor regne ut til å være: $1\cdot8 + 0\cdot4 + 1\cdot 2 + 1\cdot 1 = 11$. Inne i en datamaskin lagres **allt** som binæretall. Dette er fordi en datamaskin består av veldig mange strømbrytere som enten kan være av (0) eller på (1). 
 TODO: Skal vi skrive mer dette temaet eller vise til annen kilde!
 
 ## Streng
@@ -449,16 +532,22 @@ Datatype som brukes til å representere tekst-verdier
 ### Beskrivelse
 Innen programmering kalles en tekst for en streng (*string* eng.). Ordet kommer fra at man lagrer en *streng* med enkeltbokstaver. Mange ganger kan det være nyttig å tenke på en streng som en [liste](#liste) med enkelt bokstaver (*characters* eng.) men til forskjell fra lister kan ikke enkeltelementene endres uten å lage en ny streng. 
 
+#### Streng-operatorer
 Strenger kan legges sammen med [streng-operatoren](#streng-operatorer) `+`. Denne operasjonen kalles da å konkatenere to strenger, men oftest sier man bare å *legge sammen* to strenger. 
 
 ```python
 fornavn = "Elise"
 etternavn = "Sandberg"
-print("Eleven heter " + fornavn + " " + etternavn)
+print("Eleven heter " + fornavn + " " + etternavn + ".")
 ```
-
+```
+Eleven heter Elise Sandberg.
+```
 Det finnes flere ulike [operasjoner](#operasjon) som kan gjøres på og med strenger...
 TODO: Legge til noe flere operasjoner.
+
+#### 
+
 
 ## Boolean
 Datatype som brukes til å representere sanne og falske verdier
@@ -469,14 +558,16 @@ Verdier av datatypen boolean kalles boolske verdier og de brukes til å represen
 #### Eksempel på boolske verdier i Python
 ```python
 er_høy = True
+liker_fisk = False
 if er_høy:
     print("Du er et høyt menneske!")
 
-liker_fisk = False
 if liker_fisk:
     print("Du liker fisk!")
 ```
-
+```
+Du er et høyt menneske!
+```
 ## Liste
 En samling av verdier som er ordnet i en rekkefølge 
 
@@ -492,7 +583,39 @@ antall_deltagere = len(deltagere)
 `deltagere` er en list-variabel med fire elementer. Hvert element representerer navnene til deltagerne i en konkuranse. `deltager` er en variabel som har det *tredje* (ikke det andre!) elementet fra listen. Til slutt endres verdien til det andre elementet til `"Svein"`. Deltager `"Erik"` er altså byttet ut med `"Svein"`.
 
 #### Element - liste
-Verdiene i en liste kalles for elementer
+Verdiene i en liste kalles for elementer. 
+```python
+# To lister med streng og heltalls elementer. 
+deltagere = ["Rebecca", "Erik", "Selma", "Amanda"]
+poeng = [34, 23, 39, 41]
+print(deltagere[2], poeng[2])
+```
+```
+Selma 39
+```
+Elementene i de to listene over er [streng-verdiene](#streng): `"Rebecca"`, `"Erik"`, `"Selma"`, `"Amanda"` og [heltallene](#heltall): `34`, `23`, `39`, `41`.
+
+En liste kan ha elementer med ulike datatyper.
+```python
+# Ulike datatyper som elementer i en Liste
+deltagere = ["Rebecca", 34, "Erik", 23, "Selma", 39, "Amanda", 41]
+print(deltagere[2], deltagere[3])
+```
+```
+Erik 23
+```
+En liste kan også ha andre lister som sine elementer.
+```python
+# Lister som elementer i en liste
+deltagere = [["Rebecca", 34], 
+             ["Erik", 23], 
+             ["Selma", 39], 
+             ["Amanda", 41]]
+print(deltagere[3][0], deltagere[3][1])
+```
+```
+Amanda 41
+```
 
 #### Indeks - liste
 En indeks brukes når man skal hente ut eller endre på elementene i en liste. Indeksen betegner plasseringen til verdien i listen og må alltid angis med et [heltall](#heltall) (flyttal virker ikke, da plassering 2.59 ikke gir mening).
@@ -631,6 +754,8 @@ En sammenligningsoperator sammenligner to verdier. Basert på verdiene og type o
 #### Sammenligne flyttal
 Ettersom flyttal representeres [unøyaktig](#flyttal-er-unøyaktig-representert) i en datamaskin. 
 må likhets-operatoren `==` aldri brukes til å sammenligne to [flyttall](#flyttall). Dette kan illustreres med følgende eksempel:
+
+##### Aldri bruk `==` til å sammenligne to flyttal
 ```python
 print(0.3 == 3*0.1)
 ```
@@ -646,6 +771,7 @@ True
 ```
 men hovedregelen er å aldri bruk `==` når to flyttall skal sammenlignes. 
 
+##### Sammenlign forskjellen mellom to flyttal eller om flyttallen er nære hverandre
 Istedenfor å bruke `==` operatoren for å teste om to flyttall er like må man teste om *forskjellen* mellom to flyttall er liten. Hvor liten må man selv bestemme som programmerere.
 ```python
 print(abs(0.3-3*0.1) < 1e-6)
@@ -655,6 +781,14 @@ True
 ```
 Her brukes `abs` til å finne ut om avstandet mellom differansen  $0,3-3\cdot 0,1$ og 0 er *mindre enn* (`<`) tallet $0,000001$, som er et litet tall. Merk at her brukes [eksponensiell notasjon](#eksponensiell-notasjon-av-flyttall) for å skrive flyttallet $0,000001$.
 
+En enklere måte å teste om to flyttal er like, eller nære hverandre i verdi, er å bruke `isclose` fra det [eksterne biblioteket](#eksternt-bibliotek) `math` eller `numpy`.
+```python
+import math
+print(math.isclose(0.3, 3*0.1))
+```
+```
+True
+```
 ## Tilordningsoperatorer
 Tegn som brukes til å tilordner en variabel en verdi
 
@@ -689,10 +823,13 @@ Utføre operasjoner knyttet til en funksjon
 En funksjon lagrer operasjoner og når disse skal utføres må funksjonen kalles. Andre ord som ofte brukes for dette er å utføre funksjonen eller å kjøres den. Innen [tekstbasert programmering](#tekstbasert-programmering) kalles en funksjon gjennom å skrive to parenteser etter funksjonsnavnet.
 ```python
 # Print funksjonen kalles
-print("Hei verden")
+print("Hei verden!")
 
 # Print funksjonen kalles IKKE
 print
+```
+```
+Hei verden!
 ```
 Her brukes funksjonen `print` to ganger. Den første gangen kalles funksjonen og den andre gangen kalles ikke funksjonen da den mangler de to parentesene etter funksjonsnavnet. 
 
@@ -726,11 +863,18 @@ En kontrollstruktur som gjør et valg på grunnlag av en betingelse
 ### Beskrivelse
 En if-setning er en [kontrollstruktur](#kontrollstruktur) som kan brukes til å ta et valg. Valget gjøres på bakgrunn av verdien til en [betingelse](#betingelse). Et valg kan være å utføre en [blokk med kode](#kodeblokk) hvis en bruker har gjetter korrekt tall (betingelsen er da [sann](#boolean)) i en gjettelek, og en kodeblokk hvis brukeren gjetter feil tall. 
 ```python
+gjettet = int(input("Skriv inn et tall: "))
+korrekt = 4
 if gjettet == korrekt:
     print("Du gjettet riktig :)")
 else:
     print("Du gjettet feil :(")
 ```
+```
+Skriv inn et tall: 6
+Du gjettet feil :(
+```
+
 En if-setning kan brukes for å ta ett valg, istedenfor to som i eksemplet over. Da sløyfes bare `else` setningen.
 ```python
 pris = 30
@@ -740,6 +884,7 @@ print(f"Du skal betale {pris} kr")
 ```
 En if-setning kan brukes til å ta flere enn to valg også. Da legges flere betingelser inn gjennom `elif` setningen.
 ```python
+alder = 16
 if alder < 4:
     pris = 0
 elif alder < 15:
@@ -750,21 +895,35 @@ else:
     pris = 15
 print(f"Du skal betale {pris} kr")
 ```
-
+```
+Du skal betale 30 kr
+```
 ## Kodeblokk
 Linjer med kode som hører sammen
 
 ### Beskrivelse
 En kodeblokk er et sett med linjer som hører sammen. I python brukes mellomrom, eller så kallte innrykk, i starten på hver linje for å vise et kodeblokk. Linjer som har samme [innrykk](#innrykk) i python tilhører samme kodeblokk. 
 ```python
-for i in range(1,11):
+for i in range(1,6):
     # Dette er en kodeblokk
-    # En kodeblokk kan gå over flere linjer
-    print("Jeg tilhører kodeblokk 1")
-    if i < 5:
-        print ("Jeg tilhører kodeblokk 2")
+    # En kodeblokk kan gå over flere linjer    
+    print("* Jeg tilhører kodeblokk 1 *")
+    if i < 3:
+        print ("- Jeg tilhører kodeblokk 2 -")
     else:
-        print ("Jeg tilhører kodeblokk 3")
+        print ("- Jeg tilhører kodeblokk 3 -")
+```
+```
+* Jeg tilhører kodeblokk 1 *
+- Jeg tilhører kodeblokk 2 -
+* Jeg tilhører kodeblokk 1 *
+- Jeg tilhører kodeblokk 2 -
+* Jeg tilhører kodeblokk 1 *
+- Jeg tilhører kodeblokk 3 -
+* Jeg tilhører kodeblokk 1 *
+- Jeg tilhører kodeblokk 3 -
+* Jeg tilhører kodeblokk 1 *
+- Jeg tilhører kodeblokk 3 -
 ```
 I andre tekst baserte [programmeringsspråk](#tekst-baserte-programmeringsspråk), som for eksempel C++, Java, JavaScript, brukes krøllparenteser `{<kodeblokk>}` til å avgrense en kodeblokk. 
 
@@ -780,12 +939,16 @@ Noe som må være sant for at kode skal utføres
 ### Beskrivelse
 I programmering brukes betingelser blandt annet til å ta [valg](#valg). En betingelse er noe som enten har verdien [sant](#boolean) eller verdien [falskt](#boolean). Her er noen måter en betingelse kan lages på i python.
 ```python
+alder = 11
+ferdig = True
+navn = "Dole"
+
 # Sammenligning
 if alder <= 12:
     print("Du er et barn!")
 
 # Kombinerte sammenligninger
-if 13 <= alder and alder < 20:
+elif 12 < alder and alder < 20:
     print("Du er en tennåring!")
 
 # Sjekker om en verdi er i en liste
@@ -795,6 +958,11 @@ if navn in ["Ole", "Dole", "Doffen"]:
 # Sjekker verdien til en variabel
 if ferdig:
     print("Der var du ferdig!")
+```
+```
+Du er et barn!
+Du er en nevø av Donald!
+Der var du ferdig!
 ```
 
 ## Løkke
@@ -818,20 +986,37 @@ for i in range(1, 11):
         # Indre kodeblokk
         print(i*j)
 ```
+```
+1
+2
+3
+...
+6
+12
+18
+...
+10
+20
+30
+```
+Utskriften viser de tre første gjentagelsene fra den indre for-løkken sammen med de to første og den siste gjentagelsen av den yttre for-løkken.
+
 Hver av de to løkkene vil her gentas 10 ganger, men da den indre løkken inngår i den yttre kodeblokken, vil den indre kodeblokken totalt gjentas: 10x10=100 ganger.
 
 ## for-løkke
-En løkke som bruker en tellevariabel til å gjentar en kodeblokk et gitt antall ganger og som bruker en tellevariabel
+En løkke som gjentar en kodeblokk et gitt antall ganger og som bruker en tellevariabel
 
 ### Beskrivelse
 En for-løkke brukes til å gjenta en [kodeblokk](#kodeblokk) når man vet hvor mange ganger kodeblokken skal gjentas. Spesielt for en for-løkker er at den alltid bruker en [tellevariabel](#tellevariabel) som oppdateres for hver gang en kodeblokk gjentas. 
 
 To eksempler hvor en for-løkke kan brukes er når
 1. en enkel tallfølge skal lages, og
-2. en liste med verdier skal gås igjennom
+2. en eller flere lister med verdier skal gås igjennom
 
 #### for-løkke med tallfølge
-I de tre følgende eksempelene brukes [funksjonen](#funksjon) `range` til å lage tre ulike tallfølger. 
+I de tre følgende eksempelene brukes [funksjonen](#funksjon) `range` til å lage tre ulike tallfølger.
+
+##### range med et argument
 ```python
 # Tellevariabelen i får tallverdiene 0, 1, 2, 3, 4
 for i in range(5):
@@ -839,6 +1024,7 @@ for i in range(5):
 ```
 Får `range` et tallverdi som [argument](#argument), her 5, lages en tallfølge som starter på 0 og går opp til (men ikke inklusive) 5, og hvert tall er 1 større enn det forrige.
 
+##### range med to argumenter
 ```python
 # Tellevariabelen j får tallverdiene 5, 6, 7, 8, 9
 for j in range(5, 10):
@@ -846,6 +1032,7 @@ for j in range(5, 10):
 ```
 Får `range` to tallverdier som [argument](#argument), her 5 og 10, lages en tallfølge som starter på 5 og går opp til (men ikke inklusive) 10, og hvert tall er 1 større enn det forrige. 
 
+##### range med tre argumenter
 ```python
 # Tellevariabelen k får partallverdiene 0, 2, 4, 6, 8
 for k in range(0, 10, 2):
@@ -854,6 +1041,7 @@ for k in range(0, 10, 2):
 Får `range` tre tallverdier som [argument](#argument), her 0, 10 og 2, lages en tallfølge som starter på 0 og går opp til (men ikke inklusive) 10, og hvert tall er 2 større enn det forrige. 
 
 #### for-løkke med en liste
+I de tre følgende eksemplene brukes en for-løkke til å gå igjennom verdiene i en liste.
 
 
 ## Tellevariabel
@@ -868,13 +1056,13 @@ En løkke som gjentar en kodeblokk så lenge en betingelse har verdien True
 ### Beskrivelse
 
 
-## Bibliotek
+## Eksternt bibliotek
 Funksjonalitet som må importeres for å brukes
 
 ### Beskrivelse
-Et bibliotek eller modul inneholder funksjoner eller verdier som kan brukes innen et spesifikt område. For eksempel gir biblioteket `math` i python tilgang på en del matematiske funksjoner, for eksempel: `sin()`, `exp()` og `ceil()` og tallverdier: `pi` og `e`. For å bruke et bibliotek må den første [importeres](#importere-bibliotek).
+Et eksternt bibliotek eller modul inneholder funksjoner eller verdier som kan brukes innen et spesifikt område. For eksempel gir biblioteket `math` i python tilgang på en del matematiske funksjoner, for eksempel: `sin()`, `exp()` og `ceil()` og tallverdier: `pi` og `e`. For å bruke et bibliotek må den første [importeres](#importere-bibliotek).
 ```python
-# Importerer hele biblioteket math
+# Importerer hele det eksterne biblioteket math
 from math import sin, exp, ceil, pi, e
 
 if exp(1) == e**1:
@@ -884,11 +1072,11 @@ if ceil(pi) == 4:
     print("ceil avrunder et flyttall til nærmeste heltall over tallet.")
 ```
 
-## Importere bibliotek
+## Importere eksternt bibliotek
 Få tilgang på operasjoner fra et eksternt bibliotek
 
 ### Beskrivelse
-Når et bibliotek importeres får en tilgang på funksjoner og verdier, knyttet til en spesifikk funksjonalitet. De fleste programmeringsspråk kommer med ett sett med grunnleggende operasjoner. Vil du for eksempel generere et tilfeldig tall må man i python importere denne operasjonen fra biblioteket random. 
+Når et bibliotek importeres får en tilgang på funksjoner og verdier, knyttet til en spesifikk funksjonalitet. De fleste programmeringsspråk kommer med ett sett med grunnleggende operasjoner. Vil du for eksempel generere et tilfeldig tall må man i python importere denne operasjonen fra det eksterne biblioteket `random`. 
 
 I python kan bibliotek importeres på flere ulike måter.
 ```python
@@ -909,7 +1097,6 @@ r.randint(1, 10)
 
 Det er å anbefalle å enten importere enkelt funksjoner direkte fra biblioteket: `from random import randint` eller å importere biblioteket gjennom: `import random` eller `import random as r` over `from random import *`. Når man importerer alle funksjonene fra et bibliotek kan det bli kollisjoner mellom funksjoner med samme navn fra ulike bibliotek. 
 
-
 ## Tilfeldig tall
 Et tall som velges tilfeldig
 
@@ -919,15 +1106,19 @@ Tilfeldige tall kan brukes i spill eller i noen matematiske simuleringer. For å
 from random import random, randint, choice
 
 # Genererer et tilfeldig flyttall mellom 0 og 1
-random()
+print(random())
 
 # Genererer et tilfeldig heltall mellom 1 og 10
-randint(1,10)
+print(randint(1,10))
 
 # Velger et element fra en liste
-choice(["Janne", "Jarl", "Snorre"])
+print(choice(["Janne", "Jarl", "Snorre"]))
 ```
-
+```
+0.11327077819033737
+9
+Snorre
+```
 ## Python
 
 ### Beskrivelse
