@@ -136,16 +136,20 @@ En algoritme kan være noe konkret, som noen linjer med kode som utfør oppgaven
 Mange internettbedrifter bruker algoritmer når de skal presentere varer eller artikler til deg. For eksempel bruker strømmetjenester som Netflix og Spotify slike når de skal presentere filmer eller musikk de mener passer deg. Disse algoritmene baserer seg på at bedriftene husker hva du har valgt tidligere og hva andre personer som likner deg (samme alder, kjønn, bosted) har valgt.
 
 #### Eksempel: gjennomsnitt
-* Lag en list-variabel `alle_tall` hvor du samler alle tall du vil beregne gjennomsnittet på.
-* Summer alle tallene i `alle_tall` og lagre resultatet i variabelen `sum`.
-* Divider verdien i `sum` med antallet tall i `alle_tall` og lagre verdien i variabelen `gjennomsnitt`
+* Lag en list-variabel `tall_liste` hvor du samler alle tall du vil beregne gjennomsnittet på.
+* Summer alle tallene i `tall_liste` og lagre resultatet i variabelen `sum`.
+* Divider verdien i `sum` med antallet tall i `tall_liste` og lagre verdien i variabelen `gjennomsnitt`
 
 ```python
-alle_tall = [4, 5, 3, 5, 6, 4, 3, 5]
+tall_liste = [4, 5, 3, 5, 6, 4, 3, 5]
 sum = 0
-for tall in alle_tall:
+for tall in tall_liste:
     sum += tall
-gjennomsnitt = sum/len(alle_tall)
+gjennomsnitt = sum/len(tall_liste)
+print(f"Gjennomsnittet til {tall_liste} er {gjennomsnitt:.2f}")
+```
+```
+Gjennomsnittet til [4, 5, 3, 5, 6, 4, 3, 5] er 4.38
 ```
 
 ## Operasjon
@@ -166,8 +170,10 @@ Når et program bearbeider en eller flere verdier gjøres det noe med verdiene. 
 
 Flere operasjoner som bearbeider verdier kan settes sammen til [uttrykk](#uttrykk) for eksempel:
 ```python
-round(sqrt(3)/2, 3)
+import math
+5+3*math.sqrt(3)/2
 ```
+Merk at uttrykket over blir `7.598076211353316` men det lagres ikke noe steder. 
 
 #### Lagre verdi
 Verdier lagres i [arbeidsminnet](#arbeidsminne) som [variabler](#variabel) og kan deretter brukes senere i programmet.
@@ -194,26 +200,48 @@ En verdi kan vises til en bruker for eksempel ved at den vises på skjermen, ell
 ```python
 print("Jeg er 13 år!")
 ```
-Her sendes verdien `"Jeg er 13 år!"` til [funksjonen](#funksjon) `print` som så viser den på skjermen.    
+```
+Jeg er 13 år!
+```
+
+Her sendes streng-verdien `"Jeg er 13 år!"` til [funksjonen](#funksjon) `print` som viser den på skjermen.    
 
 ## Kontrollstruktur
 Bestemmer hvilke deler av et program som skal utføres.
 
 ### Beskrivelse
-Operasjoner i et program utføres fra toppen av tekstfilen og nedover. Hver linje i tekstfilen utføres en gang. Kontrollstrukturer kan bestemme at noen linjer skal utføres og andre ikke, eller at noen linjer skal utføres mange ganger.  Slik bestemmer kontrollstrukturer flyten i et program, og de består blandt annet av [if-setninger](#if-setning) og [løkker](#l%c3%b8kke). 
+Operasjoner i et program utføres fra toppen av tekstfilen og nedover. Hver linje i tekstfilen utføres en gang. Kontrollstrukturer kan bestemme at noen linjer skal utføres og andre ikke, eller at noen linjer skal utføres mange ganger. Slik bestemmer kontrollstrukturer flyten i et program, og de består blandt annet av [if-setninger](#if-setning) og [løkker](#l%c3%b8kke).
+
+Under vises en kodesnutt med de to kontrollstrukturene [for-løkke](#for-løkke) og [if-setning](#if-setning).
+
+```python
+for tall in range(6):
+    if tall % 2 == 0:
+        print(f"Tallet: {tall} er et partall")
+    else:
+        print(f"Tallet: {tall} er et oddetall")
+```
+```
+Tallet: 0 er et partall
+Tallet: 1 er et oddetall
+Tallet: 2 er et partall
+Tallet: 3 er et oddetall
+Tallet: 4 er et partall
+Tallet: 5 er et oddetall
+```
 
 ## Uttrykk
 En eller flere operasjoner som er satt sammen og som returnerer en verdi.
 
 ### Beskrivelse
-Et uttrykk (*expression* eng.) består av en eller flere [operasjoner](#operasjon) som er satt sammen. Alle enkeltoperasjoner i et uttrykk resulterer i en verdi. 
+Et uttrykk (*expression* eng.) består av en eller flere [operasjoner](#operasjon) som er satt sammen. Et uttrykk resulterer alltid i en verdi. 
 
 ```python
 navn = "Petter"
-setning = "Jeg heter " + navn + " og jeg er " + 16 + " år." 
+resultat = 5*5 + 4*4 + 3*3 + 2*2 + 1
 ```
 
-Her er to linjer som begge [tilordner](#tilordne) to variabler verdier. Verdiene er begge resultater av to uttrykk. Den første linjen består av et uttrykk som resulterer i verdien: `"Petter"`. Den andre linjen består av et uttrykk som resulterer i verdien `"Jeg heter Petter og jeg er 16 år."`.
+Her er to linjer som begge [tilordner](#tilordne) to variabler verdier. Verdiene er begge resultater av to uttrykk. Den første linjen består av et uttrykk som resulterer i verdien: `"Petter"`. Den andre linjen består av et uttrykk som resulterer i tall-verdien `55`.
 
 ## Variabel
 Er et navngitt sted i arbeidsminnet som lagrer verdier.
@@ -286,58 +314,119 @@ Operasjon som lager en variabel eller funksjon.
 [//]: <> (TODO: Skal vi også forklar deklareres?)
 
 ### Beskrivelse
-For å kunne bruke en [variabel](#variabel) eller [funksjon](#funksjon) må de først defineres. Når en variabel defineres knyttes et [variabelnavn](#variabelnavn) til en verdi som lagres i [arbeidsminnet](#arbeidsminne). Når en funksjon defineres knyttes et [funksjonsnavn](#funksjonsnavn) til et sett med operasjoner. Navnet brukes så i programmet for å representere enten verdien til variabelen eller alle operasjonen til funksjonen.  
+For å kunne bruke en [variabel](#variabel) eller [funksjon](#funksjon) må de først defineres. Når en variabel blir definert må den også bli [tilordnet](#tilordne) en verdi. I noen [programmeringsspråk](#programmeringsspråk) kan man si ifra at man skal bruke en variabel uten å gi den en verdi. Da heter det å *deklarere* en variabel. Når en variabel defineres knyttes et [variabelnavn](#variabelnavn) til en verdi som lagres i [arbeidsminnet](#arbeidsminne). Når en funksjon defineres knyttes et [funksjonsnavn](#funksjonsnavn) til et sett med operasjoner. Navnet brukes så i programmet for å representere enten verdien til variabelen eller alle operasjonen til funksjonen.  
 
-Når en variabel blir definert må den også bli [tilordnet](#tilordne) en verdi. I noen [programmeringsspråk](#programmeringsspråk) kan man si ifra at man skal bruke en variabel uten å gi den en verdi. Da heter det å *deklarere* en variabel.
+I koden under blir variabelen `hilsen` og funksjonen `si_hilsen` definer. Variabelen blir brukt inne i funksjonen og funksjonen blir kallt etter den er blitt definert. 
+
+```python
+hilsen = "Hei verden!"
+
+def si_hilsen():
+    print(hilsen)
+
+si_hilsen()
+```
+```
+Hei verden!
+```
+Hvis en variabel eller funksjon blir brukt før den er definert får man et [programmeringsfeil](#programmere).
+
+```python
+def si_hilsen():
+    print(hilsen)
+
+si_hilsen()
+hilsen = "Hei verden!"
+```
+```
+NameError: name 'hilsen' is not defined
+```
 
 ## Tilordne
 Gir eller endrer en verdi til en variabel.
 
 ### Beskrivelse
-Når en verdi lagres i en variabel heter det at denne variabelen tilordnes en verdi. Dette gjøres med en [tilordningsoperator](#tilordningsoperator), som i Python er `=`. På venstre side av tilordningsoperatoren må [variabelens navn](#variabelnavn) skrives. På høyre side må det stå en verdi eller et uttrykk som resulterer i en verdi. Denne verdien blir så lagret i variabelen.
+Når en verdi lagres i en variabel heter det at denne variabelen tilordnes en verdi. Dette gjøres med en [tilordningsoperator](#tilordningsoperator), som i Python er `=`. På venstre side av tilordningsoperatoren må [variabelens navn](#variabelnavn) stå og på høyre side må det stå en verdi eller et uttrykk som resulterer i en verdi. Denne verdien blir så lagret i variabelen.
+
+I kodesnutten under blir to variabeler, `navn` og `resultat`, tilordnet streng-verdien: `"Petter"` og resultatet til det aritmetiske uttrykket: `5*5 + 4*4 + 3*3 + 2*2 + 1` som blir `55`.
+
+```python
+navn = "Petter"
+resultat = 5*5 + 4*4 + 3*3 + 2*2 + 1
+print(navn, resultat)
+```
+```
+Petter 55
+```
 
 ## Tall
-Datatype som brukes til numeriske verdier
+Datatype som brukes til verdier som representerer tall.
 
 ### Beskrivelse
-[Verdier](#verdi) av [datatypen](#datatype) tall brukes i programmering til utføre operasjoner som vi i hverdagen tenker på som matematiske operasjoner. Når to verdier skal legges sammen gjennom addisjon må disse verdiene for eksempel ha datatypen tall. 
+[Verdier](#verdi) av [datatypen](#datatype) tall brukes i programmering til å utføre operasjoner som vi i hverdagen tenker på som matematiske operasjoner. Når to tall-verdier skal legges sammen gjennom addisjon må disse verdiene for eksempel være tall-verdier. 
 
 En del programmeringsspråk for eksempel [Python](#python) skiller på datatypen [heltall](#heltall) og [flyttall](#flyttall). Flyttal brukes til å reprsentere tall med desimaler. Andre programmeringsspråk, som for eksempel [JavaScript](#javascript]) eller [Scratch](#scratch), skiller i utgangspunktet ikke på heltall eller flyttal.
+
+I kodesnutten under vises eksempler på de to tall-datatypene i Python.
+```python
+heltall1 = 2
+flyttal1 = 3.
+heltall2 = heltall1*10
+flyttal2 = heltall1 + flyttal1
+print(f"Heltall: {heltall1}, {heltall2} og flyttal: {flyttal1}, {flyttal2}")
+```
+```
+Heltall: 2, 20 og flyttal: 3.0, 5.0
+```
+Datatypen til resultatet fra en [aritmetisk operator](#aritmetiske-operatorer), hvor begge verdiene er [heltall](#heltall), er et heltall. Er en av verdiene et [flyttall](#flyttall) blir datatypene til  resultatet et flyttal.
 
 ## Heltall
 Datatype som brukes til å representere heltall
 
 ### Beskrivelse
-Heltall er tall som ikke har desimaler. Heltall brukes for eksempel til å representere et antall for eksempel antallet spiller i et spill eller en posisjon i en rekkefølge. Heltall er mer naturlig for en datamaskin å arbeide med enn flyttal. Det er fordi alle heltall kan representeres med et [binært tall](#bin%c3%a6re-tall) som er tall satt sammen av sifrene 1 og 0.
+Heltall er tall som ikke har desimaler. Heltall brukes for eksempel til å representere et antall eller en posisjon i en rekkefølge. Heltall er mer naturlig for en datamaskin å arbeide med enn flyttal. Det er fordi datamaskinens bruker [binære tall](#bin%c3%a6re-tall), som er sattsammen av sifrene 1 0g 0, til å representere all data, og heltall kan enkelt representeres med binæretall. 
 
-I programmeringsspråket [Python](#python) heter datatypen for helttall `int`, som er kort for integer og er engelsk for heltall. Funksjonen `int()` kan brukes til å lage et heltall fra for eksempel en [streng](#streng).
+I programmeringsspråket [Python](#python) heter datatypen for helttall `int`, som er kort for integer og er engelsk for heltall. Funksjonen `int` kan brukes til å lage et heltall fra for eksempel en [streng](#streng).
 ```python
-tall_streng = input("Skriv inn ett tall:")
+tall_streng = input("Skriv inn ett heltall som skal kvadreres: ")
 tall_int = int(tall_streng)
+print(f"Du skrev inn: {tall_streng}: {tall_streng}^2 = {tall_int**2}")
 ```
-I eksemplet over hentes en streng inn fra brukeren og så blir den gjort om til et heltall med `int()` funksjonen. Hvis brukeren skriver en streng som *ikke* går ann å gjøre om til et heltall sier kommandotolken ifra ved å reise en [programmeringsfeil](#programmeringsfeil).
+```
+Skriv inn ett heltall som skal kvadreres: 4
+Du skrev inn: 4: 4^2 = 16
+```
+
+I eksemplet over hentes en streng inn fra brukeren og så blir den gjort om til et heltall med `int` funksjonen. Hvis brukeren skriver en streng som *ikke* går ann å gjøre om til et heltall sier kommandotolken ifra ved å reise en [programmeringsfeil](#programmeringsfeil).
+```
+Skriv inn ett heltall som skal kvadreres: fire
+ValueError: invalid literal for int() with base 10: 'fire'
+```
 
 ## Flyttall
 Datatype som brukes til å representere desimaltall
 
 ### Beskrivelse
-Et flyttal er et desimaltall. Innen all programmering bruker man `"."` (punktum) istedefor `","` (komma) for å angi desimalen i et flyttal (desimaltall). Ordet *flyt* (engelske *float*) kommer fra at plasseringen av desimaltegnen flyter. Litt forenklet kan `0.03` representers med heltallet 3 hvor desimaltegnet er flyttet 2 plasser.
+Et flyttal er et desimaltall. I programmering bruker man `"."` (punktum) istedefor `","` (komma) for å angi desimalen i et flyttal (desimaltall). Ordet *flyt* (engelske *float*) kommer fra at plasseringen av desimaltegnen *flyter*. Litt forenklet kan `0.03` representers med heltallet 3 hvor desimaltegnet er flyttet 2 plasser.
 
 #### Flyttal er unøyaktig representert
-Et flyttal representeres ikke eksakt i arbeidsminnet. For eksempel består desimaltallet $\sqrt{2}$ av uendelig mange desimaler og må i en datamaskin representeres på en avrundet og unøyaktig måte. I Python er $\sqrt{2}\simeq 1.4142135623730951$. Dette kan illustreres med følgende eksempel:
+Et flyttal representeres ikke eksakt i arbeidsminnet. For eksempel består desimaltallet $\sqrt{2}$ av uendelig mange desimaler og må i en datamaskin representeres på en avrundet og unøyaktig måte. I Python er $\sqrt{2}\simeq 1.4142135623730951$. Dette kan illustreres med følgende kodesnutt:
 ```python
-from math import sqrt
-print(sqrt(2))
+import math
+print(math.sqrt(2))
 ```
-som resulterer i følgende utskrift:
-```bash
+```
 1.4142135623730951
 ```
 
-Det er ikke bare desimaltall med ubegrensede desimaler som representeres unøyaktig i Python, som $\sqrt{2}$. Følgende eksempel resulterer i utskriften: `0.30000000000000004` som nesten er `0.3` men det *er* ikke eksakt `0.3`.
+Det er ikke bare desimaltall med ubegrensede desimaler som representeres unøyaktig i Python. Følgende kodesnutt illustrerer dette.
 ```python
 print(3*0.1)
 ```
+```
+0.30000000000000004
+```
+`0.30000000000000004` er nesten `0.3` men det *er* ikke eksakt `0.3` slik det borde være. 
 
 #### Avrunde flyttall
 Et flyttall kan avrundes med funksjonen `round`. Flyttallet som skal avrundes overføres som argument til `round`.
@@ -351,7 +440,7 @@ print(round(10/3, 2))
 3 
 3.33
 ```
-Her vises først en unøyaktig representasjon av 10/3, så heltalls delen 3, hvor `round` er brukt uten ekstra [argumenter](#argument), og sist en versjon som er avrundet til to desimaler, hvor antallet desimaler, 2, er sendt med som et andre [argument](#argument) til `round`.
+Her vises først en unøyaktig representasjon av 10/3, så heltalls delen 3, hvor `round` er brukt uten ekstra [argumenter](#argument), og sist en versjon som er avrundet til to desimaler, hvor antallet desimaler, 2, er sendt med som et andre [argument](#argument) til `round`. 
 
 #### Eksponensiell notasjon av flyttall
 For å enklere representere store og små flytttall i pythonbrukes eksponensiell notasjon. Denne notasjonen bruker det at et hvilket som helst tall kan deles opp i et desimaltall som ganges med 10 opphøyd i et heltall (vitenskapelig notasjon). For eksempel kan et stort tall $567000000$ skrives som $5,67\cdot 10^{9}$ og et litet tall $0,0006$ kan skrives som $6\cdot 10^{-4}$. I Python skrives disse to tallene med eksponensiell notasjon:
@@ -546,7 +635,9 @@ Eleven heter Elise Sandberg.
 Det finnes flere ulike [operasjoner](#operasjon) som kan gjøres på og med strenger...
 TODO: Legge til noe flere operasjoner.
 
-#### 
+## Formatere streng
+Gjøre 
+
 
 
 ## Boolean
