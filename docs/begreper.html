@@ -512,6 +512,7 @@ l&#xE5;n <span class="token operator">=</span> l&#xE5;n <span class="token opera
 <li>kan IKKE inneholde mellomrom <code></code>, bindestrek <code>-</code> eller punktum <code>.</code>: Bruk heller <code>_</code> mellom ord i variabelnavnet.</li>
 <li>kan IKKE starte med et siffer.</li>
 <li>m&#xE5; v&#xE6;re unikt. Flere variabler kan alts&#xE5; ikke ha samme navn.</li>
+<li>kan ikke v&#xE6;re noen av de <a href="#reserverte-ord">reserverte ordene</a> i Python, for eksempel: <code>if</code>, <code>for</code>, <code>import</code>, <code>else</code>, <code>elif</code>.</li>
 </ol>
 <h3 class="mume-header" id="tips-til-variabelnavn">Tips til variabelnavn</h3>
 
@@ -843,7 +844,7 @@ poeng <span class="token operator">=</span> <span class="token punctuation">[</s
 deltagere <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;Rebecca&quot;</span><span class="token punctuation">,</span> <span class="token number">34</span><span class="token punctuation">,</span> <span class="token string">&quot;Erik&quot;</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">,</span> <span class="token string">&quot;Selma&quot;</span><span class="token punctuation">,</span> <span class="token number">39</span><span class="token punctuation">,</span> <span class="token string">&quot;Amanda&quot;</span><span class="token punctuation">,</span> <span class="token number">41</span><span class="token punctuation">]</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>deltagere<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> deltagere<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 </pre><pre data-role="codeBlock" data-info class="language-"><code>Erik 23
-</code></pre><p>En liste kan ogs&#xE5; ha andre lister som sine elementer.</p>
+</code></pre><p>En liste kan ogs&#xE5; ha andre lister som sine elementer og det kalles en <a href="#nested-liste">nested liste</a>.</p>
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token comment"># Lister som elementer i en liste</span>
 deltagere <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">&quot;Rebecca&quot;</span><span class="token punctuation">,</span> <span class="token number">34</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
              <span class="token punctuation">[</span><span class="token string">&quot;Erik&quot;</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
@@ -857,16 +858,63 @@ deltagere <span class="token operator">=</span> <span class="token punctuation">
 Det f&#xF8;rste elementet har indeksen <code>0</code>, det andre har indeksen <code>1</code> og s&#xE5; videre. P&#xE5; rad to over brukes indeksen <code>2</code> til &#xE5; hente ut verdien til det tredje elementet i listen <code>deltager</code>. P&#xE5; rad tre over brukes indeksen <code>1</code> til &#xE5; endre det andre elementet i listen til verdien <code>&quot;Svein&quot;</code>. Merk at indeksen m&#xE5; st&#xE5; innenfor <a href="#indeksoperator">indeksoperatoren</a> som er de to <code>[]</code>-parentesene.</p>
 <h4 class="mume-header" id="indeksoperator">Indeksoperator</h4>
 
-<p>Operator <code>[]</code>, som brukes etter en liste til &#xE5; f&#xE5; tilgang til et element i en liste <code>liste[indeks]</code>. P&#xE5; de to siste radene over brukes indeksoperatoren <code>deltagere[2]</code> og <code>deltagere[1]</code> til &#xE5; f&#xE5; tilgang til det tredje og andre elementet i listen.</p>
+<p>Operator <code>[]</code>, som brukes etter en liste for &#xE5; f&#xE5; tilgang til et element i listen. For eksempel: <code>liste[2]</code>, hvor indeksoperatoren brukes til &#xE5; hente ut det tredje elementet fra listen.</p>
 <h4 class="mume-header" id="lengden-til-en-liste">Lengden til en liste</h4>
 
-<p>Funksjonen <code>len(liste)</code> returnerer lengden til en liste.</p>
+<p>Funksjonen <code>len(liste)</code> returnerer lengden til en liste hvilket er det samme som antallet element i en liste.</p>
 <h4 class="mume-header" id="slice-liste">Slice - liste</h4>
 
-<p>TODO: Legg til forklaring</p>
-<h4 class="mume-header" id="nested-liste">Nested liste</h4>
+<p>I Python kan en slice brukes til &#xE5; hente ut flere verdier fra en liste. Syntaksten likner litt p&#xE5; den til range, fra <a href="#for-l%C3%B8kke">for-l&#xF8;kker</a>. Den bruker tre verdier:</p>
+<ol>
+<li>start-indeksen til slicen.</li>
+<li>slutt-indeksen (opp til men ikke inkludert) til slicen.</li>
+<li>avstandet mellom hvert element som er i slicen.</li>
+</ol>
+<pre data-role="codeBlock" data-info="python" class="language-python">handleliste <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;Smoothie&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;N&#xF8;ttemix&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Mellombar&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Yogurt&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Melk&quot;</span><span class="token punctuation">]</span>
+t&#xF8;rrvarer <span class="token operator">=</span> handleliste<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;T&#xF8;rrvarer i handlelisten: </span><span class="token interpolation"><span class="token punctuation">{</span>t&#xF8;rrvarer<span class="token punctuation">}</span></span><span class="token string">.&quot;</span></span><span class="token punctuation">)</span>
+</pre><pre data-role="codeBlock" data-info class="language-"><code>T&#xF8;rrvarer i handlelisten: [&apos;N&#xF8;ttemix&apos;, &apos;Mellombar&apos;].
+</code></pre><p>Variablen <code>t&#xF8;rrvarer</code> er her lagd med en slice av listen <code>handleliste</code>. Den starter p&#xE5; andre elementet (indeks 1) og g&#xE5;r opp til (men ikke inklusive) det fjerde elementet (indeks 3) og avstandet mellom elementene er 1.</p>
+<p>Det er mange finurlige m&#xE5;ter &#xE5; lage slicer p&#xE5; som vises i eksemplet under.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">handleliste <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;Smoothie&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;N&#xF8;ttemix&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Mellombar&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Yogurt&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Melk&quot;</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Hele listen:&quot;</span><span class="token punctuation">,</span> handleliste<span class="token punctuation">)</span>
 
-<p>TODO: Legg til forklaring</p>
+<span class="token comment"># Hvis f&#xF8;rste tallet i slicen utelukkes, betyr det at den returnerte</span>
+<span class="token comment"># listen starter fra starten.</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Fra start:  &quot;</span><span class="token punctuation">,</span> handleliste<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Hvis andre tallet i slicen utelukkes, betyr det at den returnerte</span>
+<span class="token comment"># listen slutter med siste element</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Til slutt:  &quot;</span><span class="token punctuation">,</span> handleliste<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Hvis siste tallet i slicen utelukkes, tolkes det slik at hver element</span>
+<span class="token comment"># mellom start og slutt er med.</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Samme liste:&quot;</span><span class="token punctuation">,</span> handleliste<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">&quot;=&quot;</span><span class="token punctuation">,</span> handleliste<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Ogs&#xE5; samme: &quot;</span><span class="token punctuation">,</span> handleliste<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">&quot;=&quot;</span><span class="token punctuation">,</span> handleliste<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Hvis f&#xF8;rste og andre tallet (start og slutt) i slicen utelukkes, tolkes</span>
+<span class="token comment"># det slik at hele listen inkluderes (fra f&#xF8;rste til siste element).</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Annenhver:  &quot;</span><span class="token punctuation">,</span> handleliste<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Hvis siste tall er negativt g&#xE5;r listen baklangs</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Omvendt:    &quot;</span><span class="token punctuation">,</span> handleliste<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</pre><pre data-role="codeBlock" data-info class="language-"><code>Hele listen: [&apos;Smoothie&apos;, &apos;N&#xF8;ttemix&apos;, &apos;Mellombar&apos;, &apos;Yogurt&apos;, &apos;Melk&apos;]
+Fra start:   [&apos;Smoothie&apos;, &apos;N&#xF8;ttemix&apos;, &apos;Mellombar&apos;]
+Til slutt:   [&apos;Yogurt&apos;, &apos;Melk&apos;]
+Samme liste: [&apos;Smoothie&apos;, &apos;N&#xF8;ttemix&apos;] = [&apos;Smoothie&apos;, &apos;N&#xF8;ttemix&apos;]
+Ogs&#xE5; samme:  [&apos;Yogurt&apos;, &apos;Melk&apos;] = [&apos;Yogurt&apos;, &apos;Melk&apos;]
+Annenhver:   [&apos;Smoothie&apos;, &apos;Mellombar&apos;, &apos;Melk&apos;]
+Omvendt:     [&apos;Melk&apos;, &apos;Yogurt&apos;, &apos;Mellombar&apos;, &apos;N&#xF8;ttemix&apos;, &apos;Smoothie&apos;]
+</code></pre><h4 class="mume-header" id="nested-liste">Nested liste</h4>
+
+<p>En nested liste er en liste som har lister som sine element.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">deltagere <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">&quot;Rebecca&quot;</span><span class="token punctuation">,</span> <span class="token number">34</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+             <span class="token punctuation">[</span><span class="token string">&quot;Erik&quot;</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+             <span class="token punctuation">[</span><span class="token string">&quot;Selma&quot;</span><span class="token punctuation">,</span> <span class="token number">39</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+             <span class="token punctuation">[</span><span class="token string">&quot;Amanda&quot;</span><span class="token punctuation">,</span> <span class="token number">41</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;</span><span class="token interpolation"><span class="token punctuation">{</span>deltagere<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">}</span></span><span class="token string"> er </span><span class="token interpolation"><span class="token punctuation">{</span>deltagere<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">}</span></span><span class="token string"> &#xE5;r.&quot;</span></span><span class="token punctuation">)</span>
+</pre><pre data-role="codeBlock" data-info class="language-"><code>Selma er 39 &#xE5;r.
+</code></pre><p>Her er listen <code>[&quot;Selma&quot;, 39]</code> tredje elementet i listen <code>deltagere</code>. For &#xE5; f&#xE5; tak p&#xE5; et element inne i denne innerste listen brukes <a href="#indeksoperator">inkeksoperatoren</a> to ganger:</p>
 <h2 class="mume-header" id="assosiativ-liste">Assosiativ liste</h2>
 
 <p>En samling verdier som hver er assosiert med en n&#xF8;kkel</p>
@@ -894,7 +942,7 @@ resultater <span class="token operator">=</span> elev<span class="token punctuat
 elev<span class="token punctuation">[</span><span class="token string">&quot;klasse&quot;</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&quot;9A&quot;</span>
 </pre><h4 class="mume-header" id="element-assositativ-liste">Element - assositativ liste</h4>
 
-<p>Et element i en assositativ liste er en n&#xF8;kkel - verdi par. N&#xF8;kkelen sier noe om hva verdien er (tenk <a href="#variabelnavn">variabelnavn</a>) og verdien er en <a href="#verdi">verdi</a> som er akseptert i programmeringsspr&#xE5;ket. I eksemplet over ser vi at verdiene er 3 <a href="#streng">strenger</a> og en <a href="#liste">liste</a>.</p>
+<p>Et element i en assositativ liste er en n&#xF8;kkel - verdi par. N&#xF8;kkelen sier noe om hva verdien er (tenk <a href="#variabelnavn">variabelnavn</a>) og verdien er en <a href="#verdi">verdi</a> som er akseptert i programmeringsspr&#xE5;ket. I eksemplet er verdiene til elementene, 3 <a href="#streng">strenger</a> og en <a href="#liste">liste</a>.</p>
 <h2 class="mume-header" id="operatorer">Operatorer</h2>
 
 <p>Enkelt tegn som bearbeider en eller flere verdier og returnerer en verdi</p>
@@ -1212,28 +1260,82 @@ Der var du ferdig!
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token comment"># Tellevariabelen i f&#xE5;r tallverdiene 0, 1, 2, 3, 4</span>
 <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;tall:&quot;</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span>
-</pre><p>F&#xE5;r <code>range</code> et tallverdi som <a href="#argument">argument</a>, her 5, lages en tallf&#xF8;lge som starter p&#xE5; 0 og g&#xE5;r opp til (men ikke inklusive) 5, og hvert tall er 1 st&#xF8;rre enn det forrige.</p>
+</pre><pre data-role="codeBlock" data-info class="language-"><code>tall: 0
+tall: 1
+tall: 2
+tall: 3
+tall: 4
+</code></pre><p>F&#xE5;r <code>range</code> et tallverdi som <a href="#argument">argument</a>, her 5, lages en tallf&#xF8;lge som starter p&#xE5; 0 og g&#xE5;r opp til (men ikke inklusive) 5, og hvert tall er 1 st&#xF8;rre enn det forrige.</p>
 <h5 class="mume-header" id="range-med-to-argumenter">range med to argumenter</h5>
 
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token comment"># Tellevariabelen j f&#xE5;r tallverdiene 5, 6, 7, 8, 9</span>
 <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;tall:&quot;</span><span class="token punctuation">,</span> j<span class="token punctuation">)</span>
-</pre><p>F&#xE5;r <code>range</code> to tallverdier som <a href="#argument">argument</a>, her 5 og 10, lages en tallf&#xF8;lge som starter p&#xE5; 5 og g&#xE5;r opp til (men ikke inklusive) 10, og hvert tall er 1 st&#xF8;rre enn det forrige.</p>
+</pre><pre data-role="codeBlock" data-info class="language-"><code>tall: 5
+tall: 6
+tall: 7
+tall: 8
+tall: 9
+</code></pre><p>F&#xE5;r <code>range</code> to tallverdier som <a href="#argument">argument</a>, her 5 og 10, lages en tallf&#xF8;lge som starter p&#xE5; 5 og g&#xE5;r opp til (men ikke inklusive) 10, og hvert tall er 1 st&#xF8;rre enn det forrige.</p>
 <h5 class="mume-header" id="range-med-tre-argumenter">range med tre argumenter</h5>
 
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token comment"># Tellevariabelen k f&#xE5;r partallverdiene 0, 2, 4, 6, 8</span>
 <span class="token keyword">for</span> k <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;partall:&quot;</span><span class="token punctuation">,</span> k<span class="token punctuation">)</span>
-</pre><p>F&#xE5;r <code>range</code> tre tallverdier som <a href="#argument">argument</a>, her 0, 10 og 2, lages en tallf&#xF8;lge som starter p&#xE5; 0 og g&#xE5;r opp til (men ikke inklusive) 10, og hvert tall er 2 st&#xF8;rre enn det forrige.</p>
+</pre><pre data-role="codeBlock" data-info class="language-"><code>partall: 0
+partall: 2
+partall: 4
+partall: 6
+partall: 8
+</code></pre><p>F&#xE5;r <code>range</code> tre tallverdier som <a href="#argument">argument</a>, her 0, 10 og 2, lages en tallf&#xF8;lge som starter p&#xE5; 0 og g&#xE5;r opp til (men ikke inklusive) 10, og hvert tall er 2 st&#xF8;rre enn det forrige.</p>
 <h4 class="mume-header" id="for-l%C3%B8kke-med-en-liste">for-l&#xF8;kke med en liste</h4>
 
-<p>I de tre f&#xF8;lgende eksemplene brukes en for-l&#xF8;kke til &#xE5; g&#xE5; igjennom verdiene i en liste.</p>
-<h2 class="mume-header" id="tellevariabel">Tellevariabel</h2>
+<p>For-l&#xF8;kker kan ogs&#xE5; brukes til &#xE5; g&#xE5; igjennom elementene i en liste. <a href="#tellevariabel">Tellevariabelen</a> f&#xE5;r da verdiene til <a href="#element---liste">elementene</a> i listen for hver gjentagelse.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">handleliste <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;Smoothie&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;N&#xF8;ttemix&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Mellombar&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Yogurt&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Melk&quot;</span><span class="token punctuation">]</span>
+
+<span class="token comment"># Bruker en for-l&#xF8;kke til &#xE5; skrive ut hvert element i listen</span>
+<span class="token keyword">for</span> vare <span class="token keyword">in</span> handleliste<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;Vare: &apos;</span><span class="token interpolation"><span class="token punctuation">{</span>vare<span class="token punctuation">}</span></span><span class="token string">&apos;.&quot;</span></span><span class="token punctuation">)</span>
+</pre><pre data-role="codeBlock" data-info class="language-"><code>Vare: &apos;Smoothie&apos;.
+Vare: &apos;N&#xF8;ttemix&apos;.
+Vare: &apos;Mellombar&apos;.
+Vare: &apos;Yogurt&apos;.
+Vare: &apos;Melk&apos;.
+</code></pre><p>Her f&#xE5;r <a href="#tellevariabel">tellevariabelen</a> <code>vare</code> verdien til hvert element i <code>handleliste</code>. Trenger vi en til tellevariabel som holder p&#xE5; indeksen til elementet kan <code>enumerate</code> brukes i Python. Merk at <code>enumerate</code> starter p&#xE5; indeks 0.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">handleliste <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;Smoothie&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;N&#xF8;ttemix&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Mellombar&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Yogurt&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Melk&quot;</span><span class="token punctuation">]</span>
+
+<span class="token comment"># Bruker en for-l&#xF8;kke til &#xE5; skrive ut hvert element i listen</span>
+<span class="token keyword">for</span> i<span class="token punctuation">,</span> vare <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>handleliste<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;Vare: nr </span><span class="token interpolation"><span class="token punctuation">{</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">}</span></span><span class="token string">: &apos;</span><span class="token interpolation"><span class="token punctuation">{</span>vare<span class="token punctuation">}</span></span><span class="token string">&apos;.&quot;</span></span><span class="token punctuation">)</span>
+</pre><pre data-role="codeBlock" data-info class="language-"><code>Vare: nr 1: &apos;Smoothie&apos;.
+Vare: nr 2: &apos;N&#xF8;ttemix&apos;.
+Vare: nr 3: &apos;Mellombar&apos;.
+Vare: nr 4: &apos;Yogurt&apos;.
+Vare: nr 5: &apos;Melk&apos;.
+</code></pre><h2 class="mume-header" id="tellevariabel">Tellevariabel</h2>
 
 <p>Variabel som oppdateres for hver gang en kodeblokk i en l&#xF8;kke gjentas</p>
 <h3 class="mume-header" id="beskrivelse-52">Beskrivelse</h3>
 
-<h2 class="mume-header" id="while-l%C3%B8kke">while-l&#xF8;kke</h2>
+<p>En tellevariabel brukes i <a href="#l%C3%B8kke">l&#xF8;kker</a> og har en verdi som oppdateres for hver gjentagelse. I sin enkleste form har en l&#xF8;kke bare en tellevariabel, det er ikke noen begrensninger p&#xE5; antall tellevariabler i en l&#xF8;kke, se eksempel under.</p>
+<p>I en <a href="#for-l%C3%B8kke">for-l&#xF8;kke</a> definereres tellevariabelen i f&#xF8;rste linjen til l&#xF8;kken. I en <a href="#while-l%C3%B8kke">while-l&#xF8;kke</a> m&#xE5; tellevariabelen defineres f&#xF8;r selve l&#xF8;kken.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token comment"># For-l&#xF8;kke med en tellevariabel i</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;</span><span class="token interpolation"><span class="token punctuation">{</span>i<span class="token punctuation">:</span><span class="token format-spec">2</span><span class="token punctuation">}</span></span><span class="token string">x5=</span><span class="token interpolation"><span class="token punctuation">{</span>i<span class="token operator">*</span><span class="token number">5</span><span class="token punctuation">:</span><span class="token format-spec">2</span><span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">)</span>
+</pre><p>To <a href="#nestede-l%C3%B8kker">nestede for-l&#xF8;kker</a> med to tellevariabler: <code>i</code> og <code>j</code>.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token comment"># Nested for-l&#xF8;kke med to tellevariabler i og j</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;</span><span class="token interpolation"><span class="token punctuation">{</span>i<span class="token punctuation">:</span><span class="token format-spec">2</span><span class="token punctuation">}</span></span><span class="token string">x</span><span class="token interpolation"><span class="token punctuation">{</span>j<span class="token punctuation">:</span><span class="token format-spec">2</span><span class="token punctuation">}</span></span><span class="token string">=</span><span class="token interpolation"><span class="token punctuation">{</span>i<span class="token operator">*</span>j<span class="token punctuation">:</span><span class="token format-spec">3</span><span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">)</span>
+</pre><pre data-role="codeBlock" data-info class="language-"><code> 1x 1=  1
+ 1x 2=  2
+...
+ 5x 6= 30
+ 5x 7= 35
+...
+10x 9= 90
+10x10=100
+</code></pre><h2 class="mume-header" id="while-l%C3%B8kke">while-l&#xF8;kke</h2>
 
 <p>En l&#xF8;kke som gjentar en kodeblokk s&#xE5; lenge en betingelse har verdien True</p>
 <h3 class="mume-header" id="beskrivelse-53">Beskrivelse</h3>
@@ -1314,8 +1416,10 @@ Snorre
 
 <h2 class="mume-header" id="reserverte-ord">Reserverte ord</h2>
 
+<p>Ord med en spesiell betydning i et tekstbasert programmeringsspr&#xE5;k</p>
 <h3 class="mume-header" id="beskrivelse-62">Beskrivelse</h3>
 
+<p>De fleste tekstbaserte programmeringsspr&#xE5;k har reservert egne ord som bare kan brukes p&#xE5; en helt bestemt m&#xE5;te. Slike ord kan da ikke brukes til <a href="#variabelnavn">variabelnavn</a> eller <a href="#funksjonsnavn">funksjonsnavn</a>. Eksempel p&#xE5; reserverte ord  Python er: <code>if</code>, <code>for</code>, <code>while</code>, <code>import</code>, <code>else</code>, <code>elif</code>, <code>as</code>, <code>True</code>, <code>False</code>, <code>and</code>, <code>or</code>, <code>def</code>, <code>return</code>, <code>break</code>, <code>continue</code></p>
 
       </div>
       

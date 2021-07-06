@@ -294,6 +294,7 @@ For Python gjelder disse kravene til et variabelnavn
 2. kan IKKE inneholde mellomrom ` `, bindestrek `-` eller punktum `.`: Bruk heller `_` mellom ord i variabelnavnet.
 3. kan IKKE starte med et siffer.
 4. må være unikt. Flere variabler kan altså ikke ha samme navn.
+5. kan ikke være noen av de [reserverte ordene](#reserverte-ord) i Python, for eksempel: `if`, `for`, `import`, `else`, `elif`.
 
 ### Tips til variabelnavn
 Bruk variabelnavn som beskriver hva verdien til variabelen skal brukes til. For eksempel er navn som `a`, `b` oftest dårlige navn, mens `lån`, `navn` eller `poengsum` er bra navn.
@@ -708,7 +709,7 @@ print(deltagere[2], deltagere[3])
 ```
 Erik 23
 ```
-En liste kan også ha andre lister som sine elementer.
+En liste kan også ha andre lister som sine elementer og det kalles en [nested liste](#nested-liste).
 ```python
 # Lister som elementer i en liste
 deltagere = [["Rebecca", 34],
@@ -726,16 +727,76 @@ En indeks brukes når man skal hente ut eller endre på elementene i en liste. I
 Det første elementet har indeksen `0`, det andre har indeksen `1` og så videre. På rad to over brukes indeksen `2` til å hente ut verdien til det tredje elementet i listen `deltager`. På rad tre over brukes indeksen `1` til å endre det andre elementet i listen til verdien `"Svein"`. Merk at indeksen må stå innenfor [indeksoperatoren](#indeksoperator) som er de to `[]`-parentesene.
 
 #### Indeksoperator
-Operator `[]`, som brukes etter en liste til å få tilgang til et element i en liste `liste[indeks]`. På de to siste radene over brukes indeksoperatoren `deltagere[2]` og `deltagere[1]` til å få tilgang til det tredje og andre elementet i listen.
+Operator `[]`, som brukes etter en liste for å få tilgang til et element i listen. For eksempel: `liste[2]`, hvor indeksoperatoren brukes til å hente ut det tredje elementet fra listen.
 
 #### Lengden til en liste
-Funksjonen `len(liste)` returnerer lengden til en liste.
+Funksjonen `len(liste)` returnerer lengden til en liste hvilket er det samme som antallet element i en liste.
 
 #### Slice - liste
-TODO: Legg til forklaring
+I Python kan en slice brukes til å hente ut flere verdier fra en liste. Syntaksten likner litt på den til range, fra [for-løkker](#for-løkke). Den bruker tre verdier:
+1. start-indeksen til slicen.
+2. slutt-indeksen (opp til men ikke inkludert) til slicen.
+3. avstandet mellom hvert element som er i slicen.
+
+```python
+handleliste = ["Smoothie", "Nøttemix", "Mellombar", "Yogurt", "Melk"]
+tørrvarer = handleliste[1:3:1]
+print(f"Tørrvarer i handlelisten: {tørrvarer}.")
+```
+```
+Tørrvarer i handlelisten: ['Nøttemix', 'Mellombar'].
+```
+Variablen `tørrvarer` er her lagd med en slice av listen `handleliste`. Den starter på andre elementet (indeks 1) og går opp til (men ikke inklusive) det fjerde elementet (indeks 3) og avstandet mellom elementene er 1.
+
+Det er mange finurlige måter å lage slicer på som vises i eksemplet under.
+```python
+handleliste = ["Smoothie", "Nøttemix", "Mellombar", "Yogurt", "Melk"]
+print("Hele listen:", handleliste)
+
+# Hvis første tallet i slicen utelukkes, betyr det at den returnerte
+# listen starter fra starten.
+print("Fra start:  ", handleliste[:3:1])
+
+# Hvis andre tallet i slicen utelukkes, betyr det at den returnerte
+# listen slutter med siste element
+print("Til slutt:  ", handleliste[3::1])
+
+# Hvis siste tallet i slicen utelukkes, tolkes det slik at hver element
+# mellom start og slutt er med.
+print("Samme liste:", handleliste[:2:1], "=", handleliste[:2:])
+print("Også samme: ", handleliste[3::1], "=", handleliste[3::])
+
+# Hvis første og andre tallet (start og slutt) i slicen utelukkes, tolkes
+# det slik at hele listen inkluderes (fra første til siste element).
+print("Annenhver:  ", handleliste[::2])
+
+# Hvis siste tall er negativt går listen baklangs
+print("Omvendt:    ", handleliste[::-1])
+```
+```
+Hele listen: ['Smoothie', 'Nøttemix', 'Mellombar', 'Yogurt', 'Melk']
+Fra start:   ['Smoothie', 'Nøttemix', 'Mellombar']
+Til slutt:   ['Yogurt', 'Melk']
+Samme liste: ['Smoothie', 'Nøttemix'] = ['Smoothie', 'Nøttemix']
+Også samme:  ['Yogurt', 'Melk'] = ['Yogurt', 'Melk']
+Annenhver:   ['Smoothie', 'Mellombar', 'Melk']
+Omvendt:     ['Melk', 'Yogurt', 'Mellombar', 'Nøttemix', 'Smoothie']
+```
 
 #### Nested liste
-TODO: Legg til forklaring
+En nested liste er en liste som har lister som sine element.
+```python
+deltagere = [["Rebecca", 34],
+             ["Erik", 23],
+             ["Selma", 39],
+             ["Amanda", 41]]
+print(f"{deltagere[2][0]} er {deltagere[2][1]} år.")
+```
+```
+Selma er 39 år.
+```
+Her er listen `["Selma", 39]` tredje elementet i listen `deltagere`. For å få tak på et element inne i denne innerste listen brukes [inkeksoperatoren](#indeksoperator) to ganger:
+
 
 ## Assosiativ liste
 En samling verdier som hver er assosiert med en nøkkel
@@ -765,7 +826,7 @@ elev["klasse"] = "9A"
 ```
 
 #### Element - assositativ liste
-Et element i en assositativ liste er en nøkkel - verdi par. Nøkkelen sier noe om hva verdien er (tenk [variabelnavn](#variabelnavn)) og verdien er en [verdi](#verdi) som er akseptert i programmeringsspråket. I eksemplet over ser vi at verdiene er 3 [strenger](#streng) og en [liste](#liste).
+Et element i en assositativ liste er en nøkkel - verdi par. Nøkkelen sier noe om hva verdien er (tenk [variabelnavn](#variabelnavn)) og verdien er en [verdi](#verdi) som er akseptert i programmeringsspråket. I eksemplet er verdiene til elementene, 3 [strenger](#streng) og en [liste](#liste).
 
 ## Operatorer
 Enkelt tegn som bearbeider en eller flere verdier og returnerer en verdi
@@ -1126,6 +1187,13 @@ I de tre følgende eksempelene brukes [funksjonen](#funksjon) `range` til å lag
 for i in range(5):
     print("tall:", i)
 ```
+```
+tall: 0
+tall: 1
+tall: 2
+tall: 3
+tall: 4
+```
 Får `range` et tallverdi som [argument](#argument), her 5, lages en tallfølge som starter på 0 og går opp til (men ikke inklusive) 5, og hvert tall er 1 større enn det forrige.
 
 ##### range med to argumenter
@@ -1133,6 +1201,13 @@ Får `range` et tallverdi som [argument](#argument), her 5, lages en tallfølge 
 # Tellevariabelen j får tallverdiene 5, 6, 7, 8, 9
 for j in range(5, 10):
     print("tall:", j)
+```
+```
+tall: 5
+tall: 6
+tall: 7
+tall: 8
+tall: 9
 ```
 Får `range` to tallverdier som [argument](#argument), her 5 og 10, lages en tallfølge som starter på 5 og går opp til (men ikke inklusive) 10, og hvert tall er 1 større enn det forrige.
 
@@ -1142,17 +1217,76 @@ Får `range` to tallverdier som [argument](#argument), her 5 og 10, lages en tal
 for k in range(0, 10, 2):
     print("partall:", k)
 ```
+```
+partall: 0
+partall: 2
+partall: 4
+partall: 6
+partall: 8
+```
 Får `range` tre tallverdier som [argument](#argument), her 0, 10 og 2, lages en tallfølge som starter på 0 og går opp til (men ikke inklusive) 10, og hvert tall er 2 større enn det forrige.
 
 #### for-løkke med en liste
-I de tre følgende eksemplene brukes en for-løkke til å gå igjennom verdiene i en liste.
+For-løkker kan også brukes til å gå igjennom elementene i en liste. [Tellevariabelen](#tellevariabel) får da verdiene til [elementene](#element---liste) i listen for hver gjentagelse.
+```python
+handleliste = ["Smoothie", "Nøttemix", "Mellombar", "Yogurt", "Melk"]
 
+# Bruker en for-løkke til å skrive ut hvert element i listen
+for vare in handleliste:
+    print(f"Vare: '{vare}'.")
+```
+```
+Vare: 'Smoothie'.
+Vare: 'Nøttemix'.
+Vare: 'Mellombar'.
+Vare: 'Yogurt'.
+Vare: 'Melk'.
+```
+Her får [tellevariabelen](#tellevariabel) `vare` verdien til hvert element i `handleliste`. Trenger vi en til tellevariabel som holder på indeksen til elementet kan `enumerate` brukes i Python. Merk at `enumerate` starter på indeks 0.
+```python
+handleliste = ["Smoothie", "Nøttemix", "Mellombar", "Yogurt", "Melk"]
+
+# Bruker en for-løkke til å skrive ut hvert element i listen
+for i, vare in enumerate(handleliste):
+    print(f"Vare: nr {i+1}: '{vare}'.")
+```
+```
+Vare: nr 1: 'Smoothie'.
+Vare: nr 2: 'Nøttemix'.
+Vare: nr 3: 'Mellombar'.
+Vare: nr 4: 'Yogurt'.
+Vare: nr 5: 'Melk'.
+```
 
 ## Tellevariabel
 Variabel som oppdateres for hver gang en kodeblokk i en løkke gjentas
 
 ### Beskrivelse
+En tellevariabel brukes i [løkker](#løkke) og har en verdi som oppdateres for hver gjentagelse. I sin enkleste form har en løkke bare en tellevariabel, det er ikke noen begrensninger på antall tellevariabler i en løkke, se eksempel under.
 
+I en [for-løkke](#for-løkke) definereres tellevariabelen i første linjen til løkken. I en [while-løkke](#while-løkke) må tellevariabelen defineres før selve løkken.
+```python
+# For-løkke med en tellevariabel i
+for i in range(1,11):
+    print(f"{i:2}x5={i*5:2}")
+```
+To [nestede for-løkker](#nestede-løkker) med to tellevariabler: `i` og `j`.
+```python
+# Nested for-løkke med to tellevariabler i og j
+for i in range(1,11):
+    for j in range(1,11):
+        print(f"{i:2}x{j:2}={i*j:3}")
+```
+```
+ 1x 1=  1
+ 1x 2=  2
+...
+ 5x 6= 30
+ 5x 7= 35
+...
+10x 9= 90
+10x10=100
+```
 
 ## while-løkke
 En løkke som gjentar en kodeblokk så lenge en betingelse har verdien True
@@ -1244,6 +1378,7 @@ Snorre
 ### Beskrivelse
 
 ## Reserverte ord
+Ord med en spesiell betydning i et tekstbasert programmeringsspråk
 
 ### Beskrivelse
-
+De fleste tekstbaserte programmeringsspråk har reservert egne ord som bare kan brukes på en helt bestemt måte. Slike ord kan da ikke brukes til [variabelnavn](#variabelnavn) eller [funksjonsnavn](#funksjonsnavn). Eksempel på reserverte ord  Python er: `if`, `for`, `while`, `import`, `else`, `elif`, `as`, `True`, `False`, `and`, `or`, `def`, `return`, `break`, `continue`
