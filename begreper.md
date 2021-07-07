@@ -44,9 +44,15 @@ Det finnes to ulike typer tekstbasert programmeringsspråk:
 1. Tolkede språk: for eksempel [Python](#python) eller [JavaScript](#javascript)
 2. Kompilerte språk: [C](#c) eller [C++](#c++)
 
-For tolkede språk kjøres tekstfilen gjennom en [kommandotolk](#kommandotolk) (*interpreter* eng.), da kalles filen ofte for et skript, eller kan filen gjøres om til et kjørbart program ved at den [kompileres](#kompilere). Vanligvis lages skript bare når vi bruker tekstbasert programmering, mens alle apper som installeres på en datamaskin er eksempler på kompilerte programmer.
+For tolkede språk kjøres tekstfilen gjennom en [kommandotolk](#kommandotolk) (*interpreter* eng.), da kalles filen ofte for et [skript](#skript), eller kan filen gjøres om til et kjørbart program ved at den [kompileres](#kompilere). Vanligvis lages skript bare når vi bruker tekstbasert programmering, mens alle apper som installeres på en datamaskin er eksempler på kompilerte programmer.
 
 tekstbasert programmering følger faste regler som bestemmes av hvilket [programmeringsspråk](#programmeringspråk) du koder i. Disse reglene kalles for [syntaksen](#syntaks) til programmeringsspråket.
+
+## Skript
+En kodefil for tolkede språk innen tekstbasert programmering
+
+### Beskrivelse
+Et skript et en fil med kode for tekstbasert programmering for tolkede språk som Python eller JavaScript.
 
 ## Kompilere
 Lage et kjørbart program av en tekstfil
@@ -93,7 +99,7 @@ Et ord som har en spesiell betydning i et programmeringsspråk
 De fleste [tekst-programmeringsspråk](#tekstbasert-programmeringsspråk) har nøkkelord (*keyword* eng.) som er reserverte til spesielle [operasjoner](#operasjon). Et nøkkelord kan ikke brukes til [variabelnavn](#variabelnavn) eller [funksjonsnavn](#funksjonsnavn). Ord som brukes til å lage [kontrollstrukturer](#kontrollstruktur) er alle nøkkelord.
 
 #### Eksempel på nøkkelord i Python
-* `def`: definerer en [funksjon](#funksjon)
+* `def`: [definerer](#definere) en [funksjon](#funksjon)
 * `if`: starter en [if-setning](#if-setning)
 * `else`: lager en else-kodeblokk knyttet til en if-setning
 * `True`, `False`: [Boolske](#boolean)-verdier
@@ -102,11 +108,10 @@ De fleste [tekst-programmeringsspråk](#tekstbasert-programmeringsspråk) har n�
 Et program som kjører et skript.
 
 ### Beskrivelse
-Tolkede [programmeringsspråk](#tekstbasert-programmering) trenger en kommandotolk for å kunne kjøres. Tekstfilene med programmet kalles da for skript. Kommandotolken til et pythonskript heter enkelt og greit `python`. Hvis [Python](#python) er installert og tilgjengelig kan et pythonskript kjøres i en terminal gjennom å bruke kommandotolken `python` foran filnavnet til skriptet.
+Tolkede [programmeringsspråk](#tekstbasert-programmering) trenger en kommandotolk for å kunne kjøres. Tekstfilene med programmet kalles da for [skript](#skript). Kommandotolken til et pythonskript heter enkelt og greit `python`. Hvis [Python](#python) er installert og tilgjengelig kan et pythonskript kjøres i en terminal gjennom å bruke kommandotolken `python` foran filnavnet til skriptet.
 ```bash
 > python mitt-program.py
 ```
-[//]: <> (TODO: Definere terminal?)
 
 ## Programmeringsspråk
 Et språk som beskriver hvordan operasjoner settes sammen i et program.
@@ -146,7 +151,7 @@ En algoritme kan være noe konkret, som noen linjer med kode som utfør oppgaven
 
 [//]: <> (TODO: Gi eksempler eller ta bort)
 
-Mange internettbedrifter bruker algoritmer når de skal presentere varer eller artikler til deg. For eksempel bruker strømmetjenester som Netflix og Spotify slike når de skal presentere filmer eller musikk de mener passer deg. Disse algoritmene baserer seg på at bedriftene husker hva du har valgt tidligere og hva andre personer som likner deg (samme alder, kjønn, bosted) har valgt.
+Mange internettbedrifter bruker algoritmer når de skal presentere varer eller artikler til deg. For eksempel bruker strømmetjenester som Netflix og Spotify slike når de skal presentere filmer eller musikk de mener passer deg. Disse algoritmene baserer seg på at programmene husker hva du har valgt tidligere og hva andre personer som likner deg (samme alder, kjønn, bosted) har valgt.
 
 #### Eksempel: gjennomsnitt
 * Lag en list-variabel `tall_liste` hvor du samler alle tall du vil beregne gjennomsnittet på.
@@ -264,8 +269,6 @@ En variabel er et navngitt sted i arbeidsminnet som lagrer en eller flere [verdi
 
 En bestemmer selv hva navnet til en variabel skal være, men [syntaksen](#syntaks) til programmeringsspråket legger begrensninger til hva et [variabelnavn](#variabelnavn) kan være. Før man kan bruke en variablel må den [definerers](#definere). Navnet til en variabel brukes når du:
 
-[//]: <> (TODO: Skal vi også forklar deklareres, for det er egentlig det som skal stå over. )
-
 1. [definerer](#definerer) variablen
 2. bruker verdien til variablen
 3. endrer verdien til variablen.
@@ -277,7 +280,7 @@ rente_prosent = 0.05
 rente = lån*rente_prosent
 lån = lån + rente
 ```
-Her defineres først tre variabler: `lån`, `rente_prosent` og `rente`. På tredje rad brukes variabelen `lån` og `rente_prosent` i et [uttrykk](#uttrykk) for å regne ut hva renten skal være. På siste rad endres verdien til variabelen `lån` ved at renten legges til den første verdien til lånet.
+Her [defineres](#definere) først tre variabler: `lån`, `rente_prosent` og `rente`. På tredje rad brukes variabelen `lån` og `rente_prosent` i et [uttrykk](#uttrykk) for å regne ut hva renten skal være. På siste rad endres verdien til variabelen `lån` ved at renten legges til den første verdien til lånet.
 
 #### Variabel i matematikken
 Ordet variabel brukes også i algebraen i matematikken. Da betegner det ofte en ukjent tallverdi, for eksempel *x, y*. Innen programmering har en variabel *alltid* en verdi og representerer altså ikke noe ukjent.
@@ -316,7 +319,7 @@ Beskriver hva en verdi kan brukes til
 
 ### Beskrivelse
 Alle verdier har en datatype som beskriver hva den kan brukes til. De vanligste datatypene er:
-* [tall](#tall): Brukes i all matematikk, se for eksempel [aritmetiske operatorer](#aritmetisk operatorer).
+* [tall](#tall): Brukes i all matematikk, se for eksempel [aritmetiske operatorer](#aritmetiske-operatorer).
 * [strenger](#streng): Brukes til å representere tekst-verdier.
 * [boolean](#boolean): Brukes til å beskrive om noe er *sant* (`True`) eller *falskt* (`False`).
 * [lister](#liste): Brukes å samle verdier i en ordnet rekkefølge.
@@ -324,8 +327,6 @@ Alle verdier har en datatype som beskriver hva den kan brukes til. De vanligste 
 
 ## Definere
 Operasjon som lager en variabel eller funksjon.
-
-[//]: <> (TODO: Skal vi også forklar deklareres?)
 
 ### Beskrivelse
 For å kunne bruke en [variabel](#variabel) eller [funksjon](#funksjon) må de først defineres. Når en variabel blir definert må den også bli [tilordnet](#tilordne) en verdi. I noen [programmeringsspråk](#programmeringsspråk) kan man si ifra at man skal bruke en variabel uten å gi den en verdi. Da heter det å *deklarere* en variabel. Når en variabel defineres knyttes et [variabelnavn](#variabelnavn) til en verdi som lagres i [arbeidsminnet](#arbeidsminne). Når en funksjon defineres knyttes et [funksjonsnavn](#funksjonsnavn) til et sett med operasjoner. Navnet brukes så i programmet for å representere enten verdien til variabelen eller alle operasjonen til funksjonen.
@@ -963,6 +964,16 @@ Når en verdi får en ny verdi brukes
 
 Er man ny til programmering blandes dette tegnet ofte sammen med likhetstegnet fra matematikk som tilsynelatende er det samme. I matematikk betyr likhetstegnet at det som står på venstre side om likhetstegnet er lik det som står på høyre side.
 
+#### Aritmetiske tilordningsoperatorer
+Når verdien til en variabel skal endres med en fast verdi kan aritmetiske tilordningsoperatorer brukes.
+```python
+n = 1
+n += 2 # Øker verdien til n med 2, samme som n = n+1
+n -= 1 # Minker verdien til n med 1, samme som n = n-1
+n *= 2 # Dobbler verdien til n, samme som n = n*2
+```
+Alle [aritmetiske operatorer](#aritmetiske-operatorer) har en tilsvarende aritmetisk tilordningsoperator.
+
 ## Funksjon
 En funksjon lagrer en eller flere operasjoner
 
@@ -970,8 +981,30 @@ En funksjon lagrer en eller flere operasjoner
 En funksjon brukes til å lagre et sett med operasjoner til et navn. Operasjonene som lagres i en funksjon må utføre en spesifikk oppgave slik at man bruker funksjonens navn istedenfor alle operasjonene når programmet skal utføre oppgaven. Når funksjonen brukes heter det at man [kaller funksjonen](#kalle-funksjon). Når en funksjon blir kallet blir alle operasjonene til funksjonen utført og slik blir også oppgaven til funksjonen utført.
 
 En funksjon likner på en variabel med at den har et navn og noe blir lagret til navnet, men en funksjon lagrer *operasjoner* hvor en variabel lagrer *verdier*.
-TODO: Legg in noen eksempler
 
+```python
+# Funksjon som skriver ut melding
+def morgenhilsen():
+    print("Gratulerer! En ny dag er deg gitt!")
+    print("Bruk den til å lage et fint program :D")
+    print("**************************************")
+
+def morgenhilsen_til(navn):
+    print(f"Gratulerer {navn}! En ny dag er deg gitt!")
+    print("Bruk den til å lage et fint program :D")
+    print("**************************************")
+
+morgenhilsen() # Kaller funksjonen morgenhilsen
+morgenhilsen_til("Petter") # Kaller morgenhilsen_til med et argument
+```
+```
+Gratulerer! En ny dag er deg gitt!
+Bruk den til å lage et fint program :D
+**************************************
+Gratulerer Petter! En ny dag er deg gitt!
+Bruk den til å lage et fint program :D
+**************************************
+```
 ## Funksjonsnavn
 Navnet til en funksjon
 
@@ -987,7 +1020,7 @@ Utføre operasjoner knyttet til en funksjon
 ### Beskrivelse
 En funksjon lagrer operasjoner og når disse skal utføres må funksjonen kalles. Andre ord som ofte brukes for dette er å utføre funksjonen eller å kjøres den. Innen [tekstbasert programmering](#tekstbasert-programmering) kalles en funksjon gjennom å skrive to parenteser etter funksjonsnavnet.
 ```python
-# Print funksjonen kalles
+# Print funksjonen kalles med "Hei verdien!" som argument
 print("Hei verden!")
 
 # Print funksjonen kalles IKKE
@@ -996,25 +1029,85 @@ print
 ```
 Hei verden!
 ```
-Her brukes funksjonen `print` to ganger. Den første gangen kalles funksjonen og den andre gangen kalles ikke funksjonen da den mangler de to parentesene etter funksjonsnavnet.
-
-Når en funksjon kalles kan verdier overføres til
+Her brukes funksjonen `print` to ganger. Den første gangen kalles funksjonen og den andre gangen kalles ikke funksjonen da den mangler de to parentesene etter funksjonsnavnet. Verdien `"Hei verdien!"` overføres til print som et [argument](#argument).
 
 ## Argument
 Verdier som overføres til en funksjon når den kalles
 
 ### Beskrivelse
+Når en funksjon kalles kan verdier overføres til funksjonen gjenom argument. Det er verdier plasserer mellom parentesene i funksjons-kallet. Er der flere argumenter separeres det gjennom kommategn.
 
+Funksoner kan [defineres](#definere) med ulike antall argumenter. Under vises to eksempel på funksjoner som tar en og to argumenter
 
+```python
+def morgenhilsen_til(navn):
+    print(f"Gratulerer {navn}! En ny dag er deg gitt!")
+
+def gratulerer_til(hilsen, navn):
+    print(f"Gratulerer {navn}! {hilsen}!")
+
+morgenhilsen_til("Janne")
+gratulerer_til("Håper dagen blir bra", "Svein")
+```
+```
+Gratulerer Janne! En ny dag er deg gitt!
+Gratulerer Svein! Håper dagen blir bra!
+```
+Hvis en funksjon kalles med feil antall argumenter vises en [kjøretids-feil](#kjøretids-feil).
+```python
+def morgenhilsen_til(navn):
+    print(f"Gratulerer {navn}! En ny dag er deg gitt!")
+
+morgenhilsen_til()
+```
+```
+TypeError: morgenhilsen_til() missing 1 required positional argument: 'navn'
+```
 ## Returverdi
+Verdi som returneres når en funksjon er ferdig med å utføre sine operasjoner
 
 ### Beskrivelse
+En returverdi er en verdi som returneres av funksjonen når den er ferdig. En retuverdi bestemmes med det som er til høyre av det[reserverte ordet](#reserverte-ord) `retur` inne i en funksjon.
+```python
+# Returnerer summen av to tall
+def summer(a, b):
+    return a + b
+
+print(summer(2,3))
+print(summer(5,10))
+```
+```
+5
+15
+```
+Her er returverdien til `summer` resultatet av regnestykket `a + b` hvor a og b er argumenter til funksjonen.
+
+En funksjon avsluttes etter den har returnert en verdi.
+```python
+def størst(a, b):
+    if a > b:
+        return a
+    return b
+
+print(størst(3,-6))
+print(størst(3,6))
+```
+Funksjonen størst returnerer det største tallet av argumentene a og b. Når a er større enn b utføres linjen return a inne i if-setningen og funksjonen avsluttes. Det betyr at siste linjen return b aldri utføres.
 
 ## Kommentar
 Tekst som ikke utfører noen operasjoner
 
 ### Beskrivelse
+Kommentarer er tekst om ikke utfører noe. I Python skrives en kommentar ved å bruke tegnet `#` først i raden. Kommentarer brukes til å dokumentere kode som er skreven eller å *inaktivere* kode slik at den ikke blir utført hver gang et program kjøres.
+```python
+#for i in range(1000):
+#    print("Dette skrives ut 1000 ganger!")
 
+# Summerer to tall
+def summer(a, b):
+    return a + b
+```
+I koden over brukes en kommentar til å inaktivere for-løkken og til å dokumentere funksjonen `summer`.
 
 ## Valg
 Ulik kode kjøres på grunnlag av en betingelse
@@ -1264,7 +1357,7 @@ Variabel som oppdateres for hver gang en kodeblokk i en løkke gjentas
 ### Beskrivelse
 En tellevariabel brukes i [løkker](#løkke) og har en verdi som oppdateres for hver gjentagelse. I sin enkleste form har en løkke bare en tellevariabel, det er ikke noen begrensninger på antall tellevariabler i en løkke, se eksempel under.
 
-I en [for-løkke](#for-løkke) definereres tellevariabelen i første linjen til løkken. I en [while-løkke](#while-løkke) må tellevariabelen defineres før selve løkken.
+I en [for-løkke](#for-løkke) [definereres](#definere) tellevariabelen i første linjen til løkken. I en [while-løkke](#while-løkke) må tellevariabelen defineres før selve løkken.
 ```python
 # For-løkke med en tellevariabel i
 for i in range(1,11):
@@ -1292,6 +1385,31 @@ for i in range(1,11):
 En løkke som gjentar en kodeblokk så lenge en betingelse har verdien True
 
 ### Beskrivelse
+En while-løkke skiller seg fra en [for-løkke](#for-løkke) med at den gjentar en kodeblokk så lenge en [betingelse](#betingelse) har verdien [True](#boolean).
+```python
+while True:
+    print("Gjentas for alltid!")
+```
+```
+Gjentas for alltid!
+Gjentas for alltid!
+...
+```
+
+En while-løkke kan brukes til å telle opp en [variabel](#variabel), men til forskjell fra [for-løkken](#for-løkke), må [tellevariabelen](#tellevariabel) [defineres](#definere) før løkken.
+```python
+n = 1             # Definerer en tellevariabel
+while n <= 20:    # While-løkken gjentas så lenge n <= 20
+    print(n, n*4) # Skriver ut verdien til n og n*4
+    n += 1        # Øker verdien til tellevariabelen med 1
+```
+```
+1 4
+2 8
+3 12
+...
+20 80
+```
 
 
 ## Eksternt bibliotek
