@@ -222,7 +222,7 @@ print("Jeg er 13 år!")
 Jeg er 13 år!
 ```
 
-Her sendes streng-verdien `"Jeg er 13 år!"` til [funksjonen](#funksjon) `print` som viser den på skjermen.
+Her sendes streng-verdien `"Jeg er 13 år!"` som argument til [funksjonen](#funksjon) `print`, som så viser den på skjermen.
 
 ## Kontrollstruktur
 Bestemmer hvilke deler av et program som skal utføres.
@@ -325,6 +325,36 @@ Alle verdier har en datatype som beskriver hva den kan brukes til. De vanligste 
 * [lister](#liste): Brukes å samle verdier i en ordnet rekkefølge.
 * [assosiative lister](#assosiativ-liste). Brukes til å samle verdier som er assosiert med en [nøkkel](#nøkkel).
 
+En [verdi](#verdi) kan konverteres mellom ulike datatyper
+
+## Konvertere mellom datatyper
+Forandre datatypen til en verdi
+
+### Beskrivelse
+En [verdi](#verdi) har alltid en [datatype](#datatype). Verdiene: `5` og `"5"` har datatypene [heltall](#heltall) og [streng](#streng). Verdier kan i flere tilfeller konverteres mellom ulike datatyper. Følgende funksjoner konverterer en verdi til sin datatype:
+* [heltall](#heltall) : `int(verdi)`
+* [flyttall](#flyttall) : `float(verdi)`
+* [streng](#streng) : `str(verdi)`
+* [boolean](#boolean) : `bool(verdi)`
+* [lister](#liste) : `list(verdi)`
+
+#### Konvertering kan endre på verdien
+Tabellen viser hvordan verdier blir konvertert mellom ulike datatyper. I noen tilfeller endres verdien etter konverteringen.
+| Funksjon   | Eksempel     | Returnerer  |
+|:-----------|:-------------|:------------|
+|`int`       |`int("5")`<br>`int(4.67)`   |Heltallet `5`<br>Heltallet `4`, alle desimalene fjernes uten avrundning.|
+|`float`     |`float("6.7")`<br>`float(5)`|Flyttallet `6.7`<br>Flyttallet `5.0`      |
+|`str`       |`str(5)`<br>`str(4.8)`      |Strengen `"5"` <br> Strengen `"4.8"`  |
+
+#### Ikke alle verdier kan konverteres
+Prøver man å konvertere en bokstav til en tallverdi får man en feilmelding.
+```python
+int("fem")
+```
+```
+ValueError: invalid literal for int() with base 10: 'fem'
+```
+
 ## Definere
 Operasjon som lager en variabel eller funksjon.
 
@@ -412,7 +442,7 @@ Skriv inn ett heltall som skal kvadreres: 4
 Du skrev inn: 4: 4^2 = 16
 ```
 
-I eksemplet over hentes en streng inn fra brukeren og så blir den gjort om til et heltall med `int` funksjonen. Hvis brukeren skriver en streng som *ikke* går ann å gjøre om til et heltall sier kommandotolken ifra ved å reise en [programmeringsfeil](#programmeringsfeil).
+I eksemplet over hentes en streng inn fra brukeren og så [konverteres](#konvertere-mellom-datatyper) den til et heltall med `int` funksjonen. Hvis brukeren skriver en streng som *ikke* går ann å gjøre om til et heltall sier kommandotolken ifra ved å reise en [programmeringsfeil](#programmeringsfeil).
 ```
 Skriv inn ett heltall som skal kvadreres: fire
 ValueError: invalid literal for int() with base 10: 'fire'
@@ -628,7 +658,7 @@ Tall som representeres med sifferene 1 og 0
 
 ### Beskrivelse
 Binære tall er tall som representerers med sifferene 1 og 0 for eksempel 1011 er et binært tall. Plassverdien til binære tall baserer seg på grunntallet 2 og ikke 10 som det er for ti-tall systemt. For å regne ut verdien til tallet ganger vi sifferverdien med plassverdien, akkurat som vi gjør med *vanlige tall* fra titall systemet. Plassverdien til de 4 første posisjonene i et binært tall er: 8, 4, 2, 1. Verdien til 1011 kan vi derfor regne ut til å være: $1\cdot8 + 0\cdot4 + 1\cdot 2 + 1\cdot 1 = 11$. Inne i en datamaskin lagres **allt** som binæretall. Dette er fordi en datamaskin består av veldig mange strømbrytere som enten kan være av (0) eller på (1).
-TODO: Skal vi skrive mer dette temaet eller vise til annen kilde!
+TODO: Skal vi skrive mer om dette temaet eller vise til annen kilde!
 
 ## Streng
 Datatype som brukes til å representere tekst-verdier
@@ -650,6 +680,7 @@ Eleven heter Elise Sandberg.
 Det finnes flere ulike [operasjoner](#operasjon) som kan gjøres på og med strenger...
 TODO: Legge til noe flere operasjoner.
 
+TODO: Skriv ferdig!!
 ## Formatere streng
 Gjøre
 
@@ -899,7 +930,7 @@ Tegn eller funksjoner som bearbeider streng-verdier og returnerer en streng
 Strengoperatorer brukes til å bearbeide [strenger](#streng) og da det er en operator returnerer den alltid en annen streng.
 
 ## Logiske operatorer
-Tegn eller ord som bearbeider boolske verdier og returnerer en boolsk verdi
+Tegn eller ord som bearbeider en eller to boolske-verdier og returnerer en boolsk verdi
 
 ### Beskrivelse
 Den enkleste måten å bearbeide en eller to verdier er å bruke en operator.
@@ -1116,12 +1147,12 @@ Ulik kode kjøres på grunnlag av en betingelse
 Et program tar et valg når ulik kode kjøres på grunnlag av en [betingelse](#betingelse). Innen programmering tas valg gjennom en [if-setning](#if-setning).
 
 ## If-setning
-En kontrollstruktur som gjør et valg på grunnlag av en betingelse
+En kontrollstruktur som gjør et valg
 
 ### Beskrivelse
 En if-setning er en [kontrollstruktur](#kontrollstruktur) som kan brukes til å ta et valg. Valget gjøres på bakgrunn av verdien til en [betingelse](#betingelse). Et valg kan være å utføre en [blokk med kode](#kodeblokk) hvis en bruker har gjetter korrekt tall (betingelsen er da [sann](#boolean)) i en gjettelek, og en kodeblokk hvis brukeren gjetter feil tall.
 ```python
-gjettet = int(input("Skriv inn et tall: "))
+gjettet = int(input("Skriv inn et heltall: "))
 korrekt = 4
 if gjettet == korrekt:
     print("Du gjettet riktig :)")
@@ -1129,7 +1160,7 @@ else:
     print("Du gjettet feil :(")
 ```
 ```
-Skriv inn et tall: 6
+Skriv inn et heltall: 6
 Du gjettet feil :(
 ```
 
@@ -1410,7 +1441,6 @@ while n <= 20:    # While-løkken gjentas så lenge n <= 20
 ...
 20 80
 ```
-
 
 ## Eksternt bibliotek
 Funksjonalitet som må importeres for å brukes
