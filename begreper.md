@@ -327,7 +327,7 @@ Alle verdier har en datatype som beskriver hva den kan brukes til. De vanligste 
 
 En [verdi](#verdi) kan konverteres mellom ulike datatyper
 
-## Konvertere mellom datatyper
+## Konvertere datatype
 Forandre datatypen til en verdi
 
 ### Beskrivelse
@@ -442,7 +442,7 @@ Skriv inn ett heltall som skal kvadreres: 4
 Du skrev inn: 4: 4^2 = 16
 ```
 
-I eksemplet over hentes en streng inn fra brukeren og så [konverteres](#konvertere-mellom-datatyper) den til et heltall med `int` funksjonen. Hvis brukeren skriver en streng som *ikke* går ann å gjøre om til et heltall sier kommandotolken ifra ved å reise en [programmeringsfeil](#programmeringsfeil).
+I eksemplet over hentes en streng inn fra brukeren og så [konverteres](#konvertere-datatype) den til et heltall med `int` funksjonen. Hvis brukeren skriver en streng som *ikke* går ann å gjøre om til et heltall sier kommandotolken ifra ved å reise en [programmeringsfeil](#programmeringsfeil).
 ```
 Skriv inn ett heltall som skal kvadreres: fire
 ValueError: invalid literal for int() with base 10: 'fire'
