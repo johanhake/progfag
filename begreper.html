@@ -358,6 +358,8 @@ h&#xF8;yde <span class="token operator">=</span> <span class="token number">1.34
 <li><code>if</code>: starter en <a href="#if-setning">if-setning</a></li>
 <li><code>else</code>: lager en else-kodeblokk knyttet til en if-setning</li>
 <li><code>True</code>, <code>False</code>: <a href="#boolean">Boolske</a>-verdier</li>
+<li><code>for</code>, <code>while</code>: starter en <a href="#l%C3%B8kke">l&#xF8;kke</a></li>
+<li><code>return</code>: returnerer en verdi fra en funksjon</li>
 </ul>
 <h2 class="mume-header" id="kommandotolk">Kommandotolk</h2>
 
@@ -518,7 +520,7 @@ l&#xE5;n <span class="token operator">=</span> l&#xE5;n <span class="token opera
 <li>kan IKKE inneholde mellomrom <code></code>, bindestrek <code>-</code> eller punktum <code>.</code>: Bruk heller <code>_</code> mellom ord i variabelnavnet.</li>
 <li>kan IKKE starte med et siffer.</li>
 <li>m&#xE5; v&#xE6;re unikt. Flere variabler kan alts&#xE5; ikke ha samme navn.</li>
-<li>kan ikke v&#xE6;re noen av de <a href="#reserverte-ord">reserverte ordene</a> i Python, for eksempel: <code>if</code>, <code>for</code>, <code>import</code>, <code>else</code>, <code>elif</code>.</li>
+<li>kan ikke v&#xE6;re noen av <a href="#n%C3%B8kkelord">n&#xF8;kkelordene</a> i Python, for eksempel: <code>if</code>, <code>for</code>, <code>import</code>, <code>else</code>, <code>elif</code>.</li>
 </ol>
 <h3 class="mume-header" id="tips-til-variabelnavn">Tips til variabelnavn</h3>
 
@@ -1253,7 +1255,7 @@ morgenhilsen_til<span class="token punctuation">(</span><span class="token punct
 <p>Verdi som returneres n&#xE5;r en funksjon er ferdig med &#xE5; utf&#xF8;re sine operasjoner</p>
 <h3 class="mume-header" id="beskrivelse-44">Beskrivelse</h3>
 
-<p>En returverdi er en verdi som returneres av funksjonen n&#xE5;r den er ferdig. En retuverdi bestemmes med det som er til h&#xF8;yre av det<a href="#reserverte-ord">reserverte ordet</a> <code>retur</code> inne i en funksjon.</p>
+<p>En returverdi er en verdi som returneres av funksjonen n&#xE5;r den er ferdig. En retuverdi bestemmes med det som er til h&#xF8;yre av <a href="#n%C3%B8kkelord">n&#xF8;kkelordet</a> <code>return</code> inne i en funksjon.</p>
 <pre data-role="codeBlock" data-info="python" class="language-python"><span class="token comment"># Returnerer summen av to tall</span>
 <span class="token keyword keyword-def">def</span> <span class="token function">summer</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword keyword-return">return</span> a <span class="token operator">+</span> b
@@ -1604,12 +1606,6 @@ Snorre
 
 <h3 class="mume-header" id="beskrivelse-63">Beskrivelse</h3>
 
-<h2 class="mume-header" id="reserverte-ord">Reserverte ord</h2>
-
-<p>Ord med en spesiell betydning i et tekstbasert programmeringsspr&#xE5;k</p>
-<h3 class="mume-header" id="beskrivelse-64">Beskrivelse</h3>
-
-<p>De fleste tekstbaserte programmeringsspr&#xE5;k har reservert egne ord som bare kan brukes p&#xE5; en helt bestemt m&#xE5;te. Slike ord kan da ikke brukes til <a href="#variabelnavn">variabelnavn</a> eller <a href="#funksjonsnavn">funksjonsnavn</a>. Eksempel p&#xE5; reserverte ord  Python er: <code>if</code>, <code>for</code>, <code>while</code>, <code>import</code>, <code>else</code>, <code>elif</code>, <code>as</code>, <code>True</code>, <code>False</code>, <code>and</code>, <code>or</code>, <code>def</code>, <code>return</code>, <code>break</code>, <code>continue</code></p>
 
       </div>
       

@@ -103,6 +103,8 @@ De fleste [tekst-programmeringsspråk](#tekstbasert-programmeringsspråk) har n�
 * `if`: starter en [if-setning](#if-setning)
 * `else`: lager en else-kodeblokk knyttet til en if-setning
 * `True`, `False`: [Boolske](#boolean)-verdier
+* `for`, `while`: starter en [løkke](#løkke)
+* `return`: returnerer en verdi fra en funksjon
 
 ## Kommandotolk
 Et program som kjører et skript.
@@ -297,7 +299,7 @@ For Python gjelder disse kravene til et variabelnavn
 2. kan IKKE inneholde mellomrom ` `, bindestrek `-` eller punktum `.`: Bruk heller `_` mellom ord i variabelnavnet.
 3. kan IKKE starte med et siffer.
 4. må være unikt. Flere variabler kan altså ikke ha samme navn.
-5. kan ikke være noen av de [reserverte ordene](#reserverte-ord) i Python, for eksempel: `if`, `for`, `import`, `else`, `elif`.
+5. kan ikke være noen av [nøkkelordene](#nøkkelord) i Python, for eksempel: `if`, `for`, `import`, `else`, `elif`.
 
 ### Tips til variabelnavn
 Bruk variabelnavn som beskriver hva verdien til variabelen skal brukes til. For eksempel er navn som `a`, `b` oftest dårlige navn, mens `lån`, `navn` eller `poengsum` er bra navn.
@@ -1126,7 +1128,7 @@ TypeError: morgenhilsen_til() missing 1 required positional argument: 'navn'
 Verdi som returneres når en funksjon er ferdig med å utføre sine operasjoner
 
 ### Beskrivelse
-En returverdi er en verdi som returneres av funksjonen når den er ferdig. En retuverdi bestemmes med det som er til høyre av det[reserverte ordet](#reserverte-ord) `retur` inne i en funksjon.
+En returverdi er en verdi som returneres av funksjonen når den er ferdig. En retuverdi bestemmes med det som er til høyre av [nøkkelordet](#nøkkelord) `return` inne i en funksjon.
 ```python
 # Returnerer summen av to tall
 def summer(a, b):
@@ -1553,8 +1555,3 @@ Snorre
 
 ### Beskrivelse
 
-## Reserverte ord
-Ord med en spesiell betydning i et tekstbasert programmeringsspråk
-
-### Beskrivelse
-De fleste tekstbaserte programmeringsspråk har reservert egne ord som bare kan brukes på en helt bestemt måte. Slike ord kan da ikke brukes til [variabelnavn](#variabelnavn) eller [funksjonsnavn](#funksjonsnavn). Eksempel på reserverte ord  Python er: `if`, `for`, `while`, `import`, `else`, `elif`, `as`, `True`, `False`, `and`, `or`, `def`, `return`, `break`, `continue`
