@@ -551,7 +551,7 @@ l&#xE5;n <span class="token operator">=</span> l&#xE5;n <span class="token opera
 <li><a href="#assosiativ-liste">assosiative lister</a>. Brukes til &#xE5; samle verdier som er assosiert med en <a href="#n%C3%B8kkel">n&#xF8;kkel</a>.</li>
 </ul>
 <p>En <a href="#verdi">verdi</a> kan konverteres mellom ulike datatyper</p>
-<h2 class="mume-header" id="konvertere-mellom-datatyper">Konvertere mellom datatyper</h2>
+<h2 class="mume-header" id="konvertere-datatype">Konvertere datatype</h2>
 
 <p>Forandre datatypen til en verdi</p>
 <h3 class="mume-header" id="beskrivelse-21">Beskrivelse</h3>
@@ -657,7 +657,7 @@ tall_int <span class="token operator">=</span> <span class="token builtin">int</
 <span class="token keyword keyword-print">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;Du skrev inn: </span><span class="token interpolation"><span class="token punctuation">{</span>tall_streng<span class="token punctuation">}</span></span><span class="token string">: </span><span class="token interpolation"><span class="token punctuation">{</span>tall_streng<span class="token punctuation">}</span></span><span class="token string">^2 = </span><span class="token interpolation"><span class="token punctuation">{</span>tall_int<span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">}</span></span><span class="token string">&quot;</span></span><span class="token punctuation">)</span>
 </pre><pre data-role="codeBlock" data-info class="language-"><code>Skriv inn ett heltall som skal kvadreres: 4
 Du skrev inn: 4: 4^2 = 16
-</code></pre><p>I eksemplet over hentes en streng inn fra brukeren og s&#xE5; <a href="#konvertere-mellom-datatyper">konverteres</a> den til et heltall med <code>int</code> funksjonen. Hvis brukeren skriver en streng som <em>ikke</em> g&#xE5;r ann &#xE5; gj&#xF8;re om til et heltall sier kommandotolken ifra ved &#xE5; reise en <a href="#programmeringsfeil">programmeringsfeil</a>.</p>
+</code></pre><p>I eksemplet over hentes en streng inn fra brukeren og s&#xE5; <a href="#konvertere-datatype">konverteres</a> den til et heltall med <code>int</code> funksjonen. Hvis brukeren skriver en streng som <em>ikke</em> g&#xE5;r ann &#xE5; gj&#xF8;re om til et heltall sier kommandotolken ifra ved &#xE5; reise en <a href="#programmeringsfeil">programmeringsfeil</a>.</p>
 <pre data-role="codeBlock" data-info class="language-"><code>Skriv inn ett heltall som skal kvadreres: fire
 ValueError: invalid literal for int() with base 10: &apos;fire&apos;
 </code></pre><h2 class="mume-header" id="flyttall">Flyttall</h2>
@@ -1077,7 +1077,55 @@ Merk at hvis ikke operatorene utf&#xF8;res fra venstre til h&#xF8;yre ville for 
 <p>Tegn eller ord som bearbeider en eller to boolske-verdier og returnerer en boolsk verdi</p>
 <h3 class="mume-header" id="beskrivelse-37">Beskrivelse</h3>
 
-<p>Den enkleste m&#xE5;ten &#xE5; bearbeide en eller to verdier er &#xE5; bruke en operator.</p>
+<p>Logiske operatorer brukes til &#xE5; kombinere og bearbeide boolske verdier og de returnerer nye boolske verdier.</p>
+<p>F&#xF8;lgende kode finner priset til en billet n&#xE5;r brukeren har gitt sin alder. Brukeren f&#xE5;r voksenpris hvis hen er mellom 18 og 63 &#xE5;r. Da m&#xE5; alder samtidig v&#xE6;re</p>
+<ol>
+<li>st&#xF8;rre enn 18: <code>18 &lt;= alder</code></li>
+<li>mindre enn 65: <code>alder &lt; 63</code><br>
+Disse to betingelsene kan kombineres med den logiske operatoren <code>and</code>: <code>18 &lt;= alder and alder &lt; 63</code>. Hvis begge betingelsene er <code>True</code> returnerer <code>18 &lt;= alder and alder &lt; 63</code>, <code>True</code> og <code>False</code> ellers.</li>
+</ol>
+<pre data-role="codeBlock" data-info="python" class="language-python">alder <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">&quot;Hva er alderen din: &quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-if">if</span> alder <span class="token operator">&lt;</span> <span class="token number">4</span><span class="token punctuation">:</span>
+    pris <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword keyword-elif">elif</span> <span class="token number">18</span> <span class="token operator">&lt;=</span> alder <span class="token keyword keyword-and">and</span> alder <span class="token operator">&lt;</span> <span class="token number">63</span><span class="token punctuation">:</span>
+    pris <span class="token operator">=</span> <span class="token number">30</span>
+<span class="token keyword keyword-else">else</span><span class="token punctuation">:</span>
+    pris <span class="token operator">=</span> <span class="token number">15</span>
+
+<span class="token keyword keyword-print">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f&quot;Prisen for din billett er </span><span class="token interpolation"><span class="token punctuation">{</span>pris<span class="token punctuation">}</span></span><span class="token string"> kr&quot;</span></span><span class="token punctuation">)</span>
+</pre><p>Under er en tabell som viser tre ulike logiske operatorer, <code>and</code>, <code>or</code> og <code>not</code> og resultatet av de n&#xE5;r variablene <code>plagg</code> og <code>farge</code> har verdiene:</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">plagg <span class="token operator">=</span> <span class="token string">&quot;skjorte&quot;</span>
+farge <span class="token operator">=</span> <span class="token string">&quot;r&#xF8;d&quot;</span>
+</pre><table>
+<thead>
+<tr>
+<th style="text-align:left">Forklaring</th>
+<th style="text-align:center">Operator</th>
+<th style="text-align:left">Python</th>
+<th style="text-align:center">Returnerer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Og</strong>, begge betingelsene er sanne</td>
+<td style="text-align:center"><code>and</code></td>
+<td style="text-align:left"><code>plagg == &quot;skjorte&quot; and farge == &quot;gr&#xF8;nn&quot;</code></td>
+<td style="text-align:center"><code>False</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Eller</strong>, &#xE9;n eller begge betingelsene er sanne</td>
+<td style="text-align:center"><code>or</code></td>
+<td style="text-align:left"><code>plagg == &quot;skjorte&quot; or farge == &quot;gr&#xF8;nn&quot;</code></td>
+<td style="text-align:center"><code>True</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Ikke</strong>, reverserer betingelsen og returnerer <code>True</code> om verdien er <code>False</code></td>
+<td style="text-align:center"><code>not</code></td>
+<td style="text-align:left"><code>not farge == &quot;gr&#xF8;nn&quot;</code></td>
+<td style="text-align:center"><code>True</code></td>
+</tr>
+</tbody>
+</table>
 <h2 class="mume-header" id="sammenligningsoperator">Sammenligningsoperator</h2>
 
 <p>Tegn som sammenligner to verdier og returnerer en boolsk verdi</p>

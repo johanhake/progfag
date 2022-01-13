@@ -933,7 +933,35 @@ Strengoperatorer brukes til å bearbeide [strenger](#streng) og da det er en ope
 Tegn eller ord som bearbeider en eller to boolske-verdier og returnerer en boolsk verdi
 
 ### Beskrivelse
-Den enkleste måten å bearbeide en eller to verdier er å bruke en operator.
+Logiske operatorer brukes til å kombinere og bearbeide boolske verdier og de returnerer nye boolske verdier.
+
+Følgende kode finner priset til en billet når brukeren har gitt sin alder. Brukeren får voksenpris hvis hen er mellom 18 og 63 år. Da må alder samtidig være
+1. større enn 18: `18 <= alder`
+2. mindre enn 65: `alder < 63`
+Disse to betingelsene kan kombineres med den logiske operatoren `and`: `18 <= alder and alder < 63`. Hvis begge betingelsene er `True` returnerer `18 <= alder and alder < 63`, `True` og `False` ellers.
+```python
+alder = int(input("Hva er alderen din: "))
+if alder < 4:
+    pris = 0
+elif 18 <= alder and alder < 63:
+    pris = 30
+else:
+    pris = 15
+
+print(f"Prisen for din billett er {pris} kr")
+```
+Under er en tabell som viser tre ulike logiske operatorer, `and`, `or` og `not` og resultatet av de når variablene `plagg` og `farge` har verdiene:
+```python
+plagg = "skjorte"
+farge = "rød"
+```
+| Forklaring | Operator     | Python      | Returnerer |
+|:-----------|:------------:|:------------|:----------:|
+|**Og**, begge betingelsene er sanne| `and`| `plagg == "skjorte" and farge == "grønn"`|  `False`
+|**Eller**, én eller begge betingelsene er sanne|`or`|`plagg == "skjorte" or farge == "grønn"`| `True`
+|**Ikke**, reverserer betingelsen og returnerer `True` om verdien er `False`|`not`|`not farge == "grønn"`|`True`|
+
+
 
 ## Sammenligningsoperator
 Tegn som sammenligner to verdier og returnerer en boolsk verdi
